@@ -37,3 +37,15 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Webstorm folder
+.idea
+
+# Total.js examples folder
+total-examples
+
+# Mac system files
+*.DS_Store
+
+# total.js tmp directory
+tmp
