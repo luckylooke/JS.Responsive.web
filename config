@@ -1,7 +1,7 @@
-name                            : Total.js
-author                          : You company name
-version                         : 1.0.0
-secret                          : secret-key-for-web
+name                            : JS.Responsive
+author                          : wezeo.com
+version                         : 0.1.0
+secret                          : secret-alalala
 
 // Mail settings
 mail.smtp                       : smtp.yourwebsite.com
