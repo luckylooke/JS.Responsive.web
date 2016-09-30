@@ -1,7 +1,11 @@
-[![Support](https://www.totaljs.com/img/button-support.png)](https://www.totaljs.com/support/) [![Donate](https://www.totaljs.com/img/button-donate.png)](https://www.totaljs.com/#make-a-donation)
+JS.Responsive web
 
-# Total.js: Empty Project - Full website example
+build on [total.js](http://www.totaljs.com/)
 
-- Install Total.js via NPM `$ npm install total.js`
-- Download example
-- Run it `$ node debug.js`
+Contribution to this web:
+- fork this repo
+- clone github repo into your machine `$ git clone https://github.com/{{yourUserName}}/JS.Responsive.web.git`
+- go to cloned project directory `cd JS.Responsive.web`
+- fetch git submodule JS.REsponsive `git submodule init && git submodule update`
+- install Total.js via NPM `$ npm install total.js`
+- Run total.js `$ node debug.js`
