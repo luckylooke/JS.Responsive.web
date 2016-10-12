@@ -1,0 +1,610 @@
+
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-loadFocusBlur/">loadFocusBlur</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: JS.Responsive.source.js</h1>
+    
+<section>
+    <article>
+        <pre class="sunlight-highlight-javascript linenums">/**
+ * @license JS.Responsive v3.0.0
+ * (c) 2015 WEZEO http://wezeo.com
+ * License: MIT
+ *
+ * @version 3.0.0
+ *
+ * @author Johnny Seyd &lt;seyd@wezeo.com&gt;, Ctibor Laky &lt;laky@wezeo.com&gt;
+ *
+ * @description JS.Responsive is a free tool for responsive styling and responsive javascript coding.
+ *
+ * @see http://responsive.lab.wezeo.com/
+ *
+ */
+(function() {
+	&apos;use strict&apos;;
+
+	// base namespace
+	if (!window.JS)
+		window.JS = {};
+
+	// defines and inicialize only once
+	if (JS.Responsive)
+		return;
+
+	
+	// -------------------------------------------------------------------------------------------------
+	// --- CLASS ---------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
+	
+	/**
+	 * Constructor is PRIVATE, client must use only class methods!!!!!
+	 * @constructor
+	 * @alias JS.Responsive
+	 */
+	var $C = JS.Responsive = function() {
+		throw new Error(&quot;JS.Responsive cannot have instances.&quot;);
+	};
+
+	/**
+	 * Library version
+	 * @const {String}
+	 */
+	$C.version = &apos;3.0.0&apos;;
+
+	 
+	// -------------------------------------------------------------------------------------------------
+	// --- CONFIG --------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
+	
+	var
+		// substitution because minimalization (internal variables are shorten in minimizing process)
+		win = window,
+		document = win.document,
+		navigator = win.navigator,
+		screen = win.screen,
+		parseInt = win.parseInt,
+		parseFloat = win.parseFloat,
+
+		TRUE = true,
+		FALSE = false,
+		NULL = null,
+		UNDEFINED = undefined,
+		EMPTY_STRING = &apos;&apos;,
+		SPACE_CHAR = &apos; &apos;,
+		WIDTH_STRING = &apos;width&apos;,
+		HEIGHT_STRING = &apos;height&apos;,
+		MOZ_PREFIX = &apos;moz&apos;,
+		MS_PREFIX = &apos;ms&apos;,
+		PORTRAIT_STRING = &apos;portrait&apos;,
+		LANDSCAPE_STRING = &apos;landscape&apos;,
+		HORIZONTAL_STRING = &apos;horizontal&apos;,
+		VERTICAL_STRING = &apos;vertical&apos;,
+
+		/**
+		 * Storing listeners types and callback functions
+		 * structure:
+		 * {
+		 * 	eventTypeName: [callbackFn, ...],
+		 * 	eventTypeName: [callbackFn, ...],
+		 * 	...
+		 * 	eventTypeName: [callbackFn, ...]
+		 * }
+		 */
+		listeners = {};
+	
+	// -------------------------------------------------------------------------------------------------	
+	// --- PUBLIC --------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
+
+	/**
+	 * Register callback to referenced event type
+	 * @param {String} type - type of an event callback will be registered to
+	 * @param {Function} fn - callback function called after event occurred
+	 * @returns {Object} JS.Responsive - for chaining
+	 */
+	$C.on = function (type, fn) {
+		if(!listeners[type])
+			listeners[type] = [];
+		listeners[type].push(fn);
+		return $C;
+	};
+
+	/**
+	 * Unregister callback of referenced event type
+	 * @param {String} type - type of an event callback where callback is registered
+	 * @param {Function} fn - callback function to be unregistered
+	 * @returns {Object} JS.Responsive - for chaining
+	 */
+	$C.off = function (type, fn) {
+		if(!listeners[type])
+			return;
+		var typeListeners = listeners[type],
+			index = typeListeners.indexOf(fn);
+		if(index != -1)
+			typeListeners.splice(index,1);
+		return $C;
+	};
+
+
+	/**
+	 * Emit event, can be used for emitting custom events too, just register them via JS.Responsive.on method.
+	 * @param {String} type - type of an event callback will be registered to
+	 * @param {...*} arguments - used when calling callbacks
+	 * @returns {Object} JS.Responsive - for chaining
+	 */
+	$C.emit = function (type) {
+
+		// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/arguments
+		var args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments)),
+			errors = [];
+
+		args.unshift(); // first argument is event type
+
+		if(listeners[type])
+			forEach(listeners[type], applyEach);
+		if(listeners[&apos;all&apos;]) // listeners to all event types
+			forEach(&apos;all&apos;, applyEach);
+
+		if (errors.length) {
+			// if more errors, we want to print all to console
+			if (errors.length&gt;1)
+				console.log(&apos;All errors in JS.Responsive onchangeHandler:&apos;, errors);
+			throw errors[0];
+		}
+
+		function applyEach(listener) {
+			try {
+				listener.apply(listener, args);
+			}
+			catch(error) {
+				errors.push(error);
+			}
+		}
+
+		return $C;
+	};
+
+	/**
+	 * @property {object} - List of included features in current bundle, each property represent one feature and value is initialisation
+	 * function of the feature, so it can be initialised later
+	 */
+
+	$C.features = {};
+
+	/* Optional files content goes here! */
+
+	/**
+	 * Initialise JS.Responsive
+	 * @param {Object} [config] - Object with key value pairs of features which will be initialised, if not
+	 * provided, all features will be initialised. If you provide empty object, none of features will be initialised.
+	 */
+
+	$C.init = function(config) {
+		init(config);
+	};
+
+	
+	/**
+	 * Tests if HTML element contains given class names.
+	 * @param {...String} - class names
+	 * @returns {Boolean}
+	 * @example JS.Responsive.is(&apos;mobile&apos;) === true, when HTML contains &quot;mobile&quot; class
+	 * @example JS.Responsive.is(&apos;portrait touch&apos;) === true, when HTML contains &quot;portrait&quot; and &quot;touch&quot; class
+	 * @example JS.Responsive.is(&apos;portrait touch&apos;, &apos;mobile&apos;) === true, when HTML contains (&quot;portrait&quot; and &quot;touch&quot; class) OR (&apos;mobile&apos;)
+	 */
+	$C.is = function() {
+
+		for (var i=0; i&lt;arguments.length; i++)
+			if (hasAllTheseClasses(arguments[i]))
+				return TRUE; // if once true then disjunction is true
+
+		return FALSE;
+	};
+	
+	// -------------------------------------------------------------------------------------------------
+	// --- PRIVATE -------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
+
+	function forEach( array, fn ) {
+		if(Array.prototype.forEach)
+			array.forEach(fn);
+		else
+			for (var i = 0; i &lt; array.length; i++)
+				// calls on array (this == array) and
+				// first argument is current array item,
+				// second argument is current index
+				fn.call(array, array[i], i, array);
+	}
+
+	/**
+	 * Returns current window width in pixels.
+	 * @returns {Number}.
+	 */
+	function getWindowWidth() {
+		return getWindowSize(WIDTH_STRING);
+	}
+
+	/**
+	 * Returns current window height in pixels.
+	 * @returns {Number}.
+	 */
+	function getWindowHeight() {
+
+		return getWindowSize(HEIGHT_STRING);
+	}
+
+	/**
+	 * Returns current document width in pixels (can be smaller than window size because scrollbar reduces it).
+	 * @returns {Number}
+	 */
+	function getDocumentWidth() {
+
+		return getDocumentSize(WIDTH_STRING);
+	}
+
+	/**
+	 * Returns current document height in pixels (can be smaller than window size because scrollbar reduces it).
+	 * @returns {Number}
+	 */
+	function getDocumentHeight() {
+
+		return getDocumentSize(HEIGHT_STRING);
+	}
+
+
+	// @param (String) sizeType - &apos;width&apos; or &apos;height&apos;
+	function getDocumentSize(sizeType) {
+		var el = !isIE() ? getHtmlElement() : getBodyElement();
+		return el ? el[&apos;offset&apos; + ucFirst(sizeType)] : 0;
+	}
+
+	// @param (String) sizeType - &apos;width&apos; or &apos;height&apos;
+	function getWindowSize(sizeType) {
+		var ucSizeType = ucFirst(sizeType),
+			size = win[&apos;inner&apos; + ucSizeType],
+			docEl = document.documentElement;
+		return size || (docEl &amp;&amp; docEl[&apos;offset&apos; + ucSizeType] ? docEl[&apos;client&apos; + ucSizeType] : screen[sizeType]);
+	}
+
+	var htmlElement,
+		bodyElement;
+
+	function getElementByTagName( tagName ) {
+		return document.getElementsByTagName(tagName)[0];
+	}
+
+	function getHtmlElement() {
+		if (!htmlElement)
+			htmlElement = getElementByTagName(&apos;html&apos;);
+		return htmlElement;
+	}
+
+	function getBodyElement() {
+		if (!bodyElement)
+			bodyElement = getElementByTagName(&apos;body&apos;);
+		return bodyElement;
+	}
+
+
+	function arrayIndex(array, value, _exactMatch) {
+		for (var i = 0; i &lt; array.length; i++)
+			if ((_exactMatch &amp;&amp; array[i] === value) || (!_exactMatch &amp;&amp; array[i] == value))
+				return i;
+		return -1;
+	}
+
+
+	function arrayContains(array, item, _exactMatch) {
+		return arrayIndex(array, item, _exactMatch) &gt;= 0;
+	}
+
+
+	function bind(el, eventType, handlerFn) {
+
+		if (el.addEventListener)
+			el.addEventListener(eventType, fn, FALSE);
+		else if (el.attachEvent)
+			el.attachEvent(&apos;on&apos; + eventType, fn);
+
+		function fn(e) {
+			handlerFn.call(NULL, e || event);
+		}
+	}
+
+
+	function addClass(name) {
+		var html = getHtmlElement();
+		if (html) {
+			if (!isInTransactionClassMode) {
+				var className = html.className;
+				// remove double spaces and trim
+				var classes = className == EMPTY_STRING ?
+								[] :
+								className
+									.replace(/ +/g, SPACE_CHAR)
+									.replace(/^\s*|\s*$/g, EMPTY_STRING)
+									.split(SPACE_CHAR);
+
+				if (!arrayContains(classes, name)) {
+					classes.push(name);
+					html.className = classes.join(SPACE_CHAR);
+				}
+			}
+			else
+				addTransactionClass(name);
+		}
+	}
+
+	function removeClass(name) {
+		var html = getHtmlElement();
+		if (html &amp;&amp; name) {
+			if (!isInTransactionClassMode) {
+				var className = html.className;
+				var classes = className == EMPTY_STRING ? [] : className.split(SPACE_CHAR);
+				if (arrayContains(classes, name)) {
+					classes.splice(arrayIndex(classes, name), 1);
+					html.className = classes.join(SPACE_CHAR);
+				}
+			}
+			else
+				removeTransactionClass(name);
+		}
+	}
+
+	function hasClass(name) {
+		var html = getHtmlElement();
+		if (html) {
+			var classes = html.className.split(SPACE_CHAR);
+			return arrayContains(classes, name);
+		}
+		return FALSE;
+	}
+
+
+	var isInTransactionClassMode = FALSE,
+		addedClasses = [],
+		removedClasses = [];
+
+	function startTransactionClass() {
+		isInTransactionClassMode = TRUE;
+		addedClasses = [];
+		removedClasses = [];
+	}
+
+	function addTransactionClass(name) {
+		// if was removed, undo this state
+		if (arrayContains(removedClasses, name))
+			removedClasses.splice(arrayIndex(removedClasses, name), 1);
+		// else adds if not already added
+		else if (!hasClass(name) &amp;&amp; !arrayContains(addedClasses, name))
+			addedClasses.push(name);
+	}
+
+	function removeTransactionClass(name) {
+		// if was added, undo this state
+		if (arrayContains(addedClasses, name))
+			addedClasses.splice(arrayIndex(addedClasses, name), 1);
+		// else adds if not already added
+		else if (hasClass(name) &amp;&amp; !arrayContains(removedClasses, name))
+			removedClasses.push(name);
+	}
+
+	function commitTransactionClass() {
+		isInTransactionClassMode = FALSE;
+		for (var i = 0; i &lt; removedClasses.length; i++)
+			removeClass(removedClasses[i]);
+		// adding in one punch
+		if (addedClasses.length)
+			addClass(addedClasses.join(SPACE_CHAR));  //.replace(/^\s*|\s*$/g, EMPTY_STRING)
+		addedClasses = [];
+		removedClasses = [];
+	}
+
+	/*
+	// UNUSED
+	function rollbackTransactionClass() {
+		isInTransactionClassMode = FALSE;
+		addedClasses = [];
+		removedClasses = [];
+	}
+	*/
+
+	// capitalize first letter
+	function ucFirst(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	}
+
+	function isIE() {
+		return navigator.appName == &apos;Microsoft Internet Explorer&apos;;
+	}
+
+	var isDocumentLoaded = FALSE,
+		docReadyTime;
+
+
+	function onloadHandler() {
+		isDocumentLoaded = TRUE;
+		docReadyTime = +(new Date());
+		$C.emit(&apos;documentReady&apos;, docReadyTime);
+	}
+
+
+	/**
+	 * Returns true if HTML element contains all given class names (space separated)
+	 * @returns {Boolean}
+	 */
+	function hasAllTheseClasses( classNames ) {
+
+		var classes = classNames.split(SPACE_CHAR);
+		for (var i=0; i&lt;classes.length; i++) {
+			if (classes[i] != EMPTY_STRING &amp;&amp; !hasClass(classes[i]))
+					return FALSE;
+		}
+		return TRUE;
+	}
+
+    function missingMethod(feat) {
+    	return function(){
+			throw Error(&apos;Method &quot;&apos; + feat + &apos;&quot; is not available in this bundle!&apos;);
+		}
+    }
+
+	var initWasExecuted;
+
+	function init(cfg) {
+
+		// runs only once
+		if (initWasExecuted)
+			return;
+
+		initWasExecuted = TRUE;
+
+		var prop;
+		if (cfg) // init features by config
+
+			for (prop in cfg) {
+				if (cfg.hasOwnProperty(prop)) {
+					if ($C.features[prop])&#x2028;
+						$C.features[prop](prop);
+					else&#x2028; missingMethod(prop)();
+				}
+			}
+		else // init all available features
+
+			for (prop in $C.features) {
+				$C.features[prop].call($C);
+			}
+
+		bind(window, &apos;load&apos;, onloadHandler);
+	}
+
+	// -------------------------------------------------------------------------------------------------
+	// --- INITIALIZATION ------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
+
+    if(typeof module != &apos;undefined&apos;)
+        module.exports = $C;
+
+})();
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#xD7;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a>
+	
+		on Oct 5, 2016 1:24 PM
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+
+
+
+    
+
+
+
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+
+
+<!--Google Analytics-->
+
+
+
+    
+
+

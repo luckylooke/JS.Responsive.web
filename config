@@ -3,6 +3,9 @@ author                          : wezeo.com
 version                         : 0.1.0
 secret                          : secret-alalala
 
+// App settings
+allow-compile-script            : false
+
 // Mail settings
 mail.smtp                       : smtp.gmail.com
 mail.smtp.options               : {"secure":false,"port":465,"user":"","password":"","timeout":10000}

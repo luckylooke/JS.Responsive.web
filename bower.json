@@ -1,0 +1,27 @@
+{
+  "name": "jsrespoweb",
+  "description": "web for https://github.com/seyd/JS.Responsive",
+  "main": "none",
+  "authors": [
+    "Jan Seyd & Ctibor Laky"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "js.responsive",
+    "responsivity",
+    "web",
+    "style",
+    "javascript",
+    "api"
+  ],
+  "homepage": "https://github.com/luckylooke/JS.Responsive.web",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
