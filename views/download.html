@@ -10,7 +10,37 @@
 <div class="container">
 	<h2>Custom download</h2>
 	<div class="row">
+		<div class="col-md-12">
 		<p>Select features you want to have included and click download link</p>
-		@{repository.test}
+
+			<!--<div data-component="checkboxlist"-->
+				 <!--data-component-path="selected"-->
+				 <!--data-source="datasource"-->
+				 <!--data-class="col-sm-2"-->
+				 <!--data-button="Select all"-->
+				 <!--data-source-text="file"-->
+				 <!--data-source-id="file"-->
+				 <!--data-component-type="string">Frameworks</div>-->
+
+			<p><label><input type="checkbox" id="checkAll"/> All features</label></p>
+			<div id="features-list"></div>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<ul id="donwload-links">
+				<li><a href="/api/download/v3.0.0/JS.Responsive.js">JS.Responsive.js</a></li>
+				<li><a href="/api/download/v3.0.0/JS.Responsive.js.map">JS.Responsive.js.map</a></li>
+				<li><a href="/api/download/v3.0.0/JS.Responsive.min.js">JS.Responsive.min.js</a></li>
+				<li><a href="/api/download/v3.0.0/JS.Responsive.min.js.map">JS.Responsive.min.js.map</a></li>
+			</ul>
+			<a href="/api/download/v3.0.0/JS.Responsive.zip" id="download-btn" target="_blank">
+				<button class="button">DOWNLOAD</button>
+			</a>
+		</div>
 	</div>
 </div>
+
+@{json(model, 'featuresList')}
+@{import('downloadView.js')}

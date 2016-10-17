@@ -51,3 +51,6 @@ total-examples
 # total.js tmp directory
 tmp
 databases
+
+# general
+*.tmp

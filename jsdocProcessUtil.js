@@ -10,7 +10,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
     files
         .filter(function(file) { return file.substr(-5) === '.html'; }) // html only
         .forEach(function(file) {
-            fs.readFile('./JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
+            fs.readFile(__dirname + '/JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
                 console.log('file contents: ', file, !!contents);
                 file = file.replace('.js', 'js');
                 if(!contents)
@@ -23,7 +23,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 var $ = cheerio.load(contents);
                 $('script').remove();
                 contents = $('body').html();
-                fs.writeFile('./views/docs/' + file, contents, function(err){
+                fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";
                     if(err) console.error(err);
 
@@ -34,26 +34,39 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 });
 
 // temp fixes:
-fs.readFile('./JS.Responsive/docs/scripts/toc.js', 'utf-8', function(err, contents) {
+fs.readFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', 'utf-8', function(err, contents) {
     if (err) console.error(err);
     if(contents.search(';var timeout;') != -1)
         return;
     contents = contents.replace('var timeout;', ';var timeout;');
-    fs.writeFile('./JS.Responsive/docs/scripts/toc.js', contents, function(err){
+    fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', contents, function(err){
         "use strict";
         if(err) console.error(err);
 
         console.log('file fix done: ', './JS.Responsive/docs/scripts/toc.js');
     });
 });
-fs.readFile('./JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
+fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
     if (err) console.error(err);
     if(contents.search(';resultsList.appendChild') != -1)
         return;
     contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
     contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","");');
     contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
-    fs.writeFile('./JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
+    fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
+        "use strict";
+        if(err) console.error(err);
+
+        console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
+    });
+});
+fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
+    if (err) console.error(err);
+    if(contents.search("spawn(__dirname + '/node_modules/.bin/jsdoc'") != -1)
+        return;
+    contents = contents.replace("spawn('./node_modules/.bin/jsdoc'", "spawn(__dirname + '/node_modules/.bin/jsdoc'");
+
+    fs.writeFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', contents, function(err){
         "use strict";
         if(err) console.error(err);
 

@@ -4,6 +4,7 @@
   "description": "web for https://github.com/seyd/JS.Responsive",
   "main": "debug.js",
   "dependencies": {
+    "archiver": "^1.1.0",
     "bootstrap": "^3.3.7",
     "cheerio": "^0.22.0",
     "ink-docstrap": "^1.3.0",

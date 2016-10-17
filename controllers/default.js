@@ -1,3 +1,5 @@
+var featuresList = require('./../JS.Responsive/server/featuresList.json');
+
 exports.install = function() {
 	F.route('/');
 	F.route('/documentation/', docCtrl);
@@ -14,8 +16,7 @@ exports.install = function() {
 
 function downloadCtrl() {
 	var self = this;
-	self.repository.test = 'test';
-	self.view('download');
+	self.view('download', {featuresList: featuresList});
 }
 function docCtrl(route) {
 	console.log('route: ', route);
