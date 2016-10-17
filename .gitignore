@@ -54,3 +54,6 @@ databases
 
 # general
 *.tmp
+
+# ignore submodule
+JS.Responsive
