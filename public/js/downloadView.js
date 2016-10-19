@@ -23,7 +23,14 @@ parent.append(domListDetached);
 
 inputs = domList.find('input');
 
-domList.on('click', function (e) {
+domList.on('click', refreshLinks);
+
+$("#checkAll").change(function (e) {
+    inputs.prop('checked', $(this).prop("checked"));
+    refreshLinks(e);
+});
+
+function refreshLinks(e) {
     e.stopPropagation();
     var result = '',
         resultPath = '',
@@ -61,12 +68,7 @@ domList.on('click', function (e) {
     );
 
 
-});
-
-$("#checkAll").change(function () {
-    inputs.prop('checked', $(this).prop("checked"));
-});
-
+}
 
 
 // /*
