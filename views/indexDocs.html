@@ -1,0 +1,13 @@
+<h3>JS.Responsive documentation</h3>
+<ul>
+    @{foreach module in repository.modules}
+    <li>
+        <a href="/documentation/module-@{module.file}/">@{module.file}</a>
+        <ul>
+            @{foreach method in module.methods}
+            <li><a href="/documentation/module-@{method}/">@{method}</a></li>
+            @{end}
+        </ul>
+    </li>
+    @{end}
+</ul>

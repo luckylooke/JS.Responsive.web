@@ -46,6 +46,18 @@ fs.readFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', 'utf-8', function(
         console.log('file fix done: ', './JS.Responsive/docs/scripts/toc.js');
     });
 });
+fs.readFile(__dirname + '/views/docs/index.html', 'utf-8', function(err, contents) {
+    if (err) console.error(err);
+    if(contents.search('<div id="main"> @{view("indexDocs")}') != -1)
+        return;
+    contents = contents.replace('<div id="main">', '<div id="main"> @{view("indexDocs")}');
+    fs.writeFile(__dirname + '/views/docs/index.html', contents, function(err){
+        "use strict";
+        if(err) console.error(err);
+
+        console.log('file fix done: ', '/views/docs/index.html');
+    });
+});
 fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
     if (err) console.error(err);
     if(contents.search(';resultsList.appendChild') != -1)

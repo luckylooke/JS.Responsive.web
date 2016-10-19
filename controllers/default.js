@@ -21,7 +21,10 @@ function downloadCtrl() {
 function docCtrl(route) {
 	console.log('route: ', route);
 	var self = this;
-	self.view('documentation', {dynaview: 'docs/' + (route || 'index')});
+	self.repository.modules = featuresList;
+	self.view('documentation', {
+		dynaview: 'docs/' + (route || 'index')
+	});
 }
 function docFiles(req, res) {
 	console.log('reqFiles', req.host, req.method, req.path);
