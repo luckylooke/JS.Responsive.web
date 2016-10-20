@@ -29,6 +29,8 @@ exports.install = function() {
 			var resFile = __dirname + '/../JS.Responsive/tmp/' + version + (def ? '' : '/' + type + cfg) + '/' + fileName;
 			console.log('resFile: ', resFile);
 
+			req.extension = 'txt'; // hack to protect files against CORS
+
 			if(fs.existsSync(resFile)){
 				// serve cached
 				res.file(resFile);
