@@ -295,6 +295,10 @@ img {
 	padding-bottom: 0 !important;
 }
 
+.no-margin {
+	margin: 0 !important;
+}
+
 .img-responsive {
 	max-width: 100%;
 	height: auto;
@@ -871,7 +875,9 @@ section {
 .contact-block {
 	.inner {
 		padding-left: (30/$font-size)+rem;
+	}
 
+	.authors {
 		p.small {
 			margin-bottom: (80/$font-size)+rem;
 		}
