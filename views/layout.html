@@ -7,38 +7,115 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="robots" content="all,follow" />
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700&subset=latin,latin-ext" />
+	<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700&subset=latin,latin-ext" />-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	@{import('meta', 'head', 'bundle.css', 'bundle.js', 'favicon.ico')}
 </head>
 <body>
-	<div data-component="cookie" class="hidden">This site uses cookies for visitor statistics. By continuing to browse the site you are agreeing to our use of cookies.</div>
+
+	<div id="page-background">
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+		<div class="background-stripe"><div class="tick"></div></div>
+	</div>
+
+	<!--<div data-component="cookie" class="hidden">This site uses cookies for visitor statistics. By continuing to browse the site you are agreeing to our use of cookies.</div>-->
+
 	<header>
-		<div class="container">
-			<a href="javascript:void(0)" class="mainmenu-button"><i class="fa fa-navicon"></i></a>
-			<!--<a href="/"><img src="/img/logo.png" alt="@{config.name}" border="0" height="30" /></a>-->
-			<a href="/">JS.Responsive</a>
-			<nav>
-				<a href="/"><i class="fa fa-home"></i>Home</a>
-				<a href="/documentation/">Documentation</a>
-				<a href="/download/">Download</a>
-				<a href="/contact/">Contact</a>
-			</nav>
+		<div class="wrap">
+
+			<a id="github-ribbon" class="wow fadeIn" data-wow-delay=".4s" href="https://github.com/luckylooke/JS.Responsive.web"><span>Fork me on <strong>GitHub</strong></span></a>
+
+			<div class="container">
+				<!--<a href="javascript:void(0)" class="mainmenu-button"><i class="fa fa-navicon"></i></a>-->
+				<a class="logo wow fadeIn" data-wow-delay=".25s" href="/"><img src="/img/logo@2x.png" alt="@{config.name}" border="0" width="162" /><strong>.Responsive</strong></a>
+				<nav class="wow fadeIn" data-wow-delay=".25s">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/documentation/">Documentation</a></li>
+						<li><a href="/download/">Download</a></li>
+						<li><a href="/contact/">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</header>
 
-		@{body}
+	@{body}
+
+	<section class="block references-block">
+
+		<div class="wrap">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-12">
+
+						<h2 class="wow fadeInUp">Built with <strong>JS.responsive.</strong></h2>
+
+						<p class="max-75 wow fadeInUp" data-wow-delay=".5s">
+							Millions of amazing sites across the web are being built with <a href="">JS.resposnsive</a>. Get started on your own with our <a href="" class="link">growing collection</a> of examples or by exploring some of our favorites.
+						</p>
+
+					</div>
+				</div>
+
+				<div class="row references relative">
+
+					<div class="half-circle wow fadeIn" data-wow-delay=".6s" id="circle-references-left">
+						<img src="/img/half-circle-small@2x.png" width="114" alt="Circle" />
+					</div>
+
+					<div class="half-circle wow fadeIn" data-wow-delay="1.7s" id="circle-references-right">
+						<img src="/img/half-circle@2x.png" width="221" alt="Circle" />
+					</div>
+
+					<div class="col-fifth">
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay=".5s"><img src="/img/screenshots/1.jpg" alt="wezeo.com" /></a>
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay=".7s"><img src="/img/screenshots/2.jpg" alt="" /></a>
+					</div>
+
+					<div class="col-two-fifths">
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay=".9s"><img src="/img/screenshots/3.jpg" alt="Just in Sign" /></a>
+					</div>
+
+					<div class="col-fifth">
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay="1.1s"><img src="/img/screenshots/4.jpg" alt="Nafta" /></a>
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay="1.3s"><img src="/img/screenshots/5.jpg" alt="Register" /></a>
+					</div>
+
+					<div class="col-fifth">
+						<a href="" class="wow bounceInUp" data-wow-offset="10" data-wow-delay="1.4s"><img src="/img/screenshots/6.jpg" alt="Provino" /></a>
+						<a href="" class="add-new-web wow bounceInUp" data-wow-offset="10" data-wow-delay="1.6s">Add new web</a>
+					</div>
+
+				</div>
+
+			</div><!-- container -->
+		</div>
+
+	</section>
 
 	<footer>
-		<div>&copy; 2015-2016 All rights reserved.</div>
-		<div><a href="http://www.totaljs.com">Powered by Total.js - web framework</a></div>
-		<div><a href="http://www.wezeo.com">Made with <i class="fa fa-heart"></i> by Wezeo team</a></div>
+
+		<div class="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">Powered by <a href="http://www.totaljs.com" target="_blank">Total.js - web framework</a></div>
+					<div class="col-6 text-right">Made with <img src="/img/icon-heart@2x.png" alt="Love" width="19" class="heart" />  by <a href="http://www.wezeo.com" target="_blank"><img src="/img/logo-wezeo@2x.png" alt="Wezeo" width="46" /></a></div>
+				</div>
+			</div>
+		</div>
+
 	</footer>
-
-
-	<!-- Edited fork me on github ribbon from: https://github.com/blog/273-github-ribbons -->
-	<a id="github-ribbon" href="https://github.com/luckylooke/JS.Responsive.web"><img src="/img/githubribbon.png" alt="Fork me on GitHub"></a>
-
 
 </body>
 </html>

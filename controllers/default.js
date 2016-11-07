@@ -27,7 +27,7 @@ function docCtrl(route) {
 	});
 }
 function docFiles(req, res) {
-	console.log('reqFiles', req.host, req.method, req.path);
+	// console.log('reqFiles', req.host, req.method, req.path);
 	if(req.path[1] == 'bootstrap')
 		res.file(F.path.root('/node_modules/bootstrap/dist/js/' + req.path[2]));
 	else if(req.path[1] == 'quicksearch.html' || req.path[2] == 'quicksearch.html')

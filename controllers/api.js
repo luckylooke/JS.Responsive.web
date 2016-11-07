@@ -7,7 +7,7 @@ exports.install = function() {
 	F.route('/api/contact/', json_save, ['post', '*Contact']);
 	F.file(function(req, res, isValidation) {
 		if (isValidation) {
-			console.log('isValidation URL: ===> ', req.url);
+			// console.log('isValidation URL: ===> ', req.url);
 			// return false;
 			return req.url.match(/^\/api\/download\/v\d\.\d\.\d\//) ? true : false;
 		}else {

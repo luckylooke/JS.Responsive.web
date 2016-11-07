@@ -57,3 +57,6 @@ databases
 
 # ignore submodule
 JS.Responsive
+
+/.idea
+.idea/

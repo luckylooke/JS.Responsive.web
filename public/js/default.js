@@ -2,6 +2,18 @@ $(document).ready(function() {
 	$(document).on('click', '.mainmenu-button', function() {
 		$(this).parent().find('nav').toggleClass('mainmenu-visible');
 	});
+
+
+	var actualPath = location.pathname.match(/^\/[a-z]*/)[0];
+
+	$('header nav a').removeClass('active');
+	$('header nav')
+		.find('a[href="' + actualPath + '/"]')
+		.addClass('active');
+
+	// home
+	if (actualPath == '/')
+		$('header nav li:first-child a').addClass('active');
 });
 
 COMPONENT('newsletter', function() {

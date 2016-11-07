@@ -1,0 +1,27 @@
+@import "variables";
+
+// ------------------------------------
+// FUNCTIONS --------------------------
+// ------------------------------------
+
+@function selector-nth($sel, $n, $f, $args...) {
+	$collector: ();
+	@each $s in $sel {
+		$modified: call($f, nth($s, $n), $args...);
+		$collector: append($collector, set-nth($s, $n, $modified), comma);
+	}
+
+	@return $collector;
+}
+
+@function insert-selector($a, $b) {
+	@return $b $a;
+}
+
+@function append-class($a, $b) {
+	@return #{$a}#{$b};
+}
+
+@function remove-selector($sel) {
+	@return '';
+}
