@@ -41,14 +41,6 @@
 	font-style: normal;
 }
 
-// docasne
-#github-ribbon {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: 0;
-}
-
 * {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-focus-ring-color: rgba(0, 0, 0, 0);
@@ -64,10 +56,13 @@
 	}
 }
 
+html {
+	overflow: hidden;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 }
 
 body {
@@ -99,6 +94,7 @@ body {
 
 img {
 	vertical-align: middle;
+	transform: translate3d(0,0,0);
 }
 
 // --------------------------------------
@@ -131,15 +127,7 @@ img {
 	padding-right: 15px;
 
 	html.large-less & {
-		width: (1170/$font-size)+rem;
-	}
-
-	html.medium-less & {
-		width: 100%;
-	}
-
-	html.small-less & {
-		width: 100%;
+		width: (100%/$font-size)+rem;
 	}
 }
 
@@ -287,6 +275,12 @@ img {
 // POMOCNE TRIEDY -----------------------
 // --------------------------------------
 
+.hidden-xs {
+	html.small-less & {
+		display: none;
+	}
+}
+
 .text-center {
 	text-align: center;
 }
@@ -342,17 +336,18 @@ img {
 #page-background {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 50%;
+	margin-left: -1px;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 
 	.background-stripe {
-		position: relative;
-		float: left;
-		width: 8.33%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
 		height: 100%;
-		border-right: 2px solid $color-border-background;
+		border-left: 2px solid $color-border-background;
 		transform: translate3d(0, 0, 0);
 
 		.tick {
@@ -394,7 +389,7 @@ h1, .h1 {
 	.intro & {
 		font-size: ($font-size-h1-hp/$font-size)+rem;
 		text-align: center;
-		margin-bottom: (70/$font-size)+rem;
+		margin-bottom: (60/$font-size)+rem;
 	}
 }
 
@@ -409,6 +404,10 @@ h3, .h3 {
 	.download-stable-version & {
 		text-align: left;
 		margin-bottom: (25/$font-size)+rem;
+
+		html.small-less & {
+			text-align: center;
+		}
 	}
 
 	&.line {
@@ -562,11 +561,23 @@ label {
 			border: 2px solid $color-border-input;
 			border-radius: 2px;
 			background-color: rgba(#fff, .4);
-			transition: border-color $animation-time ease-in-out;
+			transition: all $animation-time ease-in-out;
+			padding: 1px;
 
 			// input[type="checkbox"] + label:hover
 			@at-root #{selector-nth(&, -3, append-class, ':hover')} {
 				border-color: darken($color-border-input, 20);
+			}
+
+			// input[type="checkbox"]:checked + label
+			@at-root #{selector-nth(&, -3, append-class, ':checked')} {
+				background-color: $color-border-input;
+				background-clip: content-box;
+			}
+
+			// input[type="checkbox"]:checked + label:hover
+			@at-root #{selector-nth(&, -3, append-class, ':checked:hover')} {
+				background-color: darken($color-border-input, 20);
 			}
 		}
 	}
@@ -783,6 +794,35 @@ section {
 		font-size: 0;
 		line-height: (70/$font-size)+rem;
 		margin-bottom: (50/$font-size)+rem;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		span {
+			display: inline-block;
+
+			&.icon-notebook {
+				width: (64/$font-size)+rem;
+			}
+
+			&.icon-phone {
+				width: (28/$font-size)+rem;
+			}
+
+			&.icon-imac {
+				width: (55/$font-size)+rem;
+			}
+
+			&.icon-tablet {
+				width: (43/$font-size)+rem;
+			}
+
+			&.icon-computer {
+				width: (64/$font-size)+rem;
+			}
+		}
 	}
 
 	.button {
@@ -990,18 +1030,25 @@ section {
 
 .documentation-block {
 
-	.part {
-		margin-bottom: (40/$font-size)+rem;
-		text-align: left;
+	.col-4 {
 
-		ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
+		html.small-less & {
+			width: 100%;
+		}
 
-			li {
-				display: block;
-				line-height: ($line-height-small/$font-size)+rem;
+		.part {
+			margin-bottom: (40/$font-size)+rem;
+			text-align: left;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				li {
+					display: block;
+					line-height: ($line-height-small/$font-size)+rem;
+				}
 			}
 		}
 	}
@@ -1060,6 +1107,10 @@ section.download-stable-version {
 		display: table;
 		margin: 0;
 		width: 100%;
+
+		html.small-less & {
+			display: block;
+		}
 	}
 
 	.col-7,
@@ -1068,14 +1119,28 @@ section.download-stable-version {
 		float: none;
 		height: 100%;
 		vertical-align: middle;
+
+		html.small-less & {
+			display: block;
+			width: 100%;
+		}
 	}
 
 	.col-7 {
 		text-align: left;
+
+		html.small-less & {
+			text-align: center;
+		}
 	}
 
 	.col-4 {
 		text-align: right;
+
+		html.small-less & {
+			margin-top: (30/$font-size)+rem;
+			text-align: center;
+		}
 	}
 }
 
