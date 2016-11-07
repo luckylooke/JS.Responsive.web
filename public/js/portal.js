@@ -31,10 +31,10 @@
         //if (finalSize>etalon)
         //finalSize = etalon;
 
-        // finalSize = (finalSize / etalon) * 100;
+        finalSize = (finalSize / etalon) * 100;
 
         $html.css('fontSize', parseInt(finalSize)+'px');
-        $html.css('fontSize', '100px');
+        // $html.css('fontSize', '100px');
 
         // aj to hned raz spustime (necakame na resize)
     }).trigger('resize');
