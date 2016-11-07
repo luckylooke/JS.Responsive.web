@@ -4,15 +4,13 @@
         $document = $(document),
         $html = $("html");
 
-    $('body').addClass('visible');
-
     // responsive init
-    // JS.Responsive
-    //     .addHorizontalSizePoint( 'micro',   420 )
-    //     .addHorizontalSizePoint( 'tiny',    478 )
-    //     .addHorizontalSizePoint( 'small',   768 )
-    //     .addHorizontalSizePoint( 'medium',  992 )
-    //     .addHorizontalSizePoint( 'large',  1346 );
+    JS.Responsive
+        .addHorizontalSizePoint( 'micro',   420 )
+        .addHorizontalSizePoint( 'tiny',    478 )
+        .addHorizontalSizePoint( 'small',   768 )
+        .addHorizontalSizePoint( 'medium',  992 )
+        .addHorizontalSizePoint( 'large',  1230 );
 
     // dynamic resize (document font size)
     $window.resize(function () {
@@ -39,13 +37,16 @@
         // aj to hned raz spustime (necakame na resize)
     }).trigger('resize');
 
-    wow = new WOW(
-        {
-            animateClass: 'animated',
-            offset: 100
-        }
-    );
+    // init wow.js
+    var wow = new WOW({
+        animateClass: 'animated',
+        offset: 100
+    });
 
     wow.init();
+
+    $('navbar-toggle').on('click', function(){
+       $(this).toggleClass('open');
+    });
 
 })();

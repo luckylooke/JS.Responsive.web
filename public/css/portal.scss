@@ -80,12 +80,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
-	//opacity: 0;
-	transition: opacity $animation-time ease-in-out;
-
-	&.visible {
-		opacity: 1;
-	}
 
 	&:before {
 		z-index: -2;
@@ -117,14 +111,32 @@ img {
 	padding-left: (45/$font-size)+rem;
 	padding-right: (45/$font-size)+rem;
 	position: relative;
+
+	html.large-less & {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	html.medium-less & {
+		padding-left: (20/$font-size)+rem;
+		padding-right: (20/$font-size)+rem;
+	}
 }
 
 .container {
-	width: (1230/$font-size)+rem; // 1230
+	width: (1230/$font-size)+rem;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 15px;
 	padding-right: 15px;
+
+	html.large-less & {
+		width: (1170/$font-size)+rem;
+	}
+
+	html.medium-less & {
+		width: 100%;
+	}
 
 	html.small-less & {
 		width: 100%;
@@ -313,6 +325,10 @@ img {
 	max-width: 75%;
 	margin-left: auto;
 	margin-right: auto;
+
+	html.small-less & {
+		max-width: none;
+	}
 }
 
 .relative {
@@ -580,6 +596,10 @@ header {
 		text-transform: uppercase;
 		margin-left: -(20/$font-size)+rem;
 
+		img {
+			max-width: (162/$font-size)+rem;
+		}
+
 		strong {
 			position: relative;
 			top: -(10/$font-size)+rem; // centrovanie na stred
@@ -621,6 +641,57 @@ header {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	.navbar-toggle {
+		width: 60px;
+		height: 45px;
+		position: relative;
+		margin: 50px auto;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+		cursor: pointer;
+
+		span {
+			display: block;
+			position: absolute;
+			height: 9px;
+			width: 100%;
+			background: $color-dark-blue;
+			opacity: 1;
+			left: 0;
+			transition: $animation-time ease-in-out;
+			transform: rotate(0deg);
+
+			&:nth-child(1) {
+				top: 0;
+
+				//top: 18px;
+				//width: 0%;
+				//left: 50%;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: 18px;
+			}
+
+			&:nth-child(2) {
+				//transform: rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				//transform: rotate(-45deg);
+			}
+
+			&:nth-child(4) {
+				top: 36px;
+
+				//top: 18px;
+				//width: 0%;
+				//left: 50%;
 			}
 		}
 	}
@@ -731,6 +802,10 @@ section {
 			z-index: 0;
 			background-color: #fff;
 
+			html.small-less & {
+				width: 100%;
+			}
+
 			&:before {
 				opacity: 0;
 				content: '';
@@ -754,6 +829,13 @@ section {
 					bottom: -(50/$font-size)+rem;
 					left: -(50/$font-size)+rem;
 					right: -(30/$font-size)+rem;
+
+					html.large-less & {
+						top: -(30/$font-size)+rem;
+						bottom: -(30/$font-size)+rem;
+						left: -(30/$font-size)+rem;
+						right: -(10/$font-size)+rem;
+					}
 				}
 
 				a {
@@ -878,8 +960,28 @@ section {
 	}
 
 	.authors {
-		p.small {
-			margin-bottom: (80/$font-size)+rem;
+
+		.row {
+			display: table;
+		}
+
+		.col-4 {
+			display: table-cell;
+			float: none;
+
+			html.small-less & {
+				width: 100%;
+			}
+
+			p.small {
+				margin-bottom: (80/$font-size)+rem;
+			}
+
+			// posledny stlpec centrovanie obrazku na spodok stlpca
+			&:last-child div.text-right {
+				position: absolute;
+				bottom: 0;
+			}
 		}
 	}
 }
@@ -910,7 +1012,7 @@ section {
 // --------------------------------------
 
 .add-new-web {
-	width: (240/$font-size)+rem;
+	width: 100%;
 	height: (180/$font-size)+rem;
 	display: block;
 	color: #fff;
@@ -985,29 +1087,42 @@ section.download-stable-version {
 	position: absolute;
 	z-index: 1;
 
+	html.small-less & {
+		display: none;
+	}
+
 	&#circle-top-hp {
 		top: -(130/$font-size)+rem;
 		right: (75/$font-size)+rem;
+		width: (221/$font-size)+rem;
 	}
 
 	&#circle-references-left {
 		top: -(40/$font-size)+rem;
 		left: -(60/$font-size)+rem;
+		width: (114/$font-size)+rem;
 	}
 
 	&#circle-references-right {
 		bottom: -(105/$font-size)+rem;
 		right: (180/$font-size)+rem;
+		width: (221/$font-size)+rem;
 	}
 
 	&#circle-top-left {
 		bottom: -(60/$font-size)+rem;
 		left: (80/$font-size)+rem;
+		width: (221/$font-size)+rem;
 	}
 
 	&#circle-top-right {
 		bottom: -(80/$font-size)+rem;
 		right: (35/$font-size)+rem;
+		width: (183/$font-size)+rem;
+	}
+
+	img {
+		max-width: 100%;
 	}
 }
 
@@ -1024,7 +1139,7 @@ section.download-stable-version {
 	background-image: url('#{$image-path}/github-logo.png');
 	background-repeat: no-repeat;
 	background-size: 36px 35px;
-	background-position: center top 23px;
+	background-position: center top (23/$font-size)+rem;
 	color: $color-headline;
 	font-size: (16/$font-size)+rem;
 	transition: box-shadow $animation-time ease-in-out;
@@ -1032,6 +1147,13 @@ section.download-stable-version {
 
 	html.hires-display & {
 		background-image: url('#{$image-path}/github-logo@2x.png');
+	}
+
+	html.medium-less & {
+		height: (88/$font-size)+rem;
+		padding: 0;
+		border: 0;
+		background-color: transparent;
 	}
 
 	&:hover {
@@ -1042,6 +1164,10 @@ section.download-stable-version {
 		display: block;
 		white-space: nowrap;
 		transform: rotate(90deg);
+
+		html.medium-less & {
+			display: none;
+		}
 	}
 }
 
