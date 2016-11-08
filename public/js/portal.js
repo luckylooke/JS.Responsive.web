@@ -46,14 +46,7 @@
         mobile: true,
         live: true
     });
-
     wow.init();
-
-    JS.SmoothScroll.init();
-
-    $('.navbar-toggle').on('click', function() {
-       $(this).toggleClass('open');
-    });
 
     setTimeout(function(){
         // background stripes
@@ -71,6 +64,11 @@
 
             start += offset;
         }
+
+        // open/close menu
+        $('.navbar-toggle').on('click', function() {
+            $('html').toggleClass('menu-open');
+        });
     }, 0);
 
 })();
