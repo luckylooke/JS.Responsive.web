@@ -113,16 +113,6 @@ img {
 	padding-right: (45/$font-size)+rem;
 	position: relative;
 
-	html.large-less & {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	html.medium-less & {
-		padding-left: (20/$font-size)+rem;
-		padding-right: (20/$font-size)+rem;
-	}
-
 	html.small-less & {
 		// html.small-less .features-block .wrap
 		@at-root #{selector-nth(&, -1, insert-selector, '.features-block')} {
@@ -135,8 +125,8 @@ img {
 	width: (1230/$font-size)+rem;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: (15/$font-size)+rem;
+	padding-right: (15/$font-size)+rem;
 
 	html.large-less & {
 		width: 100%;
@@ -144,8 +134,8 @@ img {
 }
 
 .row {
-	margin-left: -15px;
-	margin-right: -15px;
+	margin-left: -(15/$font-size)+rem;
+	margin-right: -(15/$font-size)+rem;
 
 	&:before,
 	&:after {
@@ -161,8 +151,8 @@ img {
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-fifth, .col-two-fifths {
 	position: relative;
 	float: left;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: (15/$font-size)+rem;
+	padding-right: (15/$font-size)+rem;
 	min-height: 1px;
 }
 
