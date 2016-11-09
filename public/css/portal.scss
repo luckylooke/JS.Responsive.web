@@ -728,7 +728,8 @@ header {
 			right: 0;
 			z-index: 2;
 			background-color: #fff;
-			transition: all $animation-time ease-in-out;
+			transition: $animation-time ease-in-out;
+			transition-property: opacity, transform;
 			transform: translate3d(100%, 0, 0);
 			opacity: 0;
 			padding-top: (200/$font-size)+rem;
@@ -743,7 +744,8 @@ header {
 				z-index: 0;
 				background-color: #fff;
 				border-right: 2px solid $color-gray;
-				transition: all $animation-time ease-in-out;
+				transition: $animation-time ease-in-out;
+				transition-property: opacity, transform;
 				transform: translate3d(100%, 0, 0);
 				opacity: 0;
 
@@ -931,6 +933,7 @@ footer {
 // --------------------------------------
 
 section {
+	overflow: hidden;
 
 	&.white {
 		background-color: #fff;
@@ -1276,7 +1279,7 @@ section {
 			html.small-less & {
 				width: 100%;
 				display: block;
-				margin-top: (100/$font-size)+rem;
+				padding-top: (100/$font-size)+rem;
 				border-top: 1px solid $color-light-blue;
 
 				&:first-child {
