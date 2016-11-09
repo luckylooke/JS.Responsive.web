@@ -5,12 +5,13 @@
         $html = $("html");
 
     // responsive init
+    JS.Responsive.init();
     JS.Responsive
-        .addHorizontalSizePoint( 'micro',   420 )
-        .addHorizontalSizePoint( 'tiny',    478 )
-        .addHorizontalSizePoint( 'small',   768 )
-        .addHorizontalSizePoint( 'medium',  992 )
-        .addHorizontalSizePoint( 'large',  1230 );
+        .addHorizontalBreakPoint( 'micro',   420 )
+        .addHorizontalBreakPoint( 'tiny',    478 )
+        .addHorizontalBreakPoint( 'small',   768 )
+        .addHorizontalBreakPoint( 'medium',  992 )
+        .addHorizontalBreakPoint( 'large',  1230 );
 
     // dynamic resize (document font size)
     $window.resize(function () {
