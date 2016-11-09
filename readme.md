@@ -1,5 +1,7 @@
 JS.Responsive web
 
+web for [JS.Responsive project](https://github.com/seyd/JS.Responsive)
+
 build on [total.js](http://www.totaljs.com/)
 
 Contribution to this web:
