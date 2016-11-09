@@ -77,8 +77,8 @@ body {
 	position: relative;
 
 	html.small-less & {
-		font-size: 0.42rem;
-		line-height: 0.56rem;
+		font-size: ($font-size-p-xs/$font-size)+rem;
+		line-height: ($line-height-p-xs/$font-size)+rem;
 	}
 
 	&:before {
@@ -574,9 +574,10 @@ a {
 	text-align: center;
 
 	html.small-less & {
-		font-size: (46/$font-size)+rem;
-		border-radius: (58/$font-size)+rem;
-		padding: (36/$font-size)+rem (110/$font-size)+rem;
+		font-size: (65/$font-size)+rem;
+		border-radius: (90/$font-size)+rem;
+		padding: (60/$font-size)+rem (110/$font-size)+rem;
+		display: block;
 	}
 
 	&:hover {
@@ -606,8 +607,8 @@ label {
 	transition: color $animation-time ease-in-out;
 
 	html.small-less & {
-		font-size: ($font-size-p-xs/$font-size)+rem;
-		line-height: ($line-height-p-xs/$font-size)+rem;
+		font-size: (60/$font-size)+rem;
+		line-height: (1.1/$font-size)+rem;
 	}
 
 	&:hover {
@@ -625,7 +626,7 @@ label {
 		padding-left: (30/$font-size)+rem;
 
 		html.small-less & {
-			padding-left: (60/$font-size)+rem;
+			padding-left: (80/$font-size)+rem;
 		}
 
 		&:before {
@@ -644,8 +645,8 @@ label {
 			padding: 1px;
 
 			html.small-less & {
-				$size: 40;
-				margin-top: -($size/2/$font-size)+rem;
+				$size: 44;
+				margin-top: -(18/$font-size)+rem;
 				width: ($size/$font-size)+rem;
 				height: ($size/$font-size)+rem;
 			}
@@ -859,7 +860,7 @@ header {
 			}
 
 			&:nth-child(4) {
-				top: (46/$font-size)+rem;
+				top: (48/$font-size)+rem;
 
 				html.menu-open & {
 					top: (24/$font-size)+rem;
@@ -879,7 +880,6 @@ footer {
 	border-top: 2px solid $color-light-blue;
 	background-color: #fff;
 	padding: (35/$font-size)+rem 0;
-	margin-top: (40/$font-size)+rem;
 	font-size: (14/$font-size)+rem;
 	position: relative;
 
@@ -1026,7 +1026,7 @@ section {
 		margin-top: (10/$font-size)+rem;
 
 		html.small-less & {
-			margin-top: (50/$font-size)+rem;
+			margin-top: (80/$font-size)+rem;
 		}
 	}
 }
@@ -1143,6 +1143,7 @@ section {
 // REFERENCIE V SPODNEJ CASTI VO FOOTRI
 
 .references-block {
+	margin-bottom: (40/$font-size)+rem;
 
 	.row {
 		margin: 0;
@@ -1276,9 +1277,11 @@ section {
 				width: 100%;
 				display: block;
 				margin-top: (100/$font-size)+rem;
+				border-top: 1px solid $color-light-blue;
 
 				&:first-child {
 					margin-top: 0;
+					border-top: 0;
 				}
 			}
 
