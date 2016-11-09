@@ -372,8 +372,9 @@ img {
 
 		.tick {
 			position: absolute;
-			right: -2px;
+			right: -1px;
 			width: 3px;
+			height: (25/$font-size)+rem;
 			background-color: #d9dbe3;
 			transition: top $animation-time linear;
 			transform: translate3d(0, 0, 0);

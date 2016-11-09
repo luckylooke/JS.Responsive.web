@@ -50,17 +50,36 @@
     wow.init();
 
     setTimeout(function(){
+
         // background stripes
         var $bg = $('#page-background'),
             stripes = 20,
             offset = 1.23,
-            start = (-1) * (stripes/2) * offset;
+            start = (-1) * (stripes/2) * offset,
+            minTopPosition = 0,
+            maxTopPosition = $window.height(),
+            minHeight = 0.10,
+            maxHeight = 0.36,
+            topPosition,
+            height;
 
         for (var i = 1; i < stripes; i++) {
+
+            topPosition = Math.random() * (maxTopPosition - minTopPosition) + minTopPosition;
+            height = Math.random() * (maxHeight - minHeight) + minHeight;
+
+            var tick = $('<div />', {
+                class: 'tick'
+            }).css({
+                'top': topPosition + 'px',
+                'height': height + 'rem'
+            });
+
             $bg.append(
                 $('<div />', {
                     class: 'background-stripe'
                 }).css('left', start + 'rem')
+                    .append(tick)
             );
 
             start += offset;
