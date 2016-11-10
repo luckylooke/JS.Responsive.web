@@ -4,6 +4,7 @@
 
 var fs = require('fs');
 var cheerio = require('cheerio');
+var listOfModules = '';
 fs.readdir('./JS.Responsive/docs', function(err, files) {
     if(err) console.error(err);
 
@@ -17,11 +18,27 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     return;
                 contents = contents.replace(/(href=")([\w\-.]+)(\.html")/g, function(match, p1, p2){
                     "use strict";
-                    console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
+                    // console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
                     return p1 + '/documentation/' + p2.replace('.js', 'js') + '/"';
                 });
+
                 var $ = cheerio.load(contents);
                 $('script').remove();
+                if(file == 'index.html'){
+                    listOfModules = $('.dropdown-menu').eq(0).html();
+                    fs.readFile(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
+                        console.log('file contents: ', 'docSubMenu.html', !!contents);
+                        var $ = cheerio.load(contents);
+                        $('#modules-list').html(listOfModules);
+                        contents = $.html();
+                        fs.writeFile(__dirname + '/views/docSubMenu.html', contents, function(err){
+                            if(err) console.error(err);
+                            console.log('file done: ', file);
+                        });
+                    });
+                }
+                $('.navbar').remove();
+
                 contents = $('body').html();
                 fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";
@@ -63,7 +80,7 @@ fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'ut
     if(contents.search(';resultsList.appendChild') != -1)
         return;
     contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
-    contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","");');
+    contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js");');
     contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
     fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
         "use strict";
@@ -74,7 +91,7 @@ fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'ut
 });
 fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
     if (err) console.error(err);
-    if(contents.search("spawn(__dirname + '/node_modules/.bin/jsdoc'") != -1)
+    if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)
         return;
     contents = contents.replace("spawn('./node_modules/.bin/jsdoc'", "spawn(__dirname + '/node_modules/.bin/jsdoc'");
 

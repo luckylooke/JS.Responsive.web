@@ -19,11 +19,13 @@ function downloadCtrl() {
 	self.view('download', {featuresList: featuresList});
 }
 function docCtrl(route) {
-	console.log('route: ', route);
+	console.log('doc_route: ', route || 'indexDocs');
 	var self = this;
+
+	self.repository.colBreaks = ['detectTouch', 'timeBased'];
 	self.repository.modules = featuresList;
 	self.view('documentation', {
-		dynaview: 'docs/' + (route || 'index')
+		dynaview: route ? 'docs/' + route : 'indexDocs'
 	});
 }
 function docFiles(req, res) {
