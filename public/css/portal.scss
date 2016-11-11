@@ -80,21 +80,6 @@ body {
 		font-size: ($font-size-p-xs/$font-size)+rem;
 		line-height: ($line-height-p-xs/$font-size)+rem;
 	}
-
-	&:before {
-		z-index: -2;
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: (400/$font-size)+rem;
-		background: rgb(248, 250, 253);
-		background: -moz-linear-gradient(top, rgba(248, 250, 253, 1) 0%, rgba(255, 255, 255, 1) 100%);
-		background: -webkit-linear-gradient(top, rgba(248, 250, 253, 1) 0%, rgba(255, 255, 255, 1) 100%);
-		background: linear-gradient(to bottom, rgba(248, 250, 253, 1) 0%, rgba(255, 255, 255, 1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8fafd', endColorstr='#ffffff', GradientType=0);
-	}
 }
 
 img {
@@ -372,10 +357,10 @@ img {
 
 		.tick {
 			position: absolute;
-			right: -1px;
+			right: -2px;
 			width: 3px;
 			height: (25/$font-size)+rem;
-			background-color: #d9dbe3;
+			background-color: darken($color-border-background, 1);
 			transition: top $animation-time linear;
 			transform: translate3d(0, 0, 0);
 		}
@@ -1280,8 +1265,9 @@ section {
 			html.small-less & {
 				width: 100%;
 				display: block;
-				padding-top: (100/$font-size)+rem;
 				border-top: 1px solid $color-light-blue;
+				margin: 0 (-(45/$font-size)+rem);
+				padding: (100/$font-size)+rem (65/$font-size)+rem 0;
 
 				&:first-child {
 					margin-top: 0;
@@ -1375,7 +1361,7 @@ section {
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-image: url('#{$image-path}/icon-plus.png');
-		transition: all $animation-time ease-in-out;
+		transition: transform $animation-time ease-in-out;
 		transform: translate3d(0, 0, 0);
 
 		html.small-less & {
@@ -1395,7 +1381,7 @@ section {
 		color: #fff;
 
 		&:after {
-			transform: translate3d(0, 0, 0) rotate(15deg);
+			transform: translate3d(0, 0, 0) rotate(180deg);
 		}
 	}
 }
