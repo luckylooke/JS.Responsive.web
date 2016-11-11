@@ -6,6 +6,7 @@ var list = data.featuresList,
     domList = $('#checklist'),
     downloadLinks = $('#donwload-links'),
     downloadBtn = $('#download-btn'),
+    $allCheck = $("#all"),
     parent = domList.parent(),
     domListDetached = domList.detach(),
     inputs,
@@ -24,7 +25,7 @@ parent.append(domListDetached);
 inputs = domList.find('input');
 domList.on('click', refreshLinks);
 
-$("#all").change(function (e) {
+$allCheck.change(function (e) {
     inputs.prop('checked', $(this).prop("checked"));
     refreshLinks(e);
 });
@@ -43,13 +44,16 @@ function refreshLinks(e) {
             result += '0';
     });
 
-    if(!result.match(/0/))
+    if(!result.match(/0/)){
         result = 'full';
-    else if(!result.match(/1/))
+        $allCheck.prop("checked", true);
+    }else if(!result.match(/1/)){
         result = '';
-    else{
+        $allCheck.prop("checked", false);
+    }else{
         cfg = parseInt('1' + result, 2);
         result = 'custom';
+        $allCheck.prop("checked", false);
     }
 
     if(result){
