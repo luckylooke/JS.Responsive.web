@@ -8,8 +8,7 @@ exports.install = function() {
 	F.file(function(req, res, isValidation) {
 		if (isValidation) {
 			// console.log('isValidation URL: ===> ', req.url);
-			// return false;
-			return req.url.match(/^\/api\/download\/v\d\.\d\.\d\//) ? true : false;
+			return !!req.url.match(/^\/api\/download\/v\d\.\d\.\d\//);
 		}else {
 			var version = req.split[2],
 				def = !req.split[4],
@@ -27,17 +26,18 @@ exports.install = function() {
 
 
 			var resFile = __dirname + '/../JS.Responsive/tmp/' + version + (def ? '' : '/' + type + cfg) + '/' + fileName;
-			console.log('resFile: ', resFile);
 
 			req.extension = 'txt'; // hack to protect files against CORS
 
 			if(fs.existsSync(resFile)){
+				console.log('resFile cached: ', resFile);
 				// serve cached
 				res.file(resFile);
 			}else{
 				// create and then serve
 				customBuild(cfg, type, function (err) {
 					if(err) console.error(err);
+					console.log('resFile generated: ', resFile);
 					res.file(resFile);
 				}, version);
 			}

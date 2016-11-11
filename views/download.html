@@ -49,35 +49,7 @@
 								<input type="checkbox" name="" id="all" /><label for="all">All features</label>
 							</div>
 
-							<div class="download-functions row wow fadeInUp" data-wow-delay="1.5s">
-
-								<div class="col-6">
-									<div><input type="checkbox" name="" id="a1" /><label for="a1">isMobile</label></div>
-									<div><input type="checkbox" name="" id="a2" /><label for="a2">isScrolling</label></div>
-									<div><input type="checkbox" name="" id="a3" /><label for="a3">loadFocusBlur</label></div>
-									<div><input type="checkbox" name="" id="a4" /><label for="a4">detectAgent</label></div>
-									<div><input type="checkbox" name="" id="a5" /><label for="a5">detectTouch</label></div>
-									<div><input type="checkbox" name="" id="a6" /><label for="a6">detectHiRes</label></div>
-									<div><input type="checkbox" name="" id="a7" /><label for="a7">detectOrientation</label></div>
-									<div><input type="checkbox" name="" id="a8" /><label for="a8">detectDeviceOrientation</label></div>
-									<div><input type="checkbox" name="" id="a9" /><label for="a9">timeBased</label></div>
-									<div><input type="checkbox" name="" id="a10" /><label for="a10">breakpoints</label></div>
-								</div>
-
-								<div class="col-6">
-									<div><input type="checkbox" name="" id="b1" /><label for="b1">isMobile</label></div>
-									<div><input type="checkbox" name="" id="b2" /><label for="b2">isScrolling</label></div>
-									<div><input type="checkbox" name="" id="b3" /><label for="b3">loadFocusBlur</label></div>
-									<div><input type="checkbox" name="" id="b4" /><label for="b4">detectAgent</label></div>
-									<div><input type="checkbox" name="" id="b5" /><label for="b5">detectTouch</label></div>
-									<div><input type="checkbox" name="" id="b6" /><label for="b6">detectHiRes</label></div>
-									<div><input type="checkbox" name="" id="b7" /><label for="b7">detectOrientation</label></div>
-									<div><input type="checkbox" name="" id="b8" /><label for="b8">detectDeviceOrientation</label></div>
-									<div><input type="checkbox" name="" id="b9" /><label for="b9">timeBased</label></div>
-									<div><input type="checkbox" name="" id="b10" /><label for="b10">breakpoints</label></div>
-								</div>
-
-							</div>
+							<div id="checklist" class="download-functions row wow fadeInUp" data-wow-delay="1.5s"></div>
 
 						</div><!-- inner -->
 
@@ -98,14 +70,14 @@
 				<div class="row wow fadeInUp">
 					<div class="col-7">
 
-						<h3>Version stable v2.3.3</h3>
-						<a href="#" class="link">JS.Responsive.js</a>, <a href="#" class="link">JS.Responsive.js.map</a>, <a href="#" class="link">JS.Responsive.min.js</a>, <a href="#" class="link">JS.Responsive.min.js.map</a>
+						<h3>Version v3.0.1</h3>
+						<div id="donwload-links"></div>
 
 					</div>
 
 					<div class="col-4">
 
-						<a href="https://github.com/seyd/JS.Responsive/releases/tag/v2.3.3" class="button shadow" target="_blank">Download J.S Responsive</a>
+						<a id="download-btn" href="#" class="button shadow" target="_blank">Download J.S Responsive</a>
 
 					</div>
 				</div>
@@ -117,47 +89,5 @@
 
 </section>
 
-<!--<h1>Download</h1>-->
-<!--<div class="container">-->
-	<!--<h2>Stable version download</h2>-->
-	<!--<div class="row">-->
-		<!--<a href="https://github.com/seyd/JS.Responsive/releases/tag/v2.3.3" class="btn btn-primary btn-lg">Download Stable 2.x.x</a>-->
-	<!--</div>-->
-<!--</div>-->
-<!--<div class="container">-->
-	<!--<h2>Custom download</h2>-->
-	<!--<div class="row">-->
-		<!--<div class="col-md-12">-->
-		<!--<p>Select features you want to have included and click download link</p>-->
-
-			<!--&lt;!&ndash;<div data-component="checkboxlist"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-component-path="selected"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-source="datasource"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-class="col-sm-2"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-button="Select all"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-source-text="file"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-source-id="file"&ndash;&gt;-->
-				 <!--&lt;!&ndash;data-component-type="string">Frameworks</div>&ndash;&gt;-->
-
-			<!--<p><label><input type="checkbox" id="checkAll"/> All features</label></p>-->
-			<!--<div id="features-list"></div>-->
-
-		<!--</div>-->
-	<!--</div>-->
-	<!--<div class="row">-->
-		<!--<div class="col-md-12">-->
-			<!--<ul id="donwload-links">-->
-				<!--<li><a href="/api/download/v3.0.0/JS.Responsive.js">JS.Responsive.js</a></li>-->
-				<!--<li><a href="/api/download/v3.0.0/JS.Responsive.js.map">JS.Responsive.js.map</a></li>-->
-				<!--<li><a href="/api/download/v3.0.0/JS.Responsive.min.js">JS.Responsive.min.js</a></li>-->
-				<!--<li><a href="/api/download/v3.0.0/JS.Responsive.min.js.map">JS.Responsive.min.js.map</a></li>-->
-			<!--</ul>-->
-			<!--<a href="/api/download/v3.0.0/JS.Responsive.zip" id="download-btn" target="_blank">-->
-				<!--<button class="button">DOWNLOAD</button>-->
-			<!--</a>-->
-		<!--</div>-->
-	<!--</div>-->
-<!--</div>-->
-
-<!--@{json(model, 'featuresList')}-->
-<!--@{import('downloadView.js')}-->
+@{json(model, 'featuresList')}
+@{import('downloadView.js')}
