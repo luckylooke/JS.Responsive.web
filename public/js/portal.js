@@ -5,8 +5,8 @@
         $html = $("html");
 
     // responsive init
-    JS.Responsive.init();
     JS.Responsive
+        .init()
         .addHorizontalBreakPoint( 'micro',   420 )
         .addHorizontalBreakPoint( 'tiny',    478 )
         .addHorizontalBreakPoint( 'small',   768 )
