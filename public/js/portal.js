@@ -93,4 +93,32 @@
         $('html').toggleClass('menu-open');
     });
 
+    // fixed menu after scroll on page
+    var lastScrollTop = 0,
+        $header = $('header'),
+        windowHeight = $window.height() / 2; // half of height window
+
+    $window.scroll(function(event){
+        var actualPos = $(this).scrollTop();
+
+        console.log(actualPos);
+        console.log($('html').hasClass('menu-open'));
+
+        if (actualPos >= windowHeight)
+            $header.addClass('navbar-fixed');
+
+        // if actual position is top of page and menu is closed
+        if (actualPos == 0 && !$('html').hasClass('menu-open'))
+            $header.removeClass('navbar-fixed navbar-in navbar-out');
+
+        if (actualPos < lastScrollTop){
+            if (actualPos >= windowHeight)
+                $header.addClass('navbar-in navbar-out');
+        } else if (actualPos >= $header.outerHeight()) { // hide header after actual position is heigher then header height
+            $header.removeClass('navbar-in');
+        }
+
+        lastScrollTop = actualPos;
+    }).trigger('scroll');
+
 })();
