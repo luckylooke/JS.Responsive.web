@@ -44,16 +44,6 @@
     if (!JS.Responsive.isMobile())
         $scene.parallax();
 
-    // init wow.js
-    var wow = new WOW({
-        boxClass: 'wow',
-        animateClass: 'animated',
-        offset: 0,
-        mobile: true,
-        live: true
-    });
-    wow.init();
-
     // background stripes
     var $bg = $('#page-background'),
         stripes = 20,
