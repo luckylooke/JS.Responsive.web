@@ -40,8 +40,8 @@
     // init FastClick
     FastClick.attach(document.body);
 
-    // init paralax
-    if ($('html').hasClass('desktop'))
+    // init paralax only for desktop
+    if (!JS.Responsive.isMobile())
         $scene.parallax();
 
     // init wow.js
