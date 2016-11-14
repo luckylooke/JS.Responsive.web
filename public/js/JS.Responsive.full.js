@@ -183,7 +183,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        if (listeners[type]) forEach(listeners[type], applyEach);
 	        if (listeners['all']) // listeners to all event types
-	            forEach('all', applyEach);
+	            forEach(listeners['all'], applyEach);
 	
 	        if (errors.length) {
 	            // if more errors, we want to print all to console
@@ -640,6 +640,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // adds "touch" or "no-touch" class (once)
 	    function detectTouch() {
 	        addClass($C.isTouch() ? 'touch' : 'no-touch');
+	    }
+	
+	    /**
+	     * Returns information if is actually using touches.
+	     * @returns {Boolean|undefined} Returns true if using touches, false if using mouse, undefined if no use detected yet
+	     * @memberof module:touchVsMouse
+	     * @alias JS.Responsive.isUsingTouches
+	     */
+	
+	    $C.isUsingTouches = function () {
+	        return touchVsMouseUsingTouch;
+	    };
+	
+	    var touchVsMouseLastTime = 0,
+	        touchVsMouseUsingTouch;
+	
+	    bind(document, 'touchstart', function () {
+	        if (touchVsMouseUsingTouch) return;
+	
+	        touchVsMouseUsingTouch = TRUE;
+	        addClass('user-is-using-touch');
+	        removeClass('user-is-using-mouse');
+	        touchVsMouseLastTime = Date.now();
+	        $C.emit('changedUsingTouch', TRUE, FALSE);
+	    });
+	
+	    bind(document, 'mousemove', mouseHandler);
+	    bind(document, 'mousedown', mouseHandler);
+	
+	    function mouseHandler() {
+	        if (touchVsMouseUsingTouch === FALSE || Date.now() - touchVsMouseLastTime < 250) return;
+	
+	        touchVsMouseUsingTouch = FALSE;
+	        addClass('user-is-using-mouse');
+	        removeClass('user-is-using-touch');
+	        $C.emit('changedUsingTouch', FALSE, TRUE);
 	    }
 	    /**
 	     *
