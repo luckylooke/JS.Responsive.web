@@ -2,7 +2,8 @@
 
     var $window = $(window),
         $document = $(document),
-        $html = $("html");
+        $html = $('html'),
+        $scene = $('#scene');
 
     // responsive init
     JS.Responsive
@@ -20,12 +21,10 @@
             w = $window.width(),
             h = $window.height(),
             koef = w / h,
-            size = w, //Math.pow( w*w + h*h, 0.5),
+            size = w,
             diff = Math.abs(etalon - size),
             sign = size > etalon ? 1 : -1,
             finalSize = etalon + Math.pow(diff, 1) * sign;
-
-        //finalSize = etalon;
 
         // zastavenie zvacsovania nad etalon
         if (finalSize>etalon)
@@ -34,10 +33,16 @@
         finalSize = (finalSize / etalon) * 100;
 
         $html.css('fontSize', (finalSize).toFixed(4)+'px');
-        // $html.css('fontSize', '100px');
 
         // aj to hned raz spustime (necakame na resize)
     }).trigger('resize');
+
+    // init FastClick
+    FastClick.attach(document.body);
+
+    // init paralax
+    if ($('html').hasClass('desktop'))
+        $scene.parallax();
 
     // init wow.js
     var wow = new WOW({
@@ -101,9 +106,6 @@
     $window.scroll(function(event){
         var actualPos = $(this).scrollTop();
 
-        console.log(actualPos);
-        console.log($('html').hasClass('menu-open'));
-
         if (actualPos >= windowHeight)
             $header.addClass('navbar-fixed');
 
@@ -111,8 +113,8 @@
         if (actualPos == 0 && !$('html').hasClass('menu-open'))
             $header.removeClass('navbar-fixed navbar-in navbar-out');
 
-        if (actualPos < lastScrollTop){
-            if (actualPos >= windowHeight)
+        if (actualPos < lastScrollTop && actualPos >= $header.outerHeight()){
+            // if (actualPos >= windowHeight)
                 $header.addClass('navbar-in navbar-out');
         } else if (actualPos >= $header.outerHeight()) { // hide header after actual position is heigher then header height
             $header.removeClass('navbar-in');

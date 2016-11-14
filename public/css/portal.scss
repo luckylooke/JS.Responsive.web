@@ -120,6 +120,8 @@ img {
 	margin-right: auto;
 	padding-left: (15/$font-size)+rem;
 	padding-right: (15/$font-size)+rem;
+	overflow: visible;
+	position: relative;
 
 	html.large-less & {
 		width: 100%;
@@ -1497,8 +1499,8 @@ section.download-stable-version {
 	padding-bottom: (80/$font-size)+rem;
 }
 
-.half-circle {
-	position: absolute;
+.layer.half-circle {
+	position: absolute !important; // rewrite inline style
 	z-index: 1;
 
 	html.small-less & {
@@ -1506,32 +1508,38 @@ section.download-stable-version {
 	}
 
 	&#circle-top-hp {
-		top: -(130/$font-size)+rem;
+		top: -(130/$font-size)+rem !important; // rewrite inline style
 		right: (75/$font-size)+rem;
+		left: auto !important; // reset inline style
 		width: (221/$font-size)+rem;
 	}
 
 	&#circle-references-left {
-		top: -(40/$font-size)+rem;
-		left: -(60/$font-size)+rem;
+		top: -(40/$font-size)+rem !important; // rewrite inline style
+		left: -(60/$font-size)+rem !important; // rewrite inline style
 		width: (114/$font-size)+rem;
 	}
 
 	&#circle-references-right {
 		bottom: -(105/$font-size)+rem;
 		right: (180/$font-size)+rem;
+		top: auto !important; // reset inline style
+		left: auto !important; // reset inline style
 		width: (221/$font-size)+rem;
 	}
 
 	&#circle-top-left {
+		top: auto !important; // reset inline style
 		bottom: -(60/$font-size)+rem;
-		left: (80/$font-size)+rem;
+		left: (80/$font-size)+rem !important; // rewrite inline style
 		width: (221/$font-size)+rem;
 	}
 
 	&#circle-top-right {
+		top: auto !important; // reset inline style
 		bottom: -(80/$font-size)+rem;
 		right: (35/$font-size)+rem;
+		left: auto !important; // reset inline style
 		width: (183/$font-size)+rem;
 	}
 
