@@ -7,10 +7,12 @@ var list = data.featuresList,
     downloadLinks = $('#donwload-links'),
     downloadBtn = $('#download-btn'),
     $allCheck = $("#all"),
+    $defaultCheck = $("#default"),
     parent = domList.parent(),
     domListDetached = domList.detach(),
     inputs,
-    html = '';
+    html = '',
+    defaultSetup = '10001110001';
 
 html += '<div class="col-6">';
 $.each(list, function (i, feature) {
@@ -25,8 +27,18 @@ parent.append(domListDetached);
 inputs = domList.find('input');
 domList.on('click', refreshLinks);
 
+inputs.prop('checked', function(i){
+    return !!parseInt(defaultSetup[i]);
+});
+
 $allCheck.change(function (e) {
     inputs.prop('checked', $(this).prop("checked"));
+    refreshLinks(e);
+});
+$defaultCheck.change(function (e) {
+    inputs.prop('checked', function(i){
+        return !!parseInt(defaultSetup[i]);
+    });
     refreshLinks(e);
 });
 
@@ -47,13 +59,16 @@ function refreshLinks(e) {
     if(!result.match(/0/)){
         result = 'full';
         $allCheck.prop("checked", true);
-    }else if(!result.match(/1/)){
+        $defaultCheck.prop("checked", false);
+    }else if(!result.match(/1/) || result == defaultSetup){
         result = '';
         $allCheck.prop("checked", false);
+        $defaultCheck.prop("checked", true);
     }else{
         cfg = parseInt('1' + result, 2);
         result = 'custom';
         $allCheck.prop("checked", false);
+        $defaultCheck.prop("checked", false);
     }
 
     if(result){
