@@ -12,7 +12,7 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: detectDeviceOrientation</h1>
+	<h1 class="page-title">Module: touchVsMouse</h1>
 <section>
 
 <header>
@@ -60,8 +60,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detectDeviceOrientationjs/">detectDeviceOrientation.js</a>,
-				 <a href="detectDeviceOrientation.js.html#sunlight-1-line-1">line 1</a>
+				<a href="/documentation/touchVsMousejs/">touchVsMouse.js</a>,
+				 <a href="touchVsMouse.js.html#sunlight-1-line-1">line 1</a>
 			</li>
 		</ul>
 	</dd>
@@ -98,7 +98,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getDeviceOrientation"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDeviceOrientation()</h4>
+    <h4 class="name" id=".JS.Responsive.isUsingTouches"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isUsingTouches()</h4>
     
     
 </dt>
@@ -106,7 +106,7 @@
 
     
     <div class="description">
-        Returns device orientation &quot;portrait&quot; or &quot;landscape&quot;.
+        Returns information if is actually using touches.
     </div>
     
 
@@ -152,8 +152,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detectDeviceOrientationjs/">detectDeviceOrientation.js</a>,
-				 <a href="detectDeviceOrientation.js.html#sunlight-1-line-33">line 33</a>
+				<a href="/documentation/touchVsMousejs/">touchVsMouse.js</a>,
+				 <a href="touchVsMouse.js.html#sunlight-1-line-15">line 15</a>
 			</li>
 		</ul>
 	</dd>
@@ -182,7 +182,7 @@
     
             
 <div class="param-desc">
-    &quot;portrait&quot; or &quot;landscape&quot;
+    Returns true if using touches, false if using mouse, undefined if no use detected yet
 </div>
 
 
@@ -193,119 +193,10 @@
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type">Boolean</span>
+|
 
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.getDeviceOrientationAngle"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDeviceOrientationAngle()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Returns angle of device orientation 0, 90, 180, 270 in degrees cross clock wise.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/detectDeviceOrientationjs/">detectDeviceOrientation.js</a>,
-				 <a href="detectDeviceOrientation.js.html#sunlight-1-line-45">line 45</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    0, 90, 180, 270
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Number</span>
+<span class="param-type">undefined</span>
 
 
 

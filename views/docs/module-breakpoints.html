@@ -290,6 +290,372 @@
             
 <hr>
 <dt>
+    <h4 class="name" id=".JS.Responsive.addVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addVerticalBreakPoint(name, height)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Sets a new vertical break point for responsive styling.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Height size in pixels.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
+				 <a href="breakpoints.js.html#sunlight-1-line-126">line 126</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this - for chaining.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">JS.Responsive.addVerticalBreakPoint(&apos;vertical-medium&apos;, 960);</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.disableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableHorizontalBreakPoints( [_leaveActualClasses])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Disable horizontal break points checking and remove all class names from HTML element.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>_leaveActualClasses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional&gt;<br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If true, leaves (freezes) actual class names in HTML element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
+				 <a href="breakpoints.js.html#sunlight-1-line-82">line 82</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this - for chaining.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id=".JS.Responsive.disableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableVerticalBreakPoints( [_leaveActualClasses])</h4>
     
     
@@ -464,6 +830,118 @@
             
 <hr>
 <dt>
+    <h4 class="name" id=".JS.Responsive.enableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableHorizontalBreakPoints()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Enable horizontal break points checking (if was disabled before).
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
+				 <a href="breakpoints.js.html#sunlight-1-line-97">line 97</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this - for chaining.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id=".JS.Responsive.enableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableVerticalBreakPoints()</h4>
     
     
@@ -560,6 +1038,121 @@
     <dd>
         
 <span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.getActualHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getActualHorizontalBreakPoint()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Returns name of actual horizontal break point.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
+				 <a href="breakpoints.js.html#sunlight-1-line-69">line 69</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Name of actual horizontal break point or null if no horizontal break point is set.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+|
+
+<span class="param-type">null</span>
 
 
 
@@ -1147,401 +1740,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledVerticalBreakPoints()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Returns if is vertical break points checking disabled.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-196">line 196</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint( [_leaveActualClasses])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Disable horizontal break points checking and remove all class names from HTML element.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>_leaveActualClasses</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional&gt;<br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">If true, leaves (freezes) actual class names in HTML element.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-82">line 82</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    this - for chaining.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Enable horizontal break points checking (if was disabled before).
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-97">line 97</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    this - for chaining.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint()</h4>
+    <h4 class="name" id=".JS.Responsive.isDisabledHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledHorizontalBreakPoints()</h4>
     
     
 </dt>
@@ -1649,7 +1848,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint(name, height)</h4>
+    <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledVerticalBreakPoints()</h4>
     
     
 </dt>
@@ -1657,7 +1856,7 @@
 
     
     <div class="description">
-        Sets a new vertical break point for responsive styling.
+        Returns if is vertical break points checking disabled.
     </div>
     
 
@@ -1666,80 +1865,6 @@
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>height</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Height size in pixels.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     
@@ -1778,7 +1903,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-126">line 126</a>
+				 <a href="breakpoints.js.html#sunlight-1-line-196">line 196</a>
 			</li>
 		</ul>
 	</dd>
@@ -1806,10 +1931,6 @@
     <h5>Returns:</h5>
     
             
-<div class="param-desc">
-    this - for chaining.
-</div>
-
 
 
 <dl>
@@ -1818,7 +1939,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">Boolean</span>
 
 
 
@@ -1827,180 +1948,6 @@
 
 
         
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">JS.Responsive.addVerticalBreakPoint(&apos;vertical-medium&apos;, 960);</pre>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint(name)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Removes a vertical break point for responsive styling.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Existing name of break point.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-141">line 141</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    this - for chaining.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">JS.Responsive.removeVerticalBreakPoint(&apos;vertical-medium&apos;);</pre>
-
 
     
 </dd>
@@ -2177,7 +2124,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint()</h4>
+    <h4 class="name" id=".JS.Responsive.removeVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeVerticalBreakPoint(name)</h4>
     
     
 </dt>
@@ -2185,7 +2132,7 @@
 
     
     <div class="description">
-        Returns name of actual horizontal break point.
+        Removes a vertical break point for responsive styling.
     </div>
     
 
@@ -2194,6 +2141,56 @@
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Existing name of break point.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -2232,7 +2229,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="breakpoints.js.html#sunlight-1-line-69">line 69</a>
+				 <a href="breakpoints.js.html#sunlight-1-line-141">line 141</a>
 			</li>
 		</ul>
 	</dd>
@@ -2261,7 +2258,7 @@
     
             
 <div class="param-desc">
-    Name of actual horizontal break point or null if no horizontal break point is set.
+    this - for chaining.
 </div>
 
 
@@ -2272,10 +2269,7 @@
     </dt>
     <dd>
         
-<span class="param-type">String</span>
-|
-
-<span class="param-type">null</span>
+<span class="param-type">Object</span>
 
 
 
@@ -2284,6 +2278,12 @@
 
 
         
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">JS.Responsive.removeVerticalBreakPoint(&apos;vertical-medium&apos;);</pre>
+
 
     
 </dd>
@@ -2336,9 +2336,9 @@
 
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Oct 5, 2016 1:24 PM
+		on Nov 15, 2016 6:56 AM
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

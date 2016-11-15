@@ -12,61 +12,53 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: detectOrientation.js</h1>
+		<h1 class="page-title">Source: touchVsMouse.js</h1>
     
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
- *
- * @module detectOrientation
- *
- * */
+*
+* @module touchVsMouse
+*
+**/
 
 /**
- * Returns if current device has display landscape oriented (width is larger than height).
- * @returns {Boolean}
- * @memberof module:detectOrientation
- * @alias JS.Responsive.addHorizontalBreakPoint
+ * Returns information if is actually using touches.
+ * @returns {Boolean|undefined} Returns true if using touches, false if using mouse, undefined if no use detected yet
+ * @memberof module:touchVsMouse
+ * @alias JS.Responsive.isUsingTouches
  */
-$C.isLandscape = function() {
 
-    return getWindowWidth() &gt; getWindowHeight();
+
+$C.isUsingTouches = function() {
+    return touchVsMouseUsingTouch;
 };
 
-/**
- * Returns if current device has display portrait oriented (height is larger than width).
- * @returns {Boolean}
- * @memberof module:detectOrientation
- * @alias JS.Responsive.addHorizontalBreakPoint
- */
-$C.isPortrait = function() {
+var touchVsMouseLastTime = 0,
+    touchVsMouseUsingTouch;
 
-    return !this.isLandscape();
-};
+bind(document, &apos;touchstart&apos;, function(){
+    if(touchVsMouseUsingTouch)
+        return;
 
-$C.features.detectOrientation = initDetectOrientation;
+    touchVsMouseUsingTouch = TRUE;
+    addClass(&apos;user-is-using-touch&apos;);
+    removeClass(&apos;user-is-using-mouse&apos;);
+    touchVsMouseLastTime = Date.now();
+    $C.emit(&apos;changedUsingTouch&apos;, TRUE, FALSE);
+});
 
+bind(document, &apos;mousemove&apos;, mouseHandler);
+bind(document, &apos;mousedown&apos;, mouseHandler);
 
-// init detection
-function initDetectOrientation() {
-    detectOrientation();
-    bind(window, &apos;orientationchange&apos;, detectOrientation);
-}
+function mouseHandler() {
+    if (touchVsMouseUsingTouch === FALSE || Date.now() - touchVsMouseLastTime &lt; 250)
+        return;
 
-// adds &quot;portrait&quot; or &quot;landscape&quot; class
-function detectOrientation() {
-    var landscape = $C.isLandscape(),
-        newValue = landscape ? LANDSCAPE_STRING : PORTRAIT_STRING,
-        oldValue = landscape ? PORTRAIT_STRING : LANDSCAPE_STRING;
-
-    if(!hasClass(newValue)){
-        addClass(newValue);
-        removeClass(oldValue);
-    }
-
-    $C.emit(&apos;changedOrientation&apos;, newValue, oldValue);
-
-    return newValue;
+    touchVsMouseUsingTouch = FALSE;
+    addClass(&apos;user-is-using-mouse&apos;);
+    removeClass(&apos;user-is-using-touch&apos;);
+    $C.emit(&apos;changedUsingTouch&apos;, FALSE, TRUE);
 }</pre>
     </article>
 </section>
