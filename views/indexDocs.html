@@ -16,7 +16,11 @@
                 <div class="col-12 text-center">
                     <h1 class="wow fadeIn" data-wow-delay=".25s">@{title}</h1>
                     <p class="max-75 wow bounceInUp" data-wow-delay=".5s">
-                        JS.Responsive is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
+                        Enjoy JS.Responsive documentation! It is generated from source code with <a href="http://usejsdoc.org/" class="link">jsdoc</a> and maintained by
+                        <a href="/contact/">authors</a>. Is organised into modules where each module consists of methods, see the list bellow.
+                    </p>
+                    <p class="max-75 wow bounceInUp" data-wow-delay=".5s">
+                        <b>Attention!</b> Not all contents suits your version and type of your build, please ensure the module is included in your build, before rising an issue.
                     </p>
                 </div>
             </div>
@@ -33,6 +37,20 @@
 
                         <div class="col-4 wow bounceInUp" data-wow-delay="1s">
 
+                            <!-- CORE -->
+
+                            <div class="part">
+                                <h2 class="h3 line small"><a href="/documentation/JS.Responsive/">JS.Responsive (core)</a></h2>
+
+                                <ul>
+                                    <li><a href="/documentation/JS.Responsive/#.init" class="link">init()</a></li>
+                                    <li><a href="/documentation/JS.Responsive/#.emit" class="link">emit()</a></li>
+                                    <li><a href="/documentation/JS.Responsive/#.on" class="link">on()</a></li>
+                                    <li><a href="/documentation/JS.Responsive/#.is" class="link">is()</a></li>
+                                    <li><a href="/documentation/JS.Responsive/#.features" class="link">features</a></li>
+                                </ul>
+                            </div>
+
                             @{foreach module in repository.modules}
 
                                 @{if repository.colBreaks.indexOf(module.file) > -1}
@@ -45,7 +63,7 @@
 
                                     <ul>
                                         @{foreach method in module.methods}
-                                            <li><a href="/documentation/module-@{module.file}/" class="link">@{method}</a></li>
+                                            <li><a href="/documentation/module-@{module.file}/#.JS.Responsive.@{method}" class="link">@{method}()</a></li>
                                         @{end}
                                     </ul>
                                 </div>
