@@ -14,7 +14,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "node test.js",
-    "update": "cd JS.Responsive && git pull && npm run build && cd .. && node jsdocProcessUtil"
+    "update": "cd JS.Responsive && git pull && npm i && npm run build && cd .. && node jsdocProcessUtil",
+    "install": "git submodule init && git submodule update && npm run update"
   },
   "repository": {
     "type": "git",
