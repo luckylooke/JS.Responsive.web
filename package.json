@@ -14,7 +14,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node test.js",
-    "postinstall": "bower install"
+    "update": "cd JS.Responsive && git pull && npm run build && cd .. && node jsdocProcessUtil"
   },
   "repository": {
     "type": "git",
