@@ -21,6 +21,8 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     // console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
                     return p1 + '/documentation/' + p2.replace('.js', 'js') + '/"';
                 });
+                contents = contents.replace("col-md-3", "");
+                contents = contents.replace("col-md-8", "col-md-12");
 
                 var $ = cheerio.load(contents);
                 $('script').remove();
