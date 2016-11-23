@@ -27,6 +27,13 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 var $ = cheerio.load(contents);
                 $('script').remove();
                 var toc = $('#toc-content');
+                var tocHtml = toc.html();
+                toc
+                    .removeClass('container')
+                    .html('')
+                    .append('<div class="container"></div>>')
+                    .find('.container')
+                        .html(tocHtml);
                 var h2 = $('h2');
                 if(h2.length){
                     toc.before(h2);
