@@ -23,6 +23,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 });
                 contents = contents.replace("col-md-3", "");
                 contents = contents.replace("col-md-8", "col-md-12");
+                contents = contents.replace("pull-right icon-plus-sign icon-white", "caret");
 
                 var $ = cheerio.load(contents);
                 $('script').remove();
@@ -34,14 +35,14 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     .append('<div class="container"></div>>')
                     .find('.container')
                         .html(tocHtml);
+                var h1 = $('h1');
+                if(h1.length){
+                    toc.before(h1);
+                }
                 var h2 = $('h2');
                 if(h2.length){
                     toc.before(h2);
                     $('header').remove();
-                }
-                var h1 = $('h1');
-                if(h1.length){
-                    toc.before(h1);
                 }
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
