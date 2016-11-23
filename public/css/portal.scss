@@ -56,10 +56,16 @@
 	}
 }
 
-.btn:focus,
-button:focus {
-	outline: none;
-	box-shadow: none;
+// reset bootstrap
+.btn,
+button {
+	&.active,
+	&:focus,
+	&:active,
+	&:active:focus {
+		outline: none;
+		box-shadow: none;
+	}
 }
 
 html {
@@ -897,6 +903,7 @@ header {
 			transform: rotate(0deg);
 			border-radius: 5px;
 
+			// header .navbar-toggle:hover span
 			@at-root #{selector-nth(&, -2, append-class, ':hover')} {
 				background-color: $color-blue;
 			}
@@ -1419,7 +1426,36 @@ section {
 
 .documentation-detail-block {
 
-	h1 {
+	#toc-content {
+		border-top: 2px solid $color-light-blue;
+		margin-top: (100/$font-size)+rem;
+		padding: (40/$font-size)+rem 0;
+		background-color: #fff;
+
+		header {
+			padding: 0;
+		}
+
+		h2, h3, h4, h5, h6 {
+			font-family: $roboto-regular;
+			font-size: (16/$font-size)+rem;
+			margin-bottom: (10/$font-size)+rem;
+		}
+
+		h4.name {
+			font-family: $roboto-bold;
+			font-size: (20/$font-size)+rem;
+			margin-bottom: (10/$font-size)+rem;
+		}
+
+		.description,
+		.param-desc {
+			margin-bottom: (10/$font-size)+rem;
+		}
+	}
+
+	h1,
+	h2 {
 		text-align: center;
 	}
 
@@ -1430,9 +1466,19 @@ section {
 
 .navbar.navbar-fixed-top {
 	$height: 58;
+	$height-xs: 200;
 	background-color: $color-blue;
-	min-height: ($height/$font-size)+rem;
+	min-height: 0;
+	height: ($height/$font-size)+rem;
 	border: 1px solid #fff;
+	margin: 0;
+
+	html.small-less & {
+		border: 0;
+		top: auto;
+		bottom: 0;
+		height: ($height-xs/$font-size)+rem;
+	}
 
 	a {
 		color: #fff;
@@ -1443,18 +1489,28 @@ section {
 	}
 
 	.container {
-		position: static;
+		position: relative;
 	}
 
 	.navbar-header {
 		float: right;
+		padding: (16/$font-size)+rem 0;
+		margin-right: (15/$font-size)+rem;
+
+		html.small-less & {
+			display: none;
+		}
 
 		.navbar-brand {
-			height: ($height/$font-size)+rem;
-			line-height: ($height/$font-size)+rem;
-			padding: 0 (15/$font-size)+rem;
+			height: auto;
+			padding: 0;
 			font-size: inherit;
 			transition: color $animation-time ease-in-out;
+			float: none;
+
+			&:after {
+				background-color: #fff;
+			}
 
 			&:hover {
 				color: $color-dark-blue;
@@ -1465,20 +1521,53 @@ section {
 	.navbar-collapse.collapse {
 		float: right;
 		display: inline-block !important; // rewrite bootstrap style
+		margin-right: (40/$font-size)+rem;
+
+		html.small-less & {
+			width: 100%;
+			float: none;
+			margin: 0 auto;
+		}
 
 		.navbar-nav {
+			position: relative;
 			padding-right: (15/$font-size)+rem;
+
+			html.small-less & {
+				text-align: center;
+				margin: 0;
+			}
+
+			&:after {
+				display: block;
+				width: 1px;
+				background-color: #fff;
+				position: absolute;
+				top: (10/$font-size)+rem;
+				bottom: (10/$font-size)+rem;
+				right: 0;
+
+				html.small-less & {
+					display: none;
+				}
+			}
 
 			> li {
 				position: static;
+				padding: 0 (15/$font-size)+rem;
 
 				> a {
-					line-height: ($height/$font-size)+rem;
-					padding: 0 (15/$font-size)+rem;
+					padding: (18/$font-size)+rem 0;
+
+					html.small-less & {
+						line-height: ($height-xs/$font-size)+rem;
+						padding: 0;
+					}
 
 					// .navbar.navbar-fixed-top .navbar-collapse.collapse .navbar-nav.open > li > a
 					@at-root #{selector-nth(&, -3, append-class, '.open')} {
 						background-color: transparent;
+						color: $color-dark-blue;
 					}
 
 					&:hover,
@@ -1490,24 +1579,42 @@ section {
 					&.dropdown-toggle {
 						transition: color $animation-time ease-in-out;
 					}
+
+					.caret {
+						// .navbar.navbar-fixed-top .navbar-collapse.collapse .navbar-nav.open > li > a .caret
+						@at-root #{selector-nth(&, -4, append-class, '.open')} {
+							border-top-width: 0;
+							border-bottom: 4px solid $color-dark-blue;
+						}
+					}
 				}
 
 				.dropdown-menu {
+					position: fixed;
+					top: (58/$font-size)+rem;
+					right: 0;
 					display: block;
+					background-color: #fff;
 					opacity: 0;
 					border-radius: 0;
 					box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
-					top: -1000%;
-					right: 0;
 					border: 0;
 					font-size: 0;
+					visibility: hidden;
 					padding: (40/$font-size)+rem (70/$font-size)+rem;
-					transition: all $animation-time ease-in-out;
-					transform: translate3d(0, 0, 0);
+					transition: transform $animation-time ease-in-out;
+					transition-property: visibility, opacity;
 
+					// .navbar.navbar-fixed-top .navbar-collapse.collapse .navbar-nav.open .dropdown-menu
 					@at-root #{selector-nth(&, -2, append-class, '.open')} {
-						top: 100%;
+						visibility: visible;
 						opacity: 1;
+					}
+
+					html.small-less & {
+						padding: 1rem;
+						top: 0;
+						bottom: ($height-xs/$font-size)+rem;
 					}
 
 					li {
@@ -1515,6 +1622,12 @@ section {
 						width: (100%/3);
 						font-size: (20/$font-size)+rem;
 						line-height: (36/$font-size)+rem;
+
+						html.small-less & {
+							width: 100%;
+							font-size: (90/$font-size)+rem;
+							line-height: (116/$font-size)+rem;
+						}
 
 						&.title {
 							width: 100%;
@@ -1526,6 +1639,11 @@ section {
 							line-height: (36/$font-size)+rem;
 							color: $color-blue;
 							padding: 0;
+
+							html.small-less & {
+								font-size: (60/$font-size)+rem;
+								line-height: (96/$font-size)+rem;
+							}
 
 							&:hover {
 								background-color: transparent;
@@ -1547,7 +1665,21 @@ section {
 		display: inline-block;
 		margin: 0;
 		padding-right: 0;
-		position: relative;
+		position: absolute;
+		background-color: $color-blue;
+		top: 0;
+		right: 0;
+		z-index: 3;
+		width: (55/$font-size)+rem;
+		transition: width .5s linear;
+
+		html.small-less & {
+			width: (100/$font-size)+rem;
+		}
+
+		&.expand {
+			width: 100%;
+		}
 
 		::-webkit-input-placeholder {
 			color: #fff;
@@ -1575,21 +1707,60 @@ section {
 		}
 
 		.form-control {
+			color: #fff;
 			border: 0;
 			box-shadow: none;
 			background-color: transparent;
 			width: 0;
 			padding: 0;
-			line-height: (58/$font-size)+rem;
+			height: (56/$font-size)+rem;
+			font-size: (20/$font-size)+rem;
 
+			// .navbar.navbar-fixed-top .navbar-form.expand .form-control
+			@at-root #{selector-nth(&, -2, append-class, '.expand')} {
+				width: 100%;
+			}
 		}
 
 		.btn {
 			background-color: transparent;
 			color: #fff;
 			padding: 0 (15/$font-size)+rem;
-			line-height: ($height/$font-size)+rem;
 			font-size: (20/$font-size)+rem;
+			line-height: (56/$font-size)+rem;
+			border: 0;
+		}
+
+		.close {
+			$width: 18;
+			$height: 17;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: ($width*3/$font-size)+rem;
+			background-image: url('#{$image-path}/icon-close.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: ($width/$font-size)+rem ($height/$font-size)+rem;
+			visibility: hidden;
+			opacity: 0;
+			transition: $animation-time ease;
+			transition-property: visibility, opacity;
+
+			// .navbar.navbar-fixed-top .navbar-form.expand .close
+			@at-root #{selector-nth(&, -2, append-class, '.expand')} {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			html.hires-display & {
+				background-image: url('#{$image-path}/icon-close@2x.png');
+			}
+
+			&:hover {
+				opacity: .6;
+			}
 		}
 	}
 }
@@ -1802,4 +1973,10 @@ section.download-stable-version {
 
 .wow {
 	visibility: hidden;
+}
+
+pre {
+	background-color: rgba($color-blue, .5);
+	border-color: rgba($color-blue, .7);
+	color: $color-dark-blue;
 }
