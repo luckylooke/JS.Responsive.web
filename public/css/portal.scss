@@ -56,6 +56,12 @@
 	}
 }
 
+.btn:focus,
+button:focus {
+	outline: none;
+	box-shadow: none;
+}
+
 html {
 	height: 100%;
 	width: 100%;
@@ -374,7 +380,7 @@ img {
 			right: -2px;
 			width: 3px;
 			height: (25/$font-size)+rem;
-			background-color: darken($color-border-background, 1);
+			background-color: darken($color-border-background, 3);
 			transition: top $animation-time linear;
 			transform: translate3d(0, 0, 0);
 		}
@@ -462,7 +468,7 @@ h3, .h3 {
 		position: relative;
 
 		html.small-less & {
-			margin: (50/$font-size)+rem 0 (100/$font-size)+rem;
+			margin: (100/$font-size)+rem 0 (80/$font-size)+rem;
 		}
 
 		.part & {
@@ -470,7 +476,11 @@ h3, .h3 {
 		}
 
 		&.small {
-			margin-bottom: (52/$font-size)+rem;
+			margin-bottom: (36/$font-size)+rem;
+
+			&:before {
+				bottom: -(20/$font-size)+rem;
+			}
 		}
 
 		&:before {
@@ -483,13 +493,8 @@ h3, .h3 {
 			background-color: $color-blue;
 
 			html.small-less & {
-				bottom: -(50/$font-size)+rem;
+				bottom: -(45/$font-size)+rem;
 				width: (64/$font-size)+rem;
-			}
-
-			// h3.line.small
-			@at-root #{selector-nth(&, -1, append-class, '.small')} {
-				bottom: -(25/$font-size)+rem;
 			}
 		}
 	}
@@ -516,6 +521,11 @@ p {
 		font-family: $roboto-regular;
 	}
 
+	.page-title-box & {
+		font-size: (20/$font-size)+rem;
+		line-height: (32/$font-size)+rem;
+	}
+
 	.features & {
 		font-size: (18/$font-size)+rem;
 		line-height: (24/$font-size)+rem;
@@ -536,6 +546,7 @@ strong, b {
 a {
 	color: $color-blue;
 	transition: color $animation-time ease-in-out;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {
@@ -729,7 +740,6 @@ header {
 		line-height: (98/$font-size)+rem;
 		color: $color-headline;
 		display: inline-block;
-		text-transform: uppercase;
 		margin-left: -(20/$font-size)+rem;
 
 		html.small-less & {
@@ -1255,7 +1265,7 @@ section {
 .download-block {
 	.custom-download {
 		border-top: 2px solid $color-light-blue;
-		padding: (115/$font-size)+rem 0 (120/$font-size)+rem;
+		padding: (90/$font-size)+rem 0 (100/$font-size)+rem;
 		background-color: $color-bg-blue;
 
 		.row {
@@ -1486,12 +1496,12 @@ section {
 					display: block;
 					opacity: 0;
 					border-radius: 0;
-					box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+					box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
 					top: -1000%;
 					right: 0;
 					border: 0;
 					font-size: 0;
-					padding: (70/$font-size)+rem;
+					padding: (40/$font-size)+rem (70/$font-size)+rem;
 					transition: all $animation-time ease-in-out;
 					transform: translate3d(0, 0, 0);
 
@@ -1503,17 +1513,17 @@ section {
 					li {
 						display: inline-block;
 						width: (100%/3);
-						font-size: (30/$font-size)+rem;
-						line-height: (48/$font-size)+rem;
+						font-size: (20/$font-size)+rem;
+						line-height: (36/$font-size)+rem;
 
 						&.title {
 							width: 100%;
-							margin-bottom: (30/$font-size)+rem;
+							margin-bottom: (20/$font-size)+rem;
 						}
 
 						a {
-							font-size: (30/$font-size)+rem;
-							line-height: (48/$font-size)+rem;
+							font-size: (20/$font-size)+rem;
+							line-height: (36/$font-size)+rem;
 							color: $color-blue;
 							padding: 0;
 
@@ -1678,6 +1688,7 @@ section.download-stable-version {
 
 	.col-4 {
 		text-align: right;
+		vertical-align: bottom;
 
 		html.small-less & {
 			margin-top: (60/$font-size)+rem;
@@ -1687,7 +1698,7 @@ section.download-stable-version {
 }
 
 .page-title-box {
-	padding-bottom: (80/$font-size)+rem;
+	padding-bottom: (60/$font-size)+rem;
 }
 
 .layer.half-circle {
