@@ -5,6 +5,7 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
 var listOfModules = '';
+var opened = 0;
 fs.readdir('./JS.Responsive/docs', function(err, files) {
     if(err) console.error(err);
 
@@ -12,6 +13,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
         .filter(function(file) { return file.substr(-5) === '.html'; }) // html only
         .forEach(function(file) {
             fs.readFile(__dirname + '/JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
+                opened++;
                 console.log('file contents: ', file, !!contents);
                 file = file.replace('.js', 'js');
                 if(!contents)
@@ -23,7 +25,6 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 });
                 contents = contents.replace("col-md-3", "");
                 contents = contents.replace("col-md-8", "col-md-12");
-                contents = contents.replace("pull-right icon-plus-sign icon-white", "caret");
 
                 var $ = cheerio.load(contents);
                 $('script').remove();
@@ -65,60 +66,67 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     if(err) console.error(err);
 
                     console.log('file done: ', file);
+                    opened--;
+                    if(!opened){
+                        afterAllCreated();
+                    }
                 });
             });
         });
 });
 
-// temp fixes:
-fs.readFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', 'utf-8', function(err, contents) {
-    if (err) console.error(err);
-    if(contents.search(';var timeout;') != -1)
-        return;
-    contents = contents.replace('var timeout;', ';var timeout;');
-    fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', contents, function(err){
-        "use strict";
-        if(err) console.error(err);
+function afterAllCreated(){
+    "use strict";
+    // temp fixes:
+    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', 'utf-8', function(err, contents) {
+        if (err) console.error(err);
+        if(contents.search(';var timeout;') != -1)
+            return;
+        contents = contents.replace('var timeout;', ';var timeout;');
+        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', contents, function(err){
+            "use strict";
+            if(err) console.error(err);
 
-        console.log('file fix done: ', './JS.Responsive/docs/scripts/toc.js');
+            console.log('file fix done: ', './JS.Responsive/docs/scripts/toc.js');
+        });
     });
-});
-fs.readFile(__dirname + '/views/docs/index.html', 'utf-8', function(err, contents) {
-    if (err) console.error(err);
-    if(contents.search('<div id="main"> @{view("indexDocs")}') != -1)
-        return;
-    contents = contents.replace('<div id="main">', '<div id="main"> @{view("indexDocs")}');
-    fs.writeFile(__dirname + '/views/docs/index.html', contents, function(err){
-        "use strict";
-        if(err) console.error(err);
+    fs.readFile(__dirname + '/views/docs/index.html', 'utf-8', function(err, contents) {
+        if (err) console.error(err);
+        if(contents.search('<div id="main"> @{view("indexDocs")}') != -1)
+            return;
+        contents = contents.replace('<div id="main">', '<div id="main"> @{view("indexDocs")}');
+        fs.writeFile(__dirname + '/views/docs/index.html', contents, function(err){
+            "use strict";
+            if(err) console.error(err);
 
-        console.log('file fix done: ', '/views/docs/index.html');
+            console.log('file fix done: ', '/views/docs/index.html');
+        });
     });
-});
-fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
-    if (err) console.error(err);
-    if(contents.search(';resultsList.appendChild') != -1)
-        return;
-    contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
-    contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js");');
-    contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
-    fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
-        "use strict";
-        if(err) console.error(err);
+    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
+        if (err) console.error(err);
+        if(contents.search(';resultsList.appendChild') != -1)
+            return;
+        contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
+        contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js");');
+        contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
+        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
+            "use strict";
+            if(err) console.error(err);
 
-        console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
+            console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
+        });
     });
-});
-fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
-    if (err) console.error(err);
-    if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)
-        return;
-    contents = contents.replace("spawn('./node_modules/.bin/jsdoc'", "spawn(__dirname + '/node_modules/.bin/jsdoc'");
+    fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
+        if (err) console.error(err);
+        if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)
+            return;
+        contents = contents.replace("spawn('./node_modules/.bin/jsdoc'", "spawn(__dirname + '/node_modules/.bin/jsdoc'");
 
-    fs.writeFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', contents, function(err){
-        "use strict";
-        if(err) console.error(err);
+        fs.writeFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', contents, function(err){
+            "use strict";
+            if(err) console.error(err);
 
-        console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
+            console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
+        });
     });
-});
+}
