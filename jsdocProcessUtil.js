@@ -26,6 +26,16 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 
                 var $ = cheerio.load(contents);
                 $('script').remove();
+                var toc = $('#toc-content');
+                var h2 = $('h2');
+                if(h2.length){
+                    toc.before(h2);
+                    $('header').remove();
+                }
+                var h1 = $('h1');
+                if(h1.length){
+                    toc.before(h1);
+                }
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
                     fs.readFile(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
