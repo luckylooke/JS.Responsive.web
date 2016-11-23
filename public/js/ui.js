@@ -235,7 +235,7 @@ COMPONENT('validation', function() {
 	self.readonly();
 
 	self.make = function() {
-		elements = self.find(self.attr('data-selector') || 'button');
+		elements = self.find(self.attr('data-selector') || '#submit');
 		elements.prop({ disabled: true });
 		self.evaluate = self.attr('data-if');
 		path = self.path.replace(/\.\*$/, '');
