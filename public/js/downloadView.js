@@ -17,7 +17,7 @@ var list = data.featuresList,
 html += '<div class="col-6">';
 $.each(list, function (i, feature) {
     html += (i === listHalf ? '</div><div class="col-6">' : '');
-    html += '<div><input type="checkbox" name="checklist" id="a' + i + '" /><label for="a' + i + '">' + feature.file + '</label></div>';
+    html += '<div title="' + feature.teaser + '"><input type="checkbox" name="checklist" id="a' + i + '" /><label for="a' + i + '">' + feature.file + '</label></div>';
 });
 html += '</div>';
 
