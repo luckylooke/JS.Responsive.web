@@ -57,7 +57,11 @@
 		</div>
 	</header>
 
-	<div  id="scene" class="scene unselectable"
+	@{if self.repository.colBreaks}
+		@{view('docSubMenu')}
+	@{fi}
+
+	<div id="scene" class="scene unselectable"
 		  data-friction-x="0.1"
 		  data-friction-y="0.1"
 		  data-scalar-x="25"

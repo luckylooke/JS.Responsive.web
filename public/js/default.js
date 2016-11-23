@@ -11,6 +11,9 @@ $(document).ready(function() {
 		.find('a[href="' + actualPath + '/"]')
 		.addClass('active');
 
+	// add to data attribute on body element actual page
+	$('body').attr('data-page', actualPath.charAt(0) === '/' ? actualPath.slice(1) : actualPath);
+
 	// home
 	if (actualPath == '/')
 		$('header nav li:first-child a').addClass('active');

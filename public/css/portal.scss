@@ -89,6 +89,10 @@ body {
 	html.menu-open & {
 		overflow: hidden;
 	}
+
+	&[data-page="documentation"] {
+		padding-top: (58/$font-size)+rem; // fix navbar
+	}
 }
 
 img {
@@ -395,6 +399,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 	.block & {
 		text-align: center;
+	}
+
+	.left & {
+		text-align: left;
 	}
 
 	strong {
@@ -819,7 +827,6 @@ header {
 					border-radius: (23/$font-size)+rem;
 
 					html.small-less & {
-						display: block;
 						font-size: (60/$font-size)+rem;
 						padding: (40/$font-size)+rem;
 						border-radius: (30/$font-size)+rem;
@@ -856,14 +863,14 @@ header {
 	}
 
 	.navbar-toggle {
-		width: (100/$font-size)+rem;
-		height: (65/$font-size)+rem;
+		width: (200/$font-size)+rem;
+		height: (130/$font-size)+rem;
 		top: 0;
-		right: (20/$font-size)+rem;
+		margin: 0;
+		right: 0;
 		position: absolute;
 		transform: rotate(0deg);
 		transition: opacity $animation-time-long ease;
-		//transition-property: opacity;
 		cursor: pointer;
 		z-index: 3;
 
@@ -872,10 +879,10 @@ header {
 			position: absolute;
 			height: (12/$font-size)+rem;
 			min-height: 4px;
-			width: 100%;
+			width: (100/$font-size)+rem;
 			background: $color-dark-blue;
 			opacity: 1;
-			left: 0;
+			left: (50/$font-size)+rem;
 			transition: $animation-time ease-in-out, background-color $animation-time ease-in-out;
 			transform: rotate(0deg);
 			border-radius: 5px;
@@ -885,10 +892,10 @@ header {
 			}
 
 			&:nth-child(1) {
-				top: 0;
+				top: (30/$font-size)+rem;
 
 				html.menu-open & {
-					top: (24/$font-size)+rem;
+					top: (54/$font-size)+rem;
 					width: 0%;
 					left: 50%;
 				}
@@ -896,7 +903,7 @@ header {
 
 			&:nth-child(2),
 			&:nth-child(3) {
-				top: (24/$font-size)+rem;
+				top: (54/$font-size)+rem;
 			}
 
 			&:nth-child(2) {
@@ -912,10 +919,10 @@ header {
 			}
 
 			&:nth-child(4) {
-				top: (46/$font-size)+rem;
+				top: (76/$font-size)+rem;
 
 				html.menu-open & {
-					top: (24/$font-size)+rem;
+					top: (54/$font-size)+rem;
 					width: 0%;
 					left: 50%;
 				}
@@ -1098,7 +1105,6 @@ section {
 		.col-3 {
 			z-index: 0;
 			background-color: #fff;
-			cursor: default;
 
 			html.small-less & {
 				border-top: 1px solid $color-light-blue;
@@ -1375,6 +1381,14 @@ section {
 			margin-bottom: (40/$font-size)+rem;
 			text-align: left;
 
+			h2 a {
+				color: $color-headline;
+
+				&:hover {
+					color: $color-blue;
+				}
+			}
+
 			ul {
 				margin: 0;
 				padding: 0;
@@ -1389,6 +1403,183 @@ section {
 					}
 				}
 			}
+		}
+	}
+}
+
+.documentation-detail-block {
+
+	h1 {
+		text-align: center;
+	}
+
+	footer {
+		display: none;
+	}
+}
+
+.navbar.navbar-fixed-top {
+	$height: 58;
+	background-color: $color-blue;
+	min-height: ($height/$font-size)+rem;
+	border: 1px solid #fff;
+
+	a {
+		color: #fff;
+	}
+
+	.caret {
+		margin-left: (5/$font-size)+rem;
+	}
+
+	.container {
+		position: static;
+	}
+
+	.navbar-header {
+		float: right;
+
+		.navbar-brand {
+			height: ($height/$font-size)+rem;
+			line-height: ($height/$font-size)+rem;
+			padding: 0 (15/$font-size)+rem;
+			font-size: inherit;
+			transition: color $animation-time ease-in-out;
+
+			&:hover {
+				color: $color-dark-blue;
+			}
+		}
+	}
+
+	.navbar-collapse.collapse {
+		float: right;
+		display: inline-block !important; // rewrite bootstrap style
+
+		.navbar-nav {
+			padding-right: (15/$font-size)+rem;
+
+			> li {
+				position: static;
+
+				> a {
+					line-height: ($height/$font-size)+rem;
+					padding: 0 (15/$font-size)+rem;
+
+					// .navbar.navbar-fixed-top .navbar-collapse.collapse .navbar-nav.open > li > a
+					@at-root #{selector-nth(&, -3, append-class, '.open')} {
+						background-color: transparent;
+					}
+
+					&:hover,
+					&:focus {
+						background-color: transparent;
+						color: $color-dark-blue;
+					}
+
+					&.dropdown-toggle {
+						transition: color $animation-time ease-in-out;
+					}
+				}
+
+				.dropdown-menu {
+					display: block;
+					opacity: 0;
+					border-radius: 0;
+					box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+					top: -1000%;
+					right: 0;
+					border: 0;
+					font-size: 0;
+					padding: (70/$font-size)+rem;
+					transition: all $animation-time ease-in-out;
+					transform: translate3d(0, 0, 0);
+
+					@at-root #{selector-nth(&, -2, append-class, '.open')} {
+						top: 100%;
+						opacity: 1;
+					}
+
+					li {
+						display: inline-block;
+						width: (100%/3);
+						font-size: (30/$font-size)+rem;
+						line-height: (48/$font-size)+rem;
+
+						&.title {
+							width: 100%;
+							margin-bottom: (30/$font-size)+rem;
+						}
+
+						a {
+							font-size: (30/$font-size)+rem;
+							line-height: (48/$font-size)+rem;
+							color: $color-blue;
+							padding: 0;
+
+							&:hover {
+								background-color: transparent;
+								color: $color-dark-blue;
+							}
+
+							&:focus {
+								background-color: transparent;
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	.navbar-form {
+		display: inline-block;
+		margin: 0;
+		padding-right: 0;
+		position: relative;
+
+		::-webkit-input-placeholder {
+			color: #fff;
+		}
+		::-moz-placeholder {
+			color: #fff;
+		}
+		:-ms-input-placeholder {
+			color: #fff;
+		}
+		:-moz-placeholder {
+			color: #fff;
+		}
+
+		.input-group {
+			&:after {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: (12/$font-size)+rem;
+				bottom: (12/$font-size)+rem;
+				width: 1px;
+				background-color: #fff;
+			}
+		}
+
+		.form-control {
+			border: 0;
+			box-shadow: none;
+			background-color: transparent;
+			width: 0;
+			padding: 0;
+			line-height: (58/$font-size)+rem;
+
+		}
+
+		.btn {
+			background-color: transparent;
+			color: #fff;
+			padding: 0 (15/$font-size)+rem;
+			line-height: ($height/$font-size)+rem;
+			font-size: (20/$font-size)+rem;
 		}
 	}
 }
@@ -1566,6 +1757,7 @@ section.download-stable-version {
 	font-size: (16/$font-size)+rem;
 	transition: box-shadow $animation-time ease-in-out;
 	transform: translate3d(0, 0, 0);
+	z-index: 5;
 
 	html.hires-display & {
 		background-image: url('#{$image-path}/github-logo@2x.png');
