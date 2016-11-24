@@ -1440,12 +1440,55 @@ section {
 			font-family: $roboto-regular;
 			font-size: (16/$font-size)+rem;
 			margin-bottom: (10/$font-size)+rem;
+
+			html.small-less & {
+				font-size: (66/$font-size)+rem;
+				margin-bottom: (50/$font-size)+rem;
+			}
 		}
 
-		h4.name {
+		h3.subsection-title {
 			font-family: $roboto-bold;
 			font-size: (20/$font-size)+rem;
+
+			html.small-less & {
+				font-size: (70/$font-size)+rem;
+			}
+		}
+
+		h4.name,
+		dt.name h4 {
+			font-family: $roboto-medium;
+			font-size: (18/$font-size)+rem;
 			margin-bottom: (10/$font-size)+rem;
+
+			html.small-less & {
+				font-size: (68/$font-size)+rem;
+				margin-bottom: (50/$font-size)+rem;
+			}
+		}
+
+		dt.name {
+			.caret {
+				margin: 0 10px 2px;
+
+				@at-root #{selector-nth(&, -2, append-class, '[class*="-open"]')} {
+					border-top-width: 0;
+					border-bottom: 4px solid $color-dark-blue;
+				}
+			}
+
+			h4 {
+				float: left;
+			}
+
+			+ dd {
+				margin-top: 10px;
+				clear: both;
+				background-color: #fafafa;
+				border-radius: 5px;
+				padding: 15px 20px;
+			}
 		}
 
 		.description,
@@ -1470,7 +1513,7 @@ section {
 	background-color: $color-blue;
 	min-height: 0;
 	height: ($height/$font-size)+rem;
-	border: 1px solid #fff;
+	border: 0;
 	margin: 0;
 
 	html.small-less & {
@@ -1494,8 +1537,8 @@ section {
 
 	.navbar-header {
 		float: right;
-		padding: (16/$font-size)+rem 0;
 		margin-right: (15/$font-size)+rem;
+		line-height: ($height/$font-size)+rem;
 
 		html.small-less & {
 			display: none;
@@ -1536,6 +1579,7 @@ section {
 			html.small-less & {
 				text-align: center;
 				margin: 0;
+				padding: 0;
 			}
 
 			&:after {
@@ -1557,11 +1601,11 @@ section {
 				padding: 0 (15/$font-size)+rem;
 
 				> a {
-					padding: (18/$font-size)+rem 0;
+					padding: 0;
+					line-height: ($height/$font-size)+rem;
 
 					html.small-less & {
 						line-height: ($height-xs/$font-size)+rem;
-						padding: 0;
 					}
 
 					// .navbar.navbar-fixed-top .navbar-collapse.collapse .navbar-nav.open > li > a
@@ -1664,7 +1708,7 @@ section {
 	.navbar-form {
 		display: inline-block;
 		margin: 0;
-		padding-right: 0;
+		padding: 0;
 		position: absolute;
 		background-color: $color-blue;
 		top: 0;
@@ -1674,11 +1718,15 @@ section {
 		transition: width .5s linear;
 
 		html.small-less & {
-			width: (100/$font-size)+rem;
+			width: (150/$font-size)+rem;
 		}
 
 		&.expand {
 			width: 100%;
+
+			html.small-less & {
+				width: 100%;
+			}
 		}
 
 		::-webkit-input-placeholder {
@@ -1713,12 +1761,20 @@ section {
 			background-color: transparent;
 			width: 0;
 			padding: 0;
-			height: (56/$font-size)+rem;
+			height: ($height/$font-size)+rem;
 			font-size: (20/$font-size)+rem;
 
 			// .navbar.navbar-fixed-top .navbar-form.expand .form-control
 			@at-root #{selector-nth(&, -2, append-class, '.expand')} {
 				width: 100%;
+
+				html.small-less & {
+				}
+			}
+
+			html.small-less & {
+				height: ($height-xs/$font-size)+rem;
+				font-size: (60/$font-size)+rem;
 			}
 		}
 
@@ -1727,8 +1783,14 @@ section {
 			color: #fff;
 			padding: 0 (15/$font-size)+rem;
 			font-size: (20/$font-size)+rem;
-			line-height: (56/$font-size)+rem;
+			line-height: ($height/$font-size)+rem;
 			border: 0;
+
+			html.small-less & {
+				font-size: (60/$font-size)+rem;
+				line-height: ($height-xs/$font-size)+rem;
+				padding: 0 (40/$font-size)+rem;
+			}
 		}
 
 		.close {
@@ -1738,6 +1800,7 @@ section {
 			top: 0;
 			bottom: 0;
 			right: 0;
+			z-index: 3;
 			width: ($width*3/$font-size)+rem;
 			background-image: url('#{$image-path}/icon-close.png');
 			background-repeat: no-repeat;
@@ -1756,6 +1819,11 @@ section {
 
 			html.hires-display & {
 				background-image: url('#{$image-path}/icon-close@2x.png');
+			}
+
+			html.small-less & {
+				width: (150/$font-size)+rem;
+				background-size: auto;
 			}
 
 			&:hover {
