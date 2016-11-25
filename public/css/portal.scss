@@ -1336,8 +1336,15 @@ section {
 // SEKCIA - CONTACT
 
 .contact-block {
+
 	.inner {
 		padding-left: (30/$font-size)+rem;
+	}
+
+	.contact-form {
+		border-top: 2px solid $color-light-blue;
+		padding-top: (90/$font-size)+rem;
+		background-color: $color-bg-blue;
 	}
 
 	.authors {
@@ -2047,4 +2054,124 @@ pre {
 	background-color: rgba($color-blue, .5);
 	border-color: rgba($color-blue, .7);
 	color: $color-dark-blue;
+}
+
+// UI - COMPONENTATOR
+.ui-textbox,
+.ui-textarea {
+	border: 2px solid $color-border-input;
+	border-radius: 5px;
+	position: relative;
+	width: 100%;
+	background-color: white;
+	display: table;
+	transition: border-color $animation-time ease;
+
+	&.ui-textbox-invalid {
+		border-color: rgba($color-red, .6);
+	}
+
+	input,
+	textarea {
+		border-radius: 5px;
+		height: (42/$font-size)+rem;
+		padding: (5/$font-size)+rem (10/$font-size)+rem;
+		display: table-cell;
+		border: 0;
+		outline: 0;
+		width: 100%;
+		background-color: white;
+		transition: background-color $animation-time ease;
+
+		html.small-less & {
+			height: (130/$font-size)+rem;
+		}
+
+		@at-root #{selector-nth(&, -2, append-class, '.ui-textbox-invalid')} {
+			background-color: rgba($color-red, .05);
+		}
+	}
+
+	div {
+		width: 1%;
+		position: relative;
+		vertical-align: middle;
+		display: table-cell;
+		text-align: center;
+		white-space: nowrap;
+		text-overflow: clip;
+		border-left: 1px solid #E0E0E0;
+		width: 30px;
+		color: silver;
+	}
+}
+
+.ui-textarea {
+	textarea {
+		resize: none;
+	}
+}
+
+.ui-textbox-label,
+.ui-textarea-label {
+	margin-bottom: (5/$font-size)+rem;
+	font-size: (16/$font-size)+rem;
+	text-align: left;
+	color: $color-blue;
+	font-family: $roboto-medium;
+
+	html.small-less & {
+		font-size: (56/$font-size)+rem;
+	}
+
+	&.ui-textbox-label-required,
+	&.ui-textarea-label-required {
+		&:after {
+			color: $color-red;
+			content: '*';
+			margin-left: (5/$font-size)+rem;
+		}
+	}
+
+	.fa {
+		width: 14px;
+	}
+}
+
+#submit {
+	html.small-less & {
+		width: 100%;
+	}
+}
+
+.ui-textbox .fa-caret-up, .ui-textbox .fa-caret-down {
+	display: block;
+	line-height: 9px;
+	cursor: pointer;
+}
+
+.ui-right {
+	text-align: right;
+}
+
+.ui-center {
+	text-align: center;
+}
+
+.ui-disabled {
+	background-color: #F0F0F0;
+	cursor: not-allowed;
+}
+
+.ui-disabled > div {
+	background-color: #F0F0F0;
+}
+
+.ui-textarea-code textarea {
+	font-family: monospace;
+	font-size: 14px;
+}
+
+.hidden {
+	display: none;
 }
