@@ -18,10 +18,10 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 file = file.replace('.js', 'js');
                 if(!contents)
                     return;
-                contents = contents.replace(/(href=")([\w\-.]+)(\.html")/g, function(match, p1, p2){
+                contents = contents.replace(/(href=")([\w\-.]+)(\.html)(#sunlight-1-line-\d+)?"/g, function(match, p1, p2, p3, p4){
                     "use strict";
                     // console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
-                    return p1 + '/documentation/' + p2.replace('.js', 'js') + '/"';
+                    return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + p4 + '"';
                 });
                 contents = contents.replace("col-md-3", "");
                 contents = contents.replace("col-md-8", "col-md-12");
@@ -65,6 +65,8 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 
                 if(file.match(/\.list.html$/))
                     file = file.replace('.list', '-list');
+
+                contents = contents.replace("</div>&gt;</div>", "</div></div>");
 
                 fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";
