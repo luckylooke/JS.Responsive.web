@@ -21,7 +21,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 contents = contents.replace(/(href=")([\w\-.]+)(\.html)(#sunlight-1-line-\d+)?"/g, function(match, p1, p2, p3, p4){
                     "use strict";
                     // console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
-                    return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + p4 + '"';
+                    return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + (p4 || '') + '"';
                 });
                 contents = contents.replace("col-md-3", "");
                 contents = contents.replace("col-md-8", "col-md-12");
