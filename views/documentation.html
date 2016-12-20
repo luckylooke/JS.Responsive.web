@@ -77,8 +77,11 @@
 			}
 		} );
 
+		var lineNumbers = window.location.pathname.split('/');
+        lineNumbers = !!lineNumbers[lineNumbers.length-2].match(/js$/); // is source file page
+
 		Sunlight.highlightAll( {
-			lineNumbers : true,
+			lineNumbers : lineNumbers,
 			showMenu : true,
 			enableDoclinks : true
 		} );
