@@ -28,6 +28,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 
                 var $ = cheerio.load(contents);
                 $('script').remove();
+                $('#searchResults').remove();
                 var toc = $('#toc-content');
                 var tocHtml = toc.html();
                 toc
@@ -61,6 +62,10 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 $('.navbar').remove();
 
                 contents = $('body').html();
+
+                if(file.match(/\.list.html$/))
+                    file = file.replace('.list', '-list');
+
                 fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";
                     if(err) console.error(err);
@@ -107,7 +112,7 @@ function afterAllCreated(){
         if(contents.search(';resultsList.appendChild') != -1)
             return;
         contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
-        contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js");');
+        contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js").replace(".list","-list");');
         contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
         fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
             "use strict";
