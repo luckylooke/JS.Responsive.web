@@ -121,6 +121,18 @@ function afterAllCreated(){
             console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
         });
     });
+    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/sunlight.js', 'utf-8', function(err, contents) {
+        if (err) console.error(err);
+        if(contents.search('if(languageData.customTokens.length)') != -1)
+            return;
+        contents = contents.replace('for (tokenName in languageData.customTokens) {', 'if(languageData.customTokens.length) for (tokenName in languageData.customTokens) {');
+        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/sunlight.js', contents, function(err){
+            "use strict";
+            if(err) console.error(err);
+
+            console.log('file fix done: ', './JS.Responsive/docs/scripts/sunlight.js');
+        });
+    });
     fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
         if (err) console.error(err);
         if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)
