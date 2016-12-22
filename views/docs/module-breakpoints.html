@@ -24,6 +24,8 @@
     <div class="container-overview">
     
         
+            <div class="description">Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.</div>
+        
 
         
 <dl class="details">
@@ -51,7 +53,7 @@
 
 	
 
-	
+	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>$breakpointName$-more - applied when display size is higher or equal to provided size for the name (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> <li>$breakpointName$-less - applied when display size is smaller than provided size for the name (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> <li>$breakpointName$ - applied when display size is higher or equal to provided size and less then next breakpoint size if any (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedBreakPointHorizontal - fires when new horizontal breakpoint is reached</li> <li>changedBreakPointVertical - fires when new vertical breakpoint is reached</li> </ul> </dd> 
 
 
 
@@ -73,6 +75,39 @@
 
 	
 </dl>
+
+
+        
+            <h3>Example</h3>
+            
+        <p class="code-caption">Example usage of module</p>
+    
+    <pre class="sunlight-highlight-javascript">// JS:
+JS.Responsive
+    .init()
+    .addHorizontalBreakPoint(&apos;micro&apos;, 420)
+    .addHorizontalBreakPoint(&apos;tiny&apos;, 478)
+    .addHorizontalBreakPoint(&apos;small&apos;, 768)
+    .addHorizontalBreakPoint(&apos;medium&apos;, 992)
+    .addHorizontalBreakPoint(&apos;large&apos;, 1230);
+
+// CSS:
+#github-ribbon {
+	    position: absolute;
+	    top: -(5/$font-size)+rem;
+     ...
+
+     html.medium-less &amp; {
+		    height: (88/$font-size)+rem;
+		    padding: 0;
+		    border: 0;
+		    background-color: transparent;
+	    }
+
+     html.small-less &amp; {
+		    display: none;
+	    }
+}</pre>
 
 
         
@@ -198,6 +233,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -227,7 +269,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-43">line 43</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-80">line 80</a>
 			</li>
 		</ul>
 	</dd>
@@ -390,6 +432,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -419,7 +468,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-126">line 126</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-169">line 169</a>
 			</li>
 		</ul>
 	</dd>
@@ -570,6 +619,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -599,7 +655,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-82">line 82</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-122">line 122</a>
 			</li>
 		</ul>
 	</dd>
@@ -744,6 +800,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -773,7 +836,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-167">line 167</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-213">line 213</a>
 			</li>
 		</ul>
 	</dd>
@@ -856,6 +919,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -885,7 +955,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-97">line 97</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-138">line 138</a>
 			</li>
 		</ul>
 	</dd>
@@ -968,6 +1038,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -997,7 +1074,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-182">line 182</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-229">line 229</a>
 			</li>
 		</ul>
 	</dd>
@@ -1080,6 +1157,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1109,7 +1193,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-69">line 69</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-108">line 108</a>
 			</li>
 		</ul>
 	</dd>
@@ -1195,6 +1279,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1224,7 +1315,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-154">line 154</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-199">line 199</a>
 			</li>
 		</ul>
 	</dd>
@@ -1310,6 +1401,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1339,7 +1437,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-244">line 244</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-296">line 296</a>
 			</li>
 		</ul>
 	</dd>
@@ -1424,6 +1522,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1453,7 +1558,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-233">line 233</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-284">line 284</a>
 			</li>
 		</ul>
 	</dd>
@@ -1538,6 +1643,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1567,7 +1679,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-222">line 222</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-272">line 272</a>
 			</li>
 		</ul>
 	</dd>
@@ -1652,6 +1764,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1681,7 +1800,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-210">line 210</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-259">line 259</a>
 			</li>
 		</ul>
 	</dd>
@@ -1766,6 +1885,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1795,7 +1921,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-111">line 111</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-153">line 153</a>
 			</li>
 		</ul>
 	</dd>
@@ -1874,6 +2000,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -1903,7 +2036,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-196">line 196</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-244">line 244</a>
 			</li>
 		</ul>
 	</dd>
@@ -2032,6 +2165,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -2061,7 +2201,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-57">line 57</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-95">line 95</a>
 			</li>
 		</ul>
 	</dd>
@@ -2200,6 +2340,13 @@
 	
 
 	
+	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>3.0.0</li>
+		</ul>
+	</dd>
+	
 
 	
 
@@ -2229,7 +2376,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-141">line 141</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-185">line 185</a>
 			</li>
 		</ul>
 	</dd>
@@ -2325,7 +2472,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Nov 20, 2016 9:55 AM
+		on Dec 22, 2016 10:17 PM
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

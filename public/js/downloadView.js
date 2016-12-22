@@ -12,7 +12,7 @@ var list = data.featuresList,
     domListDetached = domList.detach(),
     inputs,
     html = '',
-    defaultSetup = '10001110001';
+    defaultSetup = '100001110001';
 
 html += '<div class="col-6">';
 $.each(list, function (i, feature) {
@@ -84,7 +84,7 @@ function refreshLinks(e) {
     );
 
     downloadBtn.attr('href',
-        '/api/download/v3.0.1' + resultPath + cfg + '/JS.Responsive' + result + cfg + '.zip'
+        '/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + cfg + '.zip'
     );
 }
 

@@ -3,7 +3,7 @@
 
 
 
-<h1 class="page-title">Module: detectOrientation</h1><div class="" id="toc-content"><div class="container">
+<h1 class="page-title">Module: documentState</h1><div class="" id="toc-content"><div class="container">
 <div class="row">
 
 	
@@ -24,7 +24,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Detection of viewport orientation (not device physical orientation)</div>
+            <div class="description">Detection of document loading state.</div>
         
 
         
@@ -53,7 +53,7 @@
 
 	
 
-	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>portrait - </li> <li>landscape - </li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedOrientation</li> </ul> </dd> 
+	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>state-uninitialized - has not started loading yet</li> <li>state-loading - is loading</li> <li>state-interactive - Has loaded enough and the user can interact with it</li> <li>state-complete - fully loaded</li> <li>state-loaded - when document is loaded (including all images)</li> <li>state-unloading - when document is unloading</li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedDocumentState - Arguments: {String} - new-state, {String} - old-state,event: both are states strings like classes but without &quot;state-&quot; prefix</li> </ul> </dd> 
 
 
 
@@ -62,8 +62,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detectOrientationjs/">detectOrientation.js</a>,
-				 <a href="/documentation/detectOrientationjs/#sunlight-1-line-1">line 1</a>
+				<a href="/documentation/documentStatejs/">documentState.js</a>,
+				 <a href="/documentation/documentStatejs/#sunlight-1-line-1">line 1</a>
 			</li>
 		</ul>
 	</dd>
@@ -100,7 +100,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.isLandscape"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isLandscape()</h4>
+    <h4 class="name" id=".JS.Responsive.isDocumentLoaded"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDocumentLoaded()</h4>
     
     
 </dt>
@@ -108,7 +108,7 @@
 
     
     <div class="description">
-        Returns if current device has display landscape oriented (width is larger than height).
+        Returns if document is in state that everything is loaded.
     </div>
     
 
@@ -154,8 +154,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detectOrientationjs/">detectOrientation.js</a>,
-				 <a href="/documentation/detectOrientationjs/#sunlight-1-line-19">line 19</a>
+				<a href="/documentation/documentStatejs/">documentState.js</a>,
+				 <a href="/documentation/documentStatejs/#sunlight-1-line-28">line 28</a>
 			</li>
 		</ul>
 	</dd>
@@ -208,7 +208,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.isPortrait"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isPortrait()</h4>
+    <h4 class="name" id=".JS.Responsive.isDocumentUnloading"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDocumentUnloading()</h4>
     
     
 </dt>
@@ -216,7 +216,7 @@
 
     
     <div class="description">
-        Returns if current device has display portrait oriented (height is larger than width).
+        Returns true if user is leaving current page.
     </div>
     
 
@@ -262,8 +262,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detectOrientationjs/">detectOrientation.js</a>,
-				 <a href="/documentation/detectOrientationjs/#sunlight-1-line-30">line 30</a>
+				<a href="/documentation/documentStatejs/">documentState.js</a>,
+				 <a href="/documentation/documentStatejs/#sunlight-1-line-40">line 40</a>
 			</li>
 		</ul>
 	</dd>

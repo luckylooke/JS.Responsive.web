@@ -24,6 +24,8 @@
     <div class="container-overview">
     
         
+            <div class="description">Detection of document loading state.</div>
+        
 
         
 <dl class="details">
@@ -51,7 +53,7 @@
 
 	
 
-	
+	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>day-time-$$h - day time class where $$ is actual hour (non zero-padded)</li> <li>day-period-$periodName$ - day pariod class where name can be one of morning, afternoon, evening or night</li> <li>year-period-$periodName$ - year pariod class where name can be one of spring, summer, autumn or winter</li> <li>$timeBreakpointName$ - where name is custom name provided via setTimeBreakPoints</li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedDayTime - Arguments: {String} dayTimeCurrent, {String} lastDayTime, both have same syntax as classes (day-time-$$h)</li> <li>changedDayPeriod - Arguments: {String} dayTimePeriod, {String} lastDayTimePeriod, both have same syntax as classes (day-period-$periodName$)</li> <li>changedYearPeriod - Arguments: {String} yearPeriod, {String} lastYearPeriod, both have same syntax as classes (year-period-$periodName$)</li> <li>timeBreakpointReached - Arguments: {String} timeBreakPointReached - name provided via setTimeBreakPoints,event: {String|Undefined} timeBreakPointPrevious - if any</li> </ul> </dd> 
 
 
 
@@ -98,7 +100,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addHorizontalBreakPoint()</h4>
+    <h4 class="name" id=".JS.Responsive.getDayTimePeriod"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDayTimePeriod()</h4>
     
     
 </dt>
@@ -107,118 +109,6 @@
     
     <div class="description">
         Returns actual day time period. One of morning, afternoon, evening or night.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/timeBasedjs/">timeBased.js</a>,
-				 <a href="/documentation/timeBasedjs/#sunlight-1-line-53">line 53</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    Name of actual day time period.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addHorizontalBreakPoint()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Returns actual year period. One of Spring, Summer, Autumn or Winter.
     </div>
     
 
@@ -322,7 +212,119 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addHorizontalBreakPoint(breakpoints)</h4>
+    <h4 class="name" id=".JS.Responsive.getYearPeriod"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getYearPeriod()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Returns actual year period. One of Spring, Summer, Autumn or Winter.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/timeBasedjs/">timeBased.js</a>,
+				 <a href="/documentation/timeBasedjs/#sunlight-1-line-75">line 75</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Name of actual day time period.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.setTimeBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.setTimeBreakPoints(breakpoints)</h4>
     
     
 </dt>
@@ -538,7 +540,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/timeBasedjs/">timeBased.js</a>,
-				 <a href="/documentation/timeBasedjs/#sunlight-1-line-79">line 79</a>
+				 <a href="/documentation/timeBasedjs/#sunlight-1-line-90">line 90</a>
 			</li>
 		</ul>
 	</dd>
@@ -610,7 +612,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Nov 20, 2016 9:55 AM
+		on Dec 22, 2016 10:17 PM
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
