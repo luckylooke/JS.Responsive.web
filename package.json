@@ -14,8 +14,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "node test.js",
+    "update_hard": "git reset --hard && cd JS.Responsive && git reset --hard && cd .. && npm run update",
     "update": "git pull && cd JS.Responsive && git pull && npm i && cd node_modules/jsdoc-webpack-plugin && npm i --production && cd ../.. && npm run build && cd .. && node jsdocProcessUtil",
-    "install": "git submodule init && git submodule update && npm run update"
+    "install": "git submodule init && git submodule update && npm run update_hard"
   },
   "repository": {
     "type": "git",
