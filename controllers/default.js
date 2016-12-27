@@ -22,7 +22,8 @@ function docCtrl(route) {
 	console.log('doc_route: ', route || 'indexDocs');
 	var self = this;
 
-	self.repository.colBreaks = ['detectAgent', 'detectDeviceOrientation']; // columnt breaks
+	self.repository.colBreaks = ['detectAgent', 'documentState']; // column breaks
+	self.repository.colContentBreaks = ['documentState']; // column breaks
 	self.repository.modules = featuresList;
 	self.view('documentation', {
 		dynaview: route ? 'docs/' + route : 'indexDocs'
