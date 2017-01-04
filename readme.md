@@ -12,6 +12,7 @@ build on [total.js](http://www.totaljs.com/)
 - go to cloned project directory `cd JS.Responsive.web`
 - install dependencies `$ npm install`
 - run server in dev mode `$ node debug.js`
+- run server in prod mode `$ node release.js`
 - open link mentioned in terminal
 
 # Updating project
