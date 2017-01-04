@@ -2175,3 +2175,10 @@ pre {
 .hidden {
 	display: none;
 }
+
+/* Codepen emmbeded */
+.cp_embed_wrapper {
+	box-shadow: 0 0.3em 1em 0 #888;
+	margin-bottom: 4em;
+	line-height: 0;
+}
