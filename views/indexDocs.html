@@ -15,12 +15,12 @@
 
                 <div class="col-12 text-center">
                     <h1 class="wow fadeIn" data-wow-delay=".25s">@{title}</h1>
-                    <p class="max-75 wow bounceInUp" data-wow-delay=".5s">
-                        Enjoy JS.Responsive documentation! It is generated from source code with <a href="http://usejsdoc.org/" class="link" target="_blank">jsdoc</a>.
+                    <p class="max-75 wow bounceInUp" data-wow-delay=".5s">@(
+                        Enjoy JS.Responsive documentation! It is generated from source code with <a href="http://usejsdoc.org/" class="link" target="_blank">jsdoc)</a>.
                     </p>
                     <p class="max-75 wow bounceInUp" data-wow-delay=".5s">
-                        <b>Notice!</b> Not all contents suits your version and type of your build, please ensure the module is included in your build, before rising an issue.
-                    </p>
+                        <b>@(Notice!</b> Not all contents suits your version and type of your build, please ensure the module is included in your build, before rising an issue.
+                    )</p>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
 
                 <div class="row">
                     <div class="col-12 wow bounceInUp" data-wow-delay="1s">
-                        <h2>Contents</h2>
+                        <h2>@(Contents)</h2>
                     </div>
                 </div>
 
@@ -43,8 +43,8 @@
                     <div class="col-6 wow bounceInUp" data-wow-delay="1s">
 
                         <div class="part">
-                            <h2 class="h3 line small"><a href="/documentation/installation">Installation</a></h2>
-                            <p>How to get the library and choosing the right installation for your project.</p>
+                            <h2 class="h3 line small"><a href="/documentation/installation">@(Installation)</a></h2>
+                            <p>@(How to get the library and choosing the right installation for your project.)</p>
                         </div>
 
                         @{foreach module in repository.modules}
@@ -63,7 +63,7 @@
 
                         <div class="part">
                             <h2 class="h3 line small"><a href="#js-api">Javascript API</a></h2>
-                            <p>Quick access list of javascript API methods</p>
+                            <p>@(Quick access list of javascript API methods)</p>
                         </div>
 
                     </div><!-- col-6 -->
@@ -75,7 +75,7 @@
             <div class="container">
 
                 <div class="row">
-                    <h2 id="js-api">Javascript API</h2>
+                    <h2 id="js-api">@(Javascript API)</h2>
                 </div>
 
                 <div class="row">
@@ -94,7 +94,7 @@
                                     <li><a href="/documentation/JS.Responsive/#.is" class="link">is()</a></li>
                                     <li><a href="/documentation/JS.Responsive/#.features" class="link">features</a></li>
                                 </ul>
-                            </div>
+                            </div>@(
 
                             @{foreach module in repository.modules}
 
