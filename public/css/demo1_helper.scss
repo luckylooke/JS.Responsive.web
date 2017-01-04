@@ -1,6 +1,57 @@
+
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background: linear-gradient(45deg, #b3d5f4 35%, #5ca4e7);
+  font-size: 0.8em;
+}
+
+.white {
+  color: white;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+}
+
+.black {
+  color: black;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+}
+
+li {
+  margin-top: 0.75em;
+}
+
+body {
+  margin: 1em;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0.55em;
+  margin-right: 20px;
+  float: left; 
+  color: rgba(0,0,0,0.45);
+}
+
+p {
+  clear: both;
+}
+
+.notice {
+  background-color: rgba(255,255,255,0.25);
+  padding: 0.3em 0.2em;
+}
+
 $path: 'http://jsresponsive.wezeo.com/img/';
 
 #logo {
+  float: right;
+  width: 190px;
   height: 40px;
   background-repeat: no-repeat;
   background-size: contain;
