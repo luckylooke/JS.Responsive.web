@@ -1,5 +1,5 @@
 // Total.js translation file
-// Created: 2017-01-04 17:25
+// Created: 2017-01-05 11:05
 
 // tempLocalizationHelper.js
 T-264039607      : ' + item.data + '
@@ -37,14 +37,8 @@ T-1388885998     : Download complete ZIP
 
 // views/index.html
 T-1383443348     : The new standard for <span class="color-blue">responsive
-T-2134438158     : JS.Responsive is perfect tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
+T-818980096      : JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
 T772480131       : Download now!
-T-1897198298     : Designed for
-T-246259325      : everyone, everywhere.
-T-777068067      : See the Pen
-T872399805       : basic hi-res DEMO
-T39645197        : by wezeo
-T3551            : on
 T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
 T372290142       : View demo
 T-740933190      : You can use just CSS selector based API but Javascript event based API for all features also.
