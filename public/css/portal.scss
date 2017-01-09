@@ -477,6 +477,10 @@ h3, .h3 {
 			margin: (100/$font-size)+rem 0 (80/$font-size)+rem;
 		}
 
+		.features & {
+			margin-top: (20/$font-size)+rem;
+		}
+
 		.part & {
 			margin-top: 0;
 		}
@@ -605,6 +609,11 @@ a {
 		color: #fff;
 		background-color: darken($color-blue, 15);
 		box-shadow: 0 0 46px 0 rgba(0, 132, 255, 0.65);
+	}
+
+	&.small {
+		padding: (13/$font-size)+rem (40/$font-size)+rem;
+		font-size: (15/$font-size)+rem;
 	}
 
 	.download-stable-version & {
@@ -1173,8 +1182,9 @@ section {
 					}
 				}
 
-				a {
-					opacity: 1;
+				.button {
+					background-color: darken($color-blue, 15);
+					box-shadow: 0 0 46px 0 rgba(0, 132, 255, 0.65);
 				}
 			}
 
@@ -1186,21 +1196,12 @@ section {
 					padding: 0 (50/$font-size)+rem;
 				}
 			}
-
-			a {
-				opacity: 0;
-				transition: opacity $animation-time ease-in-out;
-
-				html.small-less & {
-					opacity: 1;
-				}
-			}
 		}
 	}
 
 	.icon {
-		height: (50/$font-size)+rem;
-		line-height: (50/$font-size)+rem;
+		height: (55/$font-size)+rem;
+		line-height: (55/$font-size)+rem;
 		display: inline-block;
 
 		html.small-less & {
@@ -1208,11 +1209,8 @@ section {
 		}
 
 		img {
-			max-height: 100%;
-
-			html.small-less & {
-				max-height: none;
-			}
+			max-width: 100%;
+			height: auto;
 		}
 	}
 }
@@ -1330,6 +1328,10 @@ section {
 				}
 			}
 		}
+	}
+
+	#donwload-links {
+		margin-bottom: 0.4rem;
 	}
 }
 
@@ -2178,7 +2180,7 @@ pre {
 
 /* Codepen emmbeded */
 .cp_embed_wrapper {
-	box-shadow: 0 0.3em 1em 0 #888;
+	box-shadow: 0 0.25em 0.8em 0 rgba(#888, .6);
 	margin-bottom: 4em;
 	line-height: 0;
 }
