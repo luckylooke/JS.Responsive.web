@@ -614,6 +614,11 @@ a {
 	&.small {
 		padding: (13/$font-size)+rem (40/$font-size)+rem;
 		font-size: (15/$font-size)+rem;
+
+		html.small-less & {
+			padding: (50/$font-size)+rem (100/$font-size)+rem;
+			font-size: (60/$font-size)+rem;
+		}
 	}
 
 	.download-stable-version & {
@@ -1194,6 +1199,13 @@ section {
 
 				html.small-less & {
 					padding: 0 (50/$font-size)+rem;
+				}
+
+				.button {
+					html.small-less & {
+						margin: (60/$font-size)+rem auto (20/$font-size)+rem;
+						width: 80%;
+					}
 				}
 			}
 		}
