@@ -531,6 +531,10 @@ p {
 		font-family: $roboto-regular;
 	}
 
+	&.light {
+		font-family: $roboto-light;
+	}
+
 	.page-title-box & {
 		font-size: (20/$font-size)+rem;
 		line-height: (32/$font-size)+rem;
@@ -1409,7 +1413,8 @@ section {
 
 .documentation-block {
 
-	.col-4 {
+	.col-4,
+	.col-6 {
 
 		html.small-less & {
 			width: 100%;
@@ -1419,16 +1424,8 @@ section {
 			margin-bottom: (40/$font-size)+rem;
 			text-align: left;
 
-			h2 a {
-				color: $color-headline;
-
-				&:hover {
-					color: $color-blue;
-				}
-			}
-
 			ul {
-				margin: 0;
+				margin: 0 0 (20/$font-size)+rem;
 				padding: 0;
 				list-style: none;
 
