@@ -2187,6 +2187,15 @@ pre {
 	display: none;
 }
 
+#scene {
+	.modal-open & {
+		position: static !important; // rewrite inline style
+		transform: none !important; // rewrite inline style
+		transform-style: flat !important; // rewrite inline style
+		backface-visibility: visible !important; // rewrite inline style
+	}
+}
+
 /* Codepen emmbeded */
 .cp_embed_wrapper {
 	box-shadow: 0 0.25em 0.8em 0 rgba(#888, .6);
