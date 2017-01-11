@@ -14,7 +14,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
         .forEach(function(file) {
             fs.readFile(__dirname + '/JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
                 opened++;
-                console.log('file contents: ', file, !!contents);
+                console.log('file has content: ', file, !!contents);
                 file = file.replace('.js', 'js');
                 if(!contents)
                     return;
@@ -23,35 +23,15 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     // console.log('match: ', match, 'p1: ', p1, 'p2: ', p2, p2.indexOf('.js'));
                     return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + (p4 || '') + '"';
                 });
-                contents = contents.replace("col-md-3", "");
-                contents = contents.replace("col-md-8", "col-md-12");
 
                 var $ = cheerio.load(contents);
-                $('script').remove();
-                $('#searchResults').remove();
-                var toc = $('#toc-content');
-                var tocHtml = toc.html();
-                toc
-                    .removeClass('container')
-                    .html('')
-                    .append('<div class="container"></div>>')
-                    .find('.container')
-                        .html(tocHtml);
-                var h1 = $('h1');
-                if(h1.length){
-                    toc.before(h1);
-                }
-                var h2 = $('h2');
-                if(h2.length){
-                    toc.before(h2);
-                    $('header').remove();
-                }
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
-                    fs.readFile(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
+                    fs.readFileSync(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
                         console.log('file contents: ', 'docSubMenu.html', !!contents);
                         var $ = cheerio.load(contents);
                         $('#modules-list').html(listOfModules);
+                        $('.navbar').remove();
                         contents = $.html();
                         fs.writeFile(__dirname + '/views/docSubMenu.html', contents, function(err){
                             if(err) console.error(err);
@@ -59,7 +39,6 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                         });
                     });
                 }
-                $('.navbar').remove();
 
                 contents = $('body').html();
 
@@ -85,56 +64,6 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 function afterAllCreated(){
     "use strict";
     // temp fixes:
-    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', 'utf-8', function(err, contents) {
-        if (err) console.error(err);
-        if(contents.search(';var timeout;') != -1)
-            return;
-        contents = contents.replace('var timeout;', ';var timeout;');
-        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/toc.js', contents, function(err){
-            "use strict";
-            if(err) console.error(err);
-
-            console.log('file fix done: ', './JS.Responsive/docs/scripts/toc.js');
-        });
-    });
-    fs.readFile(__dirname + '/views/docs/index.html', 'utf-8', function(err, contents) {
-        if (err) console.error(err);
-        if(contents.search('<div id="main"> @{view("indexDocs")}') != -1)
-            return;
-        contents = contents.replace('<div id="main">', '<div id="main"> @{view("indexDocs")}');
-        fs.writeFile(__dirname + '/views/docs/index.html', contents, function(err){
-            "use strict";
-            if(err) console.error(err);
-
-            console.log('file fix done: ', '/views/docs/index.html');
-        });
-    });
-    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', 'utf-8', function(err, contents) {
-        if (err) console.error(err);
-        if(contents.search(';resultsList.appendChild') != -1)
-            return;
-        contents = contents.replace('resultsList.appendChild', ';resultsList.appendChild');
-        contents = contents.replace('link.href = result.id;', 'link.href = "/documentation/" + result.id.replace(".html","").replace(".js","js").replace(".list","-list");');
-        contents = contents.replace('quickSearch.attr("src", "quicksearch.html");', 'quickSearch.attr("src", "/documentation/quicksearch.html");');
-        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/fulltext-search-ui.js', contents, function(err){
-            "use strict";
-            if(err) console.error(err);
-
-            console.log('file fix done: ', './JS.Responsive/docs/scripts/fulltext-search-ui.js');
-        });
-    });
-    fs.readFile(__dirname + '/JS.Responsive/docs/scripts/sunlight.js', 'utf-8', function(err, contents) {
-        if (err) console.error(err);
-        if(contents.search('if(languageData.customTokens.length)') != -1)
-            return;
-        contents = contents.replace('for (tokenName in languageData.customTokens) {', 'if(languageData.customTokens.length) for (tokenName in languageData.customTokens) {');
-        fs.writeFile(__dirname + '/JS.Responsive/docs/scripts/sunlight.js', contents, function(err){
-            "use strict";
-            if(err) console.error(err);
-
-            console.log('file fix done: ', './JS.Responsive/docs/scripts/sunlight.js');
-        });
-    });
     fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
         if (err) console.error(err);
         if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)

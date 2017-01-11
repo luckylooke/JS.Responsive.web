@@ -1,33 +1,89 @@
 
 
-
-
-
-<h1 class="page-title">Module: timeBased</h1><div class="" id="toc-content"><div class="container">
-<div class="row">
-
-	
-	<div class="col-md-12">
-	
-		<div id="main">
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
 			
+			<li class="dropdown">
+				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-	
-<section>
+</div>
+</div>
 
-<header>
+
     
-</header>
-
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Time related classes and custom time breakpoints from document loaded event.</div>
-        
+        <h1 class="page-title">Module: timeBased</h1>
 
         
+
+
+        <div id="toc-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="main">
+                            @{view(&quot;indexDocs&quot;)}
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    
+                    <div class="">
+                        <div id="toc" class=" hidden-xs hidden-sm hidden-md"></div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <section>
+
+
+        <article>
+            <div class="container-overview">
+            
+                
+                    <div class="description">@(Time related classes and custom time breakpoints from document loaded event.)</div>
+                
+
+                
 <dl class="details">
     
 
@@ -53,12 +109,12 @@
 
 	
 
-	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>day-time-$$h - day time class where $$ is actual hour (non zero-padded)</li> <li>day-period-$periodName$ - day pariod class where name can be one of morning, afternoon, evening or night</li> <li>year-period-$periodName$ - year pariod class where name can be one of spring, summer, autumn or winter</li> <li>$timeBreakpointName$ - where name is custom name provided via setTimeBreakPoints</li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedDayTime - Arguments: {String} dayTimeCurrent, {String} lastDayTime, both have same syntax as classes (day-time-$$h)</li> <li>changedDayPeriod - Arguments: {String} dayTimePeriod, {String} lastDayTimePeriod, both have same syntax as classes (day-period-$periodName$)</li> <li>changedYearPeriod - Arguments: {String} yearPeriod, {String} lastYearPeriod, both have same syntax as classes (year-period-$periodName$)</li> <li>timeBreakpointReached - Arguments: {String} timeBreakPointReached - name provided via setTimeBreakPoints,event: {String|Undefined} timeBreakPointPrevious - if any</li> </ul> </dd> 
+	
 
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -77,27 +133,27 @@
 </dl>
 
 
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
+                
             
+            </div>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <h3 class="subsection-title">@(Methods)</h3>
+
+                <dl>
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getDayTimePeriod"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDayTimePeriod()</h4>
@@ -107,9 +163,9 @@
 <dd>
 
     
-    <div class="description">
-        Returns actual day time period. One of morning, afternoon, evening or night.
-    </div>
+        <div class="description">
+            @(Returns actual day time period. One of morning, afternoon, evening or night.)
+        </div>
     
 
     
@@ -126,7 +182,7 @@
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -157,7 +213,7 @@
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -187,7 +243,7 @@
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -215,8 +271,8 @@
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getYearPeriod"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getYearPeriod()</h4>
@@ -226,9 +282,9 @@
 <dd>
 
     
-    <div class="description">
-        Returns actual year period. One of Spring, Summer, Autumn or Winter.
-    </div>
+        <div class="description">
+            @(Returns actual year period. One of Spring, Summer, Autumn or Winter.)
+        </div>
     
 
     
@@ -245,7 +301,7 @@
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -276,7 +332,7 @@
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -306,7 +362,7 @@
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -334,8 +390,8 @@
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.setTimeBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.setTimeBreakPoints(breakpoints)</h4>
@@ -345,9 +401,9 @@
 <dd>
 
     
-    <div class="description">
-        Sets time brakepoints with classnames and start time value.
-    </div>
+        <div class="description">
+            @(Sets time brakepoints with classnames and start time value.)
+        </div>
     
 
     
@@ -356,25 +412,25 @@
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
-        <th>Argument</th>
+        <th>@(Argument)</th>
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -408,7 +464,7 @@
 
             
 
-            <td class="description last">The employees who are responsible for the project.</td>
+            <td class="description last">@(The employees who are responsible for the project.)</td>
         </tr>
 
     
@@ -440,7 +496,7 @@
 
             
 
-            <td class="description last">The name of a breakpoint, this name will be used as className!</td>
+            <td class="description last">@(The name of a breakpoint, this name will be used as className!)</td>
         </tr>
 
     
@@ -472,7 +528,7 @@
 
             
 
-            <td class="description last">The time after document load in [ms], breakpoint name will be applied.</td>
+            <td class="description last">@(The time after document load in [ms], breakpoint name will be applied.)</td>
         </tr>
 
     
@@ -509,7 +565,7 @@
 
             
 
-            <td class="description last">The time in [ms], breakpoint name will be removed (optional). Or TRUE value to prevent replacing with next breakpoint.</td>
+            <td class="description last">@(The time in [ms], breakpoint name will be removed (optional). Or TRUE value to prevent replacing with next breakpoint.)</td>
         </tr>
 
     
@@ -525,7 +581,7 @@
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -556,7 +612,7 @@
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -588,7 +644,7 @@
     
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">JS.Responsive.setTimeBreakPoints( config )</pre>
 
@@ -596,35 +652,18 @@
     
 </dd>
 
-        </dl>
-    
+                </dl>
+            
+
+            
+
+            
+        </article>
+
+        </section>
 
     
 
-    
-</article>
-
-</section>
-
-
-
-
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
-</div></div>
-
-
-    
 
 
 <footer>
@@ -633,31 +672,9 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Jan 4, 2017 3:01 PM
+		on Jan 11, 2017 10:50 PM
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
 </footer>
-
-
-
-
-    
-
-
-
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-
-
-<!--Google Analytics-->
-
-
-
-    
-
 

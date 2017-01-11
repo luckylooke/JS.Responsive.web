@@ -1,33 +1,89 @@
 
 
-
-
-
-<h1 class="page-title">Module: breakpoints</h1><div class="" id="toc-content"><div class="container">
-<div class="row">
-
-	
-	<div class="col-md-12">
-	
-		<div id="main">
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
 			
+			<li class="dropdown">
+				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-	
-<section>
+</div>
+</div>
 
-<header>
+
     
-</header>
-
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.</div>
-        
+        <h1 class="page-title">Module: breakpoints</h1>
 
         
+
+
+        <div id="toc-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="main">
+                            @{view(&quot;indexDocs&quot;)}
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    
+                    <div class="">
+                        <div id="toc" class=" hidden-xs hidden-sm hidden-md"></div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <section>
+
+
+        <article>
+            <div class="container-overview">
+            
+                
+                    <div class="description">@(Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.)</div>
+                
+
+                
 <dl class="details">
     
 
@@ -53,12 +109,12 @@
 
 	
 
-	 <dt class="tag-default method-doc-label method-doc-details-label">Classes applied to &lt;HTML&gt;:</dt> <dd class="tag-default"> <ul class="dummy">  <li>$breakpointName$-more - applied when display size is higher or equal to provided size for the name (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> <li>$breakpointName$-less - applied when display size is smaller than provided size for the name (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> <li>$breakpointName$ - applied when display size is higher or equal to provided size and less then next breakpoint size if any (<a href="http://codepen.io/WEZEO/pen/PbZMmq">DEMO</a>)</li> </ul> </dd>  <dt class="tag-default method-doc-label method-doc-details-label">Events:</dt> <dd class="tag-default"> <ul class="dummy">  <li>changedBreakPointHorizontal - fires when new horizontal breakpoint is reached</li> <li>changedBreakPointVertical - fires when new vertical breakpoint is reached</li> </ul> </dd> 
+	
 
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -77,9 +133,9 @@
 </dl>
 
 
-        
-            <h3>Example</h3>
-            
+                
+                    <h3>@(Example)</h3>
+                    
         <p class="code-caption">Example usage of module</p>
     
     <pre class="sunlight-highlight-javascript">// JS:
@@ -110,27 +166,27 @@ JS.Responsive
 }</pre>
 
 
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
+                
             
+            </div>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <h3 class="subsection-title">@(Methods)</h3>
+
+                <dl>
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addHorizontalBreakPoint(name, width)</h4>
@@ -140,9 +196,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Sets a new horizontal break point for responsive styling.
-    </div>
+        <div class="description">
+            @(Sets a new horizontal break point for responsive styling.)
+        </div>
     
 
     
@@ -151,23 +207,23 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -193,7 +249,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/</td>
+            <td class="description last">@(Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/)</td>
         </tr>
 
     
@@ -217,7 +273,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Width size in pixels.</td>
+            <td class="description last">@(Width size in pixels.)</td>
         </tr>
 
     
@@ -233,7 +289,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -264,7 +320,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -294,7 +350,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -320,7 +376,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">JS.Responsive.addHorizontalBreakPoint(&apos;medium&apos;, 960);</pre>
 
@@ -328,8 +384,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.addVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addVerticalBreakPoint(name, height)</h4>
@@ -339,9 +395,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Sets a new vertical break point for responsive styling.
-    </div>
+        <div class="description">
+            @(Sets a new vertical break point for responsive styling.)
+        </div>
     
 
     
@@ -350,23 +406,23 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -392,7 +448,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/</td>
+            <td class="description last">@(Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/)</td>
         </tr>
 
     
@@ -416,7 +472,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Height size in pixels.</td>
+            <td class="description last">@(Height size in pixels.)</td>
         </tr>
 
     
@@ -432,7 +488,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -463,7 +519,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -493,7 +549,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -519,7 +575,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">JS.Responsive.addVerticalBreakPoint(&apos;vertical-medium&apos;, 960);</pre>
 
@@ -527,8 +583,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.disableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableHorizontalBreakPoints( [_keepActualClasses])</h4>
@@ -538,9 +594,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Disable horizontal break points checking and remove all class names from HTML element.
-    </div>
+        <div class="description">
+            @(Disable horizontal break points checking and remove all class names from HTML element.)
+        </div>
     
 
     
@@ -549,25 +605,25 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
-        <th>Argument</th>
+        <th>@(Argument)</th>
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -603,7 +659,7 @@ JS.Responsive
 
             
 
-            <td class="description last">If true, keeps (freezes) actual class names in HTML element.</td>
+            <td class="description last">@(If true, keeps (freezes) actual class names in HTML element.)</td>
         </tr>
 
     
@@ -619,7 +675,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -650,7 +706,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -680,7 +736,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -708,8 +764,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.disableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableVerticalBreakPoints( [_keepActualClasses])</h4>
@@ -719,9 +775,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Disable vertical break points checking and remove all class names from HTML element.
-    </div>
+        <div class="description">
+            @(Disable vertical break points checking and remove all class names from HTML element.)
+        </div>
     
 
     
@@ -730,25 +786,25 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
-        <th>Argument</th>
+        <th>@(Argument)</th>
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -784,7 +840,7 @@ JS.Responsive
 
             
 
-            <td class="description last">If true, keeps (freezes) actual class names in HTML element.</td>
+            <td class="description last">@(If true, keeps (freezes) actual class names in HTML element.)</td>
         </tr>
 
     
@@ -800,7 +856,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -831,7 +887,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -861,7 +917,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -889,8 +945,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.enableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableHorizontalBreakPoints()</h4>
@@ -900,9 +956,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Enable horizontal break points checking (if was disabled before).
-    </div>
+        <div class="description">
+            @(Enable horizontal break points checking (if was disabled before).)
+        </div>
     
 
     
@@ -919,7 +975,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -950,7 +1006,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -980,7 +1036,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -1008,8 +1064,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.enableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableVerticalBreakPoints()</h4>
@@ -1019,9 +1075,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Enable vertical break points checking (if was disabled before).
-    </div>
+        <div class="description">
+            @(Enable vertical break points checking (if was disabled before).)
+        </div>
     
 
     
@@ -1038,7 +1094,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1069,7 +1125,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1099,7 +1155,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -1127,8 +1183,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getActualHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getActualHorizontalBreakPoint()</h4>
@@ -1138,9 +1194,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns name of actual horizontal break point.
-    </div>
+        <div class="description">
+            @(Returns name of actual horizontal break point.)
+        </div>
     
 
     
@@ -1157,7 +1213,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1188,7 +1244,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1218,7 +1274,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -1249,8 +1305,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getActualVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getActualVerticalBreakPoint()</h4>
@@ -1260,9 +1316,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns name of actual vertical break point.
-    </div>
+        <div class="description">
+            @(Returns name of actual vertical break point.)
+        </div>
     
 
     
@@ -1279,7 +1335,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1310,7 +1366,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1340,7 +1396,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -1371,8 +1427,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getDocumentHeight"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDocumentHeight()</h4>
@@ -1382,9 +1438,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns current document height in pixels (can be smaller than window size because scrollbar reduces it).
-    </div>
+        <div class="description">
+            @(Returns current document height in pixels (can be smaller than window size because scrollbar reduces it).)
+        </div>
     
 
     
@@ -1401,7 +1457,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1432,7 +1488,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1462,7 +1518,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -1484,7 +1540,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">if (JS.Responsive.getDocumentWidth()&gt;JS.Responsive.getWindowHeight()) ...</pre>
 
@@ -1492,8 +1548,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getDocumentWidth"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDocumentWidth()</h4>
@@ -1503,9 +1559,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns current document width in pixels (can be smaller than window size because scrollbar reduces it).
-    </div>
+        <div class="description">
+            @(Returns current document width in pixels (can be smaller than window size because scrollbar reduces it).)
+        </div>
     
 
     
@@ -1522,7 +1578,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1553,7 +1609,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1583,7 +1639,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -1605,7 +1661,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">if (JS.Responsive.getDocumentWidth()&gt;JS.Responsive.getDocumentHeight()) ...</pre>
 
@@ -1613,8 +1669,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getWindowHeight"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getWindowHeight()</h4>
@@ -1624,9 +1680,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns current window height in pixels.
-    </div>
+        <div class="description">
+            @(Returns current window height in pixels.)
+        </div>
     
 
     
@@ -1643,7 +1699,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1674,7 +1730,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1704,7 +1760,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -1726,7 +1782,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">if (JS.Responsive.getWindowWidth()&gt;JS.Responsive.getWindowHeight()) ...</pre>
 
@@ -1734,8 +1790,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getWindowWidth"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getWindowWidth()</h4>
@@ -1745,9 +1801,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns current window width in pixels.
-    </div>
+        <div class="description">
+            @(Returns current window width in pixels.)
+        </div>
     
 
     
@@ -1764,7 +1820,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1795,7 +1851,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1825,7 +1881,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -1847,7 +1903,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">if (JS.Responsive.getWindowWidth()&gt;JS.Responsive.getWindowHeight()) ...</pre>
 
@@ -1855,8 +1911,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.isDisabledHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledHorizontalBreakPoints()</h4>
@@ -1866,9 +1922,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns if is horizontal break points checking disabled.
-    </div>
+        <div class="description">
+            @(Returns if is horizontal break points checking disabled.)
+        </div>
     
 
     
@@ -1885,7 +1941,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -1916,7 +1972,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -1946,7 +2002,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -1970,8 +2026,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledVerticalBreakPoints()</h4>
@@ -1981,9 +2037,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Returns if is vertical break points checking disabled.
-    </div>
+        <div class="description">
+            @(Returns if is vertical break points checking disabled.)
+        </div>
     
 
     
@@ -2000,7 +2056,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -2031,7 +2087,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -2061,7 +2117,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 
@@ -2085,8 +2141,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint(name)</h4>
@@ -2096,9 +2152,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Removes a horizontal break point for responsive styling.
-    </div>
+        <div class="description">
+            @(Removes a horizontal break point for responsive styling.)
+        </div>
     
 
     
@@ -2107,23 +2163,23 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -2149,7 +2205,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Existing name of break point.</td>
+            <td class="description last">@(Existing name of break point.)</td>
         </tr>
 
     
@@ -2165,7 +2221,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -2196,7 +2252,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -2226,7 +2282,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -2252,7 +2308,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">JS.Responsive.removeHorizontalBreakPoint(&apos;medium&apos;);</pre>
 
@@ -2260,8 +2316,8 @@ JS.Responsive
     
 </dd>
 
-        
-            
+                
+                    
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.removeVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeVerticalBreakPoint(name)</h4>
@@ -2271,9 +2327,9 @@ JS.Responsive
 <dd>
 
     
-    <div class="description">
-        Removes a vertical break point for responsive styling.
-    </div>
+        <div class="description">
+            @(Removes a vertical break point for responsive styling.)
+        </div>
     
 
     
@@ -2282,23 +2338,23 @@ JS.Responsive
 
     
     
-        <h5>Parameters:</h5>
+        <h5>@(Parameters:)</h5>
         
 
 <table class="params table table-striped">
     <thead>
     <tr>
         
-        <th>Name</th>
+        <th>@(Name)</th>
         
 
-        <th>Type</th>
+        <th>@(Type)</th>
 
         
 
         
 
-        <th class="last">Description</th>
+        <th class="last">@(Description)</th>
     </tr>
     </thead>
 
@@ -2324,7 +2380,7 @@ JS.Responsive
 
             
 
-            <td class="description last">Existing name of break point.</td>
+            <td class="description last">@(Existing name of break point.)</td>
         </tr>
 
     
@@ -2340,7 +2396,7 @@ JS.Responsive
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">Since:</dt>
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
 			<li>3.0.0</li>
@@ -2371,7 +2427,7 @@ JS.Responsive
 
 
 	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
@@ -2401,7 +2457,7 @@ JS.Responsive
     
 
     
-    <h5>Returns:</h5>
+    <h5>@(Returns:)</h5>
     
             
 <div class="param-desc">
@@ -2427,7 +2483,7 @@ JS.Responsive
         
 
     
-        <h5>Example</h5>
+        <h5>@(Example)</h5>
         
     <pre class="sunlight-highlight-javascript">JS.Responsive.removeVerticalBreakPoint(&apos;vertical-medium&apos;);</pre>
 
@@ -2435,35 +2491,18 @@ JS.Responsive
     
 </dd>
 
-        </dl>
-    
+                </dl>
+            
+
+            
+
+            
+        </article>
+
+        </section>
 
     
 
-    
-</article>
-
-</section>
-
-
-
-
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
-</div></div>
-
-
-    
 
 
 <footer>
@@ -2472,31 +2511,9 @@ JS.Responsive
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Jan 4, 2017 3:01 PM
+		on Jan 11, 2017 10:50 PM
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
 </footer>
-
-
-
-
-    
-
-
-
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-
-
-<!--Google Analytics-->
-
-
-
-    
-
 
