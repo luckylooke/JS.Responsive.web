@@ -865,6 +865,10 @@ header {
 				display: inline-block;
 				margin: 0 -1px;
 
+				&.active {
+					box-shadow: none;
+				}
+
 				html.small-less & {
 					display: block;
 					margin: (20/$font-size)+rem;
@@ -877,6 +881,32 @@ header {
 					display: inline-block;
 					transition: all $animation-time ease-in-out;
 					border-radius: (23/$font-size)+rem;
+					vertical-align: middle;
+
+					&.flag {
+						$size: 24px;
+						//padding: 0;
+						//width: $size;
+						//height: $size;
+						background-size: $size $size;
+						background-repeat: no-repeat;
+						background-position: center center;
+						overflow: hidden;
+						text-indent: -1000px;
+						border-radius: 0;
+
+						html.small-less & {
+							padding: (40/$font-size)+rem (80/$font-size)+rem;
+						}
+
+						&.flag-sk {
+							background-image: url('#{$image-path}/flag-sk.png');
+						}
+
+						&.flag-en {
+							background-image: url('#{$image-path}/flag-en.png');
+						}
+					}
 
 					html.small-less & {
 						font-size: (60/$font-size)+rem;
@@ -2225,6 +2255,31 @@ pre {
 		transform: none !important; // rewrite inline style
 		transform-style: flat !important; // rewrite inline style
 		backface-visibility: visible !important; // rewrite inline style
+	}
+}
+
+.close {
+	font-size: 27px;
+	color: $color-dark-blue;
+	opacity: .8;
+
+	.modal-header & {
+		margin: 0;
+	}
+}
+
+.modal {
+	.modal-header {
+		.modal-title {
+			font-family: $roboto-medium;
+			font-size: (20/$font-size)+rem;
+			color: $color-dark-blue;
+
+			html.small-less & {
+				margin: 0;
+				font-size: (60/$font-size)+rem;
+			}
+		}
 	}
 }
 
