@@ -29,6 +29,9 @@ function customRouter() {
 
     console.log('Routing path: ', path);
 
+    if(path.slice(-1) !== '/')
+    	path += '/';
+
 	setLanguage(ctrl, firstIsLang ? pathParts[0] : '', path, firstIsLang);
 
 	if(firstIsLang){
