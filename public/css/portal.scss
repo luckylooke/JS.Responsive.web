@@ -114,6 +114,24 @@ img {
 // --------------------------------------
 // GRID ---------------------------------
 // --------------------------------------
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: -(95/$font-size)+rem;
+
+	html.small-less & {
+		margin-bottom: -(276/$font-size)+rem;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		height: (95/$font-size)+rem;
+
+		html.small-less & {
+			height: (276/$font-size)+rem;
+		}
+	}
+}
 
 .wrap {
 	max-width: (1320/$font-size)+rem;
@@ -974,12 +992,14 @@ footer {
 	border-top: 2px solid $color-light-blue;
 	background-color: #fff;
 	padding: (35/$font-size)+rem 0;
+	height: (95/$font-size)+rem;
 	font-size: (14/$font-size)+rem;
 	position: relative;
 
 	html.small-less & {
 		font-size: (44/$font-size)+rem;
 		line-height: 130%;
+		height: (276/$font-size)+rem;
 	}
 
 	&:before {
@@ -1033,6 +1053,10 @@ section {
 
 	&.blue {
 		background-color: $color-bg-blue;
+	}
+
+	&.error-block {
+		overflow: visible;
 	}
 
 	&.block {
@@ -2040,6 +2064,14 @@ section.download-stable-version {
 
 	html.small-less & {
 		display: none;
+	}
+
+	html.lang-sk & {
+		height: (262/$font-size)+rem;
+
+		html.medium-less & {
+			height: (88/$font-size)+rem;
+		}
 	}
 
 	&:hover {

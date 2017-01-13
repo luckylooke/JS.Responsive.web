@@ -37,45 +37,49 @@
 
 	<!--<div data-component="cookie" class="hidden">This site uses cookies for visitor statistics. By continuing to browse the site you are agreeing to our use of cookies.</div>-->
 
-	<header>
-		<div class="wrap">
+	<div class="page-wrap">
 
-			<a id="github-ribbon" class="wow fadeIn" data-wow-delay=".4s" href="https://github.com/seyd/JS.Responsive" target="_blank"><span>@(Fork me on <strong>GitHub</strong>)</span></a>
+		<header>
+			<div class="wrap">
 
-			<div class="container">
-				<!--<a href="javascript:void(0)" class="mainmenu-button"><i class="fa fa-navicon"></i></a>-->
-				<a class="logo wow fadeIn" data-wow-delay=".25s" href="/"><img src="/img/logo@2x.png" alt="@{config.name}" border="0" width="162" /><strong>.Responsive</strong></a>
+				<a id="github-ribbon" class="wow fadeIn" data-wow-delay=".4s" href="https://github.com/seyd/JS.Responsive" target="_blank"><span>@(Fork me on <strong>GitHub</strong>)</span></a>
 
-				<button type="button" class="navbar-toggle">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
+				<div class="container">
+					<!--<a href="javascript:void(0)" class="mainmenu-button"><i class="fa fa-navicon"></i></a>-->
+					<a class="logo wow fadeIn" data-wow-delay=".25s" href="/"><img src="/img/logo@2x.png" alt="@{config.name}" border="0" width="162" /><strong>.Responsive</strong></a>
 
-				<nav class="wow fadeIn" data-wow-delay=".25s">
-					<ul>
-						<li><a href="@{repository.slashLang}/">@(Home)</a></li>
-						<li><a href="@{repository.slashLang}/documentation/">@(Documentation)</a></li>
-						<li><a href="@{repository.slashLang}/download/">@(Download)</a></li>
-						<li><a href="@{repository.slashLang}/contact/">@(Contact)</a></li>
-						<li><a href="@{repository.nextLangUrl}">@{repository.nextLang}</a></li>
-					</ul>
-				</nav>
+					<button type="button" class="navbar-toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<nav class="wow fadeIn" data-wow-delay=".25s">
+						<ul>
+							<li><a href="@{repository.slashLang}/">@(Home)</a></li>
+							<li><a href="@{repository.slashLang}/documentation/">@(Documentation)</a></li>
+							<li><a href="@{repository.slashLang}/download/">@(Download)</a></li>
+							<li><a href="@{repository.slashLang}/contact/">@(Contact)</a></li>
+							<li><a href="@{repository.nextLangUrl}">@{repository.nextLang}</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
-		</div>
-	</header>
+		</header>
 
-	@{if self.repository.colBreaks}
+		@{if self.repository.colBreaks}
 		@{view('docSubMenu')}
-	@{fi}
+		@{fi}
 
-	<div id="scene" class="scene unselectable"
-		  data-friction-x="0.1"
-		  data-friction-y="0.1"
-		  data-scalar-x="25"
-		  data-scalar-y="15">
-		@{body}
+		<div id="scene" class="scene unselectable"
+			 data-friction-x="0.1"
+			 data-friction-y="0.1"
+			 data-scalar-x="25"
+			 data-scalar-y="15">
+			@{body}
+		</div>
+
 	</div>
 
 	<footer>
