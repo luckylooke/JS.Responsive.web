@@ -1,3 +1,6 @@
 [submodule "JS.Responsive"]
 	path = JS.Responsive
 	url = https://github.com/seyd/JS.Responsive
+[submodule "JS.Responsive.jsdocTmpl"]
+	path = JS.Responsive.jsdocTmpl
+	url = https://github.com/luckylooke/JS.Responsive.jsdocTmpl.git

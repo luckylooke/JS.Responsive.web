@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: breakpoints.js</h1>
 
-        
+
+<h1 class="page-title">Source: breakpoints.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -66,16 +33,16 @@
  * @emits changedBreakPointHorizontal - fires when new horizontal breakpoint is reached
  * @emits changedBreakPointVertical - fires when new vertical breakpoint is reached
  *
- * @example &lt;caption&gt;Example usage of module&lt;/caption&gt;
+ * @example <caption>Example usage of module</caption>
  *
  * // JS:
  * JS.Responsive
  *     .init()
- *     .addHorizontalBreakPoint(&apos;micro&apos;, 420)
- *     .addHorizontalBreakPoint(&apos;tiny&apos;, 478)
- *     .addHorizontalBreakPoint(&apos;small&apos;, 768)
- *     .addHorizontalBreakPoint(&apos;medium&apos;, 992)
- *     .addHorizontalBreakPoint(&apos;large&apos;, 1230);
+ *     .addHorizontalBreakPoint('micro', 420)
+ *     .addHorizontalBreakPoint('tiny', 478)
+ *     .addHorizontalBreakPoint('small', 768)
+ *     .addHorizontalBreakPoint('medium', 992)
+ *     .addHorizontalBreakPoint('large', 1230);
  *
  * // CSS:
  * #github-ribbon {
@@ -119,8 +86,8 @@ var
     isDisabledHorizontalBreakPoints = FALSE,
     isDisabledVerticalBreakPoints = FALSE,
 
-    LESS_APPENDIX = &apos;-less&apos;,
-    MORE_APPENDIX = &apos;-more&apos;;
+    LESS_APPENDIX = '-less',
+    MORE_APPENDIX = '-more';
 
 
 /**
@@ -128,7 +95,7 @@ var
  * @param {String} name - Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/
  * @param {Number} width - Width size in pixels.
  * @returns {Object} this - for chaining.
- * @example JS.Responsive.addHorizontalBreakPoint(&apos;medium&apos;, 960);
+ * @example JS.Responsive.addHorizontalBreakPoint('medium', 960);
  * @memberof module:breakpoints
  * @alias JS.Responsive.addHorizontalBreakPoint
  * @since 3.0.0
@@ -143,7 +110,7 @@ $C.addHorizontalBreakPoint = function( name, width ) {
  * Removes a horizontal break point for responsive styling.
  * @param {String} name - Existing name of break point.
  * @returns {Object} this - for chaining.
- * @example JS.Responsive.removeHorizontalBreakPoint(&apos;medium&apos;);
+ * @example JS.Responsive.removeHorizontalBreakPoint('medium');
  * @memberof module:breakpoints
  * @alias JS.Responsive.removeHorizontalBreakPoint
  * @since 3.0.0
@@ -217,7 +184,7 @@ $C.isDisabledHorizontalBreakPoints = function() {
  * @param {String} name - Unique name of given break point. Only lower case letters and comma is allowed /[a-z\-]+/
  * @param {Number} height - Height size in pixels.
  * @returns {Object} this - for chaining.
- * @example JS.Responsive.addVerticalBreakPoint(&apos;vertical-medium&apos;, 960);
+ * @example JS.Responsive.addVerticalBreakPoint('vertical-medium', 960);
  * @memberof module:breakpoints
  * @alias JS.Responsive.addVerticalBreakPoint
  * @since 3.0.0
@@ -233,7 +200,7 @@ $C.addVerticalBreakPoint = function( name, height ) {
  * Removes a vertical break point for responsive styling.
  * @param {String} name - Existing name of break point.
  * @returns {Object} this - for chaining.
- * @example JS.Responsive.removeVerticalBreakPoint(&apos;vertical-medium&apos;);
+ * @example JS.Responsive.removeVerticalBreakPoint('vertical-medium');
  * @memberof module:breakpoints
  * @alias JS.Responsive.removeVerticalBreakPoint
  * @since 3.0.0
@@ -307,7 +274,7 @@ $C.isDisabledVerticalBreakPoints = function() {
  * Returns current window width in pixels.
  * @function
  * @returns {Number}
- * @example if (JS.Responsive.getWindowWidth()&gt;JS.Responsive.getWindowHeight()) ...
+ * @example if (JS.Responsive.getWindowWidth()>JS.Responsive.getWindowHeight()) ...
  * @memberof module:breakpoints
  * @alias JS.Responsive.getWindowWidth
  * @since 3.0.0
@@ -320,7 +287,7 @@ $C.getWindowWidth = getWindowWidth;
  * Returns current window height in pixels.
  * @function
  * @returns {Number}
- * @example if (JS.Responsive.getWindowWidth()&gt;JS.Responsive.getWindowHeight()) ...
+ * @example if (JS.Responsive.getWindowWidth()>JS.Responsive.getWindowHeight()) ...
  * @memberof module:breakpoints
  * @alias JS.Responsive.getWindowHeight
  * @since 3.0.0
@@ -332,7 +299,7 @@ $C.getWindowHeight = getWindowHeight;
  * Returns current document width in pixels (can be smaller than window size because scrollbar reduces it).
  * @function
  * @returns {Number}
- * @example if (JS.Responsive.getDocumentWidth()&gt;JS.Responsive.getDocumentHeight()) ...
+ * @example if (JS.Responsive.getDocumentWidth()>JS.Responsive.getDocumentHeight()) ...
  * @memberof module:breakpoints
  * @alias JS.Responsive.getDocumentWidth
  * @since 3.0.0
@@ -344,7 +311,7 @@ $C.getDocumentWidth = getDocumentWidth;
  * Returns current document height in pixels (can be smaller than window size because scrollbar reduces it).
  * @function
  * @returns {Number}
- * @example if (JS.Responsive.getDocumentWidth()&gt;JS.Responsive.getWindowHeight()) ...
+ * @example if (JS.Responsive.getDocumentWidth()>JS.Responsive.getWindowHeight()) ...
  * @memberof module:breakpoints
  * @alias JS.Responsive.getDocumentHeight
  * @since 3.0.0
@@ -358,11 +325,11 @@ $C.features.breakpoints = initBreakpoints;
 function initBreakpoints(){
     setInterval(checkWindowOrDocumentResize, CHECK_DOCUMENT_SIZE_INTERVAL);
 
-    bind(window, &apos;resize&apos;, solveSizes);
+    bind(window, 'resize', solveSizes);
 
     // for mobiles - on mobile devices is window size changing while scrolling content - because some panels are hiding
-    bind(document, &apos;touchmove&apos;, checkWindowOrDocumentResize);
-    bind(document, &apos;touchend&apos;, checkWindowOrDocumentResize);
+    bind(document, 'touchmove', checkWindowOrDocumentResize);
+    bind(document, 'touchend', checkWindowOrDocumentResize);
 }
 
 // on mobile devices is window size changing while scrolling content - because some panels are hiding
@@ -373,7 +340,7 @@ function checkWindowOrDocumentResize() {
 }
 
 function arrayGetIndexOfName( array, name ) {
-    for (var i = 0; i &lt; array.length; i++)
+    for (var i = 0; i < array.length; i++)
         if (array[i].name == name)
             return i;
     return -1;
@@ -397,7 +364,7 @@ function removeBreakPoint(name, sizesArray) {
 
     var index = arrayGetIndexOfName(sizesArray, name);
     // if does exists this name
-    if (index&gt;=0) {
+    if (index>=0) {
         sizesArray.splice(index,1);
         removeAllClasses(name);
         solveSizes();
@@ -457,8 +424,8 @@ function solveSizes() {
         thisBreakPointIsLastOne,
         isSmallerThanNextBreakPoint;
 
-    // for all dimensions, both &apos;horizontal&apos; and &apos;vertical&apos;
-    for (var k = 0; k &lt; arrays.length; k++) {
+    // for all dimensions, both 'horizontal' and 'vertical'
+    for (var k = 0; k < arrays.length; k++) {
 
         var actualSize = sizes[k],
             firstIn = FALSE,
@@ -466,16 +433,16 @@ function solveSizes() {
             sizeAttributeName = sizeAttributes[k];
 
         // for all break points in current dimension
-        for (var i = 0; i &lt; a.length; i++) {
+        for (var i = 0; i < a.length; i++) {
             size = a[i];
             nextSize = a[i + 1];
             removeAllClasses(size.name);
 
             sizeIsEqualToCurrentBreakPoint = (size[sizeAttributeName] == actualSize);
-            sizeIsGreaterThanCurrentBreakPoint = (size[sizeAttributeName] &lt; actualSize);
-            sizeIsGreaterOrEqualToCurrentBreakPoint = (size[sizeAttributeName] &lt;= actualSize);
+            sizeIsGreaterThanCurrentBreakPoint = (size[sizeAttributeName] < actualSize);
+            sizeIsGreaterOrEqualToCurrentBreakPoint = (size[sizeAttributeName] <= actualSize);
             thisBreakPointIsLastOne = (i == a.length - 1);
-            isSmallerThanNextBreakPoint = nextSize &amp;&amp; nextSize[sizeAttributeName] &gt; actualSize;
+            isSmallerThanNextBreakPoint = nextSize &amp;&amp; nextSize[sizeAttributeName] > actualSize;
 
             if (sizeIsGreaterOrEqualToCurrentBreakPoint)
                 addClass(size.name + MORE_APPENDIX);
@@ -499,29 +466,25 @@ function solveSizes() {
     commitTransactionClass();
 
     if(lastHorizontalBreakPoint != actualHorizontalBreakPoint)
-        $C.emit(&apos;changedBreakPointHorizontal&apos;, actualHorizontalBreakPoint, lastHorizontalBreakPoint);
+        $C.emit('changedBreakPointHorizontal', actualHorizontalBreakPoint, lastHorizontalBreakPoint);
     if(lastVerticalBreakPoint != actualVerticalBreakPoint)
-        $C.emit(&apos;changedBreakPointVertical&apos;, actualVerticalBreakPoint, lastVerticalBreakPoint);
+        $C.emit('changedBreakPointVertical', actualVerticalBreakPoint, lastVerticalBreakPoint);
 
 }
 </pre>
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 

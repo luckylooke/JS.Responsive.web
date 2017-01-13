@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: documentState.js</h1>
 
-        
+
+<h1 class="page-title">Source: documentState.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -66,13 +33,13 @@
  * @custom-class state-loaded - when document is loaded (including all images)
  * @custom-class state-unloading - when document is unloading
  *
- * @emits changedDocumentState - Arguments: {String} - new-state, {String} - old-state, both are states strings like classes but without &quot;state-&quot; prefix
+ * @emits changedDocumentState - Arguments: {String} - new-state, {String} - old-state, both are states strings like classes but without "state-" prefix
  *
  **/
 
 var isDocumentUnloading = FALSE,
 
-    lastDocumentState = &apos;uninitialized&apos;,
+    lastDocumentState = 'uninitialized',
     onceLoaded = FALSE;
 
 /**
@@ -105,14 +72,14 @@ $C.features.documentState = initDocState;
 // Function declarations: ######################### ######################### ######################### ######################### ######################### ######################### #########################
 
 function initDocState() {
-    bind(document, &apos;readystatechange&apos;, onreadyStateChangeHandler);
-    bind(window, &apos;load&apos;, onreadyStateChangeHandler);
-    bind(window, &apos;unload&apos;, onunloadHandler);
-    bind(window, &apos;onbeforeunload&apos;, onunloadHandler);
+    bind(document, 'readystatechange', onreadyStateChangeHandler);
+    bind(window, 'load', onreadyStateChangeHandler);
+    bind(window, 'unload', onunloadHandler);
+    bind(window, 'onbeforeunload', onunloadHandler);
 }
 
 function getDocumentState() {
-    return isDocumentLoaded ? &apos;loaded&apos; : document.readyState;
+    return isDocumentLoaded ? 'loaded' : document.readyState;
 }
 
 function onreadyStateChangeHandler() {
@@ -128,45 +95,41 @@ function onreadyStateChangeHandler() {
          loaded - when document is loaded (including all images)
          unloading - when document is unloading
          */
-        removeClass(&apos;state-uninitialized&apos;);
-        removeClass(&apos;state-loading&apos;);
-        removeClass(&apos;state-interactive&apos;);
-        // &apos;state-complete&apos; sa nebude odstranovat
+        removeClass('state-uninitialized');
+        removeClass('state-loading');
+        removeClass('state-interactive');
+        // 'state-complete' sa nebude odstranovat
         var newState = getDocumentState();
-        addClass(&apos;state-&apos; + newState);
-        if (newState == &apos;loaded&apos;)
+        addClass('state-' + newState);
+        if (newState == 'loaded')
             onceLoaded = TRUE;
 
         if (newState != lastDocumentState){
-            $C.emit(&apos;changedDocumentState&apos;, newState, lastDocumentState);
+            $C.emit('changedDocumentState', newState, lastDocumentState);
             lastDocumentState = newState;
         }
     }
 }
 
 function onunloadHandler() {
-    addClass(&apos;state-unloading&apos;);
+    addClass('state-unloading');
     isDocumentUnloading = TRUE;
-    $C.emit(&apos;documentUnloading&apos;);
+    $C.emit('documentUnloading');
 }
 </pre>
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 

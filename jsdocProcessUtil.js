@@ -24,12 +24,12 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + (p4 || '') + '"';
                 });
 
-                var $ = cheerio.load(contents);
+                var $ = cheerio.load(contents, {decodeEntities: false});
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
                     fs.readFileSync(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
                         console.log('file contents: ', 'docSubMenu.html', !!contents);
-                        var $ = cheerio.load(contents);
+                        var $ = cheerio.load(contents, {decodeEntities: false});
                         $('#modules-list').html(listOfModules);
                         $('.navbar').remove();
                         contents = $.html();
@@ -40,12 +40,10 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     });
                 }
 
-                contents = $('body').html();
+                contents = $.html();
 
                 if(file.match(/\.list.html$/))
                     file = file.replace('.list', '-list');
-
-                contents = contents.replace("</div>&gt;</div>", "</div></div>");
 
                 fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";

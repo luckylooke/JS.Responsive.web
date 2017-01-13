@@ -55,10 +55,11 @@
 
 				<nav class="wow fadeIn" data-wow-delay=".25s">
 					<ul>
-						<li><a href="/">@(Home)</a></li>
-						<li><a href="/documentation/">@(Documentation)</a></li>
-						<li><a href="/download/">@(Download)</a></li>
-						<li><a href="/contact/">@(Contact)</a></li>
+						<li><a href="@{repository.slashLang}/">@(Home)</a></li>
+						<li><a href="@{repository.slashLang}/documentation/">@(Documentation)</a></li>
+						<li><a href="@{repository.slashLang}/download/">@(Download)</a></li>
+						<li><a href="@{repository.slashLang}/contact/">@(Contact)</a></li>
+						<li><a href="@{repository.nextLangUrl}">@{repository.nextLang}</a></li>
 					</ul>
 				</nav>
 			</div>

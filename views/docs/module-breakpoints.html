@@ -1,89 +1,36 @@
+<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
+
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
 
 
-    
-        <h1 class="page-title">Module: breakpoints</h1>
+<h1 class="page-title">Module: breakpoints</h1>
 
-        
-
-
-        <div id="toc-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="main">
-                            @{view(&quot;indexDocs&quot;)}
-                        </div>
-                    </div>
-
-                    <div class="clearfix"></div>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
 
                     
-                    <div class="">
-                        <div id="toc" class=" hidden-xs hidden-sm hidden-md"></div>
-                    </div>
-                    
-
-                </div>
-            </div>
-        </div>
-
-        <section>
 
 
-        <article>
-            <div class="container-overview">
-            
-                
-                    <div class="description">@(Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.)</div>
-                
+                    <section>
 
-                
+
+                        <article>
+                            <div class="container-overview">
+                                
+                                
+                                <div class="description">@(Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.)</div>
+                                
+
+                                
 <dl class="details">
     
 
@@ -133,19 +80,19 @@
 </dl>
 
 
-                
-                    <h3>@(Example)</h3>
-                    
+                                
+                                <h3>@(Example)</h3>
+                                
         <p class="code-caption">Example usage of module</p>
     
     <pre class="sunlight-highlight-javascript">// JS:
 JS.Responsive
     .init()
-    .addHorizontalBreakPoint(&apos;micro&apos;, 420)
-    .addHorizontalBreakPoint(&apos;tiny&apos;, 478)
-    .addHorizontalBreakPoint(&apos;small&apos;, 768)
-    .addHorizontalBreakPoint(&apos;medium&apos;, 992)
-    .addHorizontalBreakPoint(&apos;large&apos;, 1230);
+    .addHorizontalBreakPoint(&#x27;micro&#x27;, 420)
+    .addHorizontalBreakPoint(&#x27;tiny&#x27;, 478)
+    .addHorizontalBreakPoint(&#x27;small&#x27;, 768)
+    .addHorizontalBreakPoint(&#x27;medium&#x27;, 992)
+    .addHorizontalBreakPoint(&#x27;large&#x27;, 1230);
 
 // CSS:
 #github-ribbon {
@@ -166,30 +113,30 @@ JS.Responsive
 }</pre>
 
 
-                
-            
-            </div>
+                                
+                                
+                            </div>
 
-            
+                            
 
-            
+                            
 
-            
+                            
 
-            
+                            
 
-            
+                            
 
-            
+                            
 
-            
-                <h3 class="subsection-title">@(Methods)</h3>
+                            
+                            <h3 class="subsection-title">@(Methods)</h3>
 
-                <dl>
-                    
+                            <dl>
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addHorizontalBreakPoint(name, width)</h4>
+    <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.addHorizontalBreakPoint(name, width)</h4>
     
     
 </dt>
@@ -378,17 +325,17 @@ JS.Responsive
     
         <h5>@(Example)</h5>
         
-    <pre class="sunlight-highlight-javascript">JS.Responsive.addHorizontalBreakPoint(&apos;medium&apos;, 960);</pre>
+    <pre class="sunlight-highlight-javascript">JS.Responsive.addHorizontalBreakPoint(&#x27;medium&#x27;, 960);</pre>
 
 
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.addVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.addVerticalBreakPoint(name, height)</h4>
+    <h4 class="name" id=".JS.Responsive.addVerticalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.addVerticalBreakPoint(name, height)</h4>
     
     
 </dt>
@@ -577,17 +524,17 @@ JS.Responsive
     
         <h5>@(Example)</h5>
         
-    <pre class="sunlight-highlight-javascript">JS.Responsive.addVerticalBreakPoint(&apos;vertical-medium&apos;, 960);</pre>
+    <pre class="sunlight-highlight-javascript">JS.Responsive.addVerticalBreakPoint(&#x27;vertical-medium&#x27;, 960);</pre>
 
 
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.disableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableHorizontalBreakPoints( [_keepActualClasses])</h4>
+    <h4 class="name" id=".JS.Responsive.disableHorizontalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.disableHorizontalBreakPoints( [_keepActualClasses])</h4>
     
     
 </dt>
@@ -648,7 +595,7 @@ JS.Responsive
             
                 <td class="attributes">
                 
-                    &lt;optional&gt;<br>
+                    <optional><br>
                 
 
                 
@@ -764,11 +711,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.disableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.disableVerticalBreakPoints( [_keepActualClasses])</h4>
+    <h4 class="name" id=".JS.Responsive.disableVerticalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.disableVerticalBreakPoints( [_keepActualClasses])</h4>
     
     
 </dt>
@@ -829,7 +776,7 @@ JS.Responsive
             
                 <td class="attributes">
                 
-                    &lt;optional&gt;<br>
+                    <optional><br>
                 
 
                 
@@ -945,11 +892,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.enableHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableHorizontalBreakPoints()</h4>
+    <h4 class="name" id=".JS.Responsive.enableHorizontalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.enableHorizontalBreakPoints()</h4>
     
     
 </dt>
@@ -1064,11 +1011,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.enableVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.enableVerticalBreakPoints()</h4>
+    <h4 class="name" id=".JS.Responsive.enableVerticalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.enableVerticalBreakPoints()</h4>
     
     
 </dt>
@@ -1183,11 +1130,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getActualHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getActualHorizontalBreakPoint()</h4>
+    <h4 class="name" id=".JS.Responsive.getActualHorizontalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.getActualHorizontalBreakPoint()</h4>
     
     
 </dt>
@@ -1305,11 +1252,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getActualVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getActualVerticalBreakPoint()</h4>
+    <h4 class="name" id=".JS.Responsive.getActualVerticalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.getActualVerticalBreakPoint()</h4>
     
     
 </dt>
@@ -1427,11 +1374,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getDocumentHeight"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDocumentHeight()</h4>
+    <h4 class="name" id=".JS.Responsive.getDocumentHeight"><span class="type-signature"><static> </span>JS.Responsive.getDocumentHeight()</h4>
     
     
 </dt>
@@ -1548,11 +1495,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getDocumentWidth"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getDocumentWidth()</h4>
+    <h4 class="name" id=".JS.Responsive.getDocumentWidth"><span class="type-signature"><static> </span>JS.Responsive.getDocumentWidth()</h4>
     
     
 </dt>
@@ -1669,11 +1616,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getWindowHeight"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getWindowHeight()</h4>
+    <h4 class="name" id=".JS.Responsive.getWindowHeight"><span class="type-signature"><static> </span>JS.Responsive.getWindowHeight()</h4>
     
     
 </dt>
@@ -1790,11 +1737,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getWindowWidth"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.getWindowWidth()</h4>
+    <h4 class="name" id=".JS.Responsive.getWindowWidth"><span class="type-signature"><static> </span>JS.Responsive.getWindowWidth()</h4>
     
     
 </dt>
@@ -1911,11 +1858,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.isDisabledHorizontalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledHorizontalBreakPoints()</h4>
+    <h4 class="name" id=".JS.Responsive.isDisabledHorizontalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.isDisabledHorizontalBreakPoints()</h4>
     
     
 </dt>
@@ -2026,11 +1973,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.isDisabledVerticalBreakPoints()</h4>
+    <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints"><span class="type-signature"><static> </span>JS.Responsive.isDisabledVerticalBreakPoints()</h4>
     
     
 </dt>
@@ -2141,11 +2088,11 @@ JS.Responsive
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeHorizontalBreakPoint(name)</h4>
+    <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.removeHorizontalBreakPoint(name)</h4>
     
     
 </dt>
@@ -2310,17 +2257,17 @@ JS.Responsive
     
         <h5>@(Example)</h5>
         
-    <pre class="sunlight-highlight-javascript">JS.Responsive.removeHorizontalBreakPoint(&apos;medium&apos;);</pre>
+    <pre class="sunlight-highlight-javascript">JS.Responsive.removeHorizontalBreakPoint(&#x27;medium&#x27;);</pre>
 
 
     
 </dd>
 
-                
-                    
+                                
+                                
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.removeVerticalBreakPoint"><span class="type-signature">&lt;static&gt; </span>JS.Responsive.removeVerticalBreakPoint(name)</h4>
+    <h4 class="name" id=".JS.Responsive.removeVerticalBreakPoint"><span class="type-signature"><static> </span>JS.Responsive.removeVerticalBreakPoint(name)</h4>
     
     
 </dt>
@@ -2485,35 +2432,34 @@ JS.Responsive
     
         <h5>@(Example)</h5>
         
-    <pre class="sunlight-highlight-javascript">JS.Responsive.removeVerticalBreakPoint(&apos;vertical-medium&apos;);</pre>
+    <pre class="sunlight-highlight-javascript">JS.Responsive.removeVerticalBreakPoint(&#x27;vertical-medium&#x27;);</pre>
 
 
     
 </dd>
 
-                </dl>
-            
+                                </dl>
+                            
+
+                            
+
+                            
+                        </article>
+
+                    </section>
+
+
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
 
             
-
+            <div class="">
+                <div id="toc" class=" hidden-xs hidden-sm hidden-md"></div>
+            </div>
             
-        </article>
 
-        </section>
-
-    
-
-
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
-
+        </div>
+    </div>
+</div>

@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: detectAgent.js</h1>
 
-        
+
+<h1 class="page-title">Source: detectAgent.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -67,13 +34,13 @@
  * */
 
 /** Set watching given browser and its version
- * @param {String} browser - browser name, see function getAgentData() attribute &quot;identity&quot;
+ * @param {String} browser - browser name, see function getAgentData() attribute "identity"
  * @param {Number} version - browser version number
  * @returns {Object} this - for chaining.
- * @example JS.Responsive.watchBrowserVersion(&apos;Webkit&apos;, 530);
- * @example JS.Responsive.watchBrowserVersion(&apos;Chrome&apos;, 47);
- * @example JS.Responsive.watchBrowserVersion(&apos;MSIE&apos;, 10);
- * @example JS.Responsive.watchBrowserVersion(&apos;Edge&apos;, 12);
+ * @example JS.Responsive.watchBrowserVersion('Webkit', 530);
+ * @example JS.Responsive.watchBrowserVersion('Chrome', 47);
+ * @example JS.Responsive.watchBrowserVersion('MSIE', 10);
+ * @example JS.Responsive.watchBrowserVersion('Edge', 12);
  * @memberof module:detectAgent
  * @alias JS.Responsive.watchBrowserVersion
  * @since 3.0.0
@@ -85,21 +52,21 @@ $C.watchBrowserVersion = function( browser, version ) {
     if (agentData)
         addBrowserVersionClasses( agentData, version );
     else
-        throw new Error(&quot;Browser &apos;&quot; + browser + &quot;&apos; was not found.&quot;);
+        throw new Error("Browser '" + browser + "' was not found.");
 
     if (agentData &amp;&amp; !agentData.versionSearch)
-        throw new Error(&quot;Parameter &apos;&quot; + browser + &quot;&apos; doesn&apos;t support version search.&quot;);
+        throw new Error("Parameter '" + browser + "' doesn't support version search.");
 
     return this;
 };
 
 /**
  * Returns information about platform, browser and its version
- * @returns {Object} containing &quot;platform&quot; as array, &quot;browser&quot; as string and &quot;version&quot; as number.
+ * @returns {Object} containing "platform" as array, "browser" as string and "version" as number.
  * @example JS.Responsive.getPlatformInfo() returns
  *   {
-	 *		platform: Array[&quot;webkit&quot;, &quot;windows&quot;, &quot;chrome&quot;],
-	 *		browser: &quot;chrome&quot;,
+	 *		platform: Array["webkit", "windows", "chrome"],
+	 *		browser: "chrome",
 	 *		version: 43.5
 	 *   }
  * @memberof module:detectAgent
@@ -129,7 +96,7 @@ function findAgentDataByBrowserName( browser ) {
 
     var data = getAgentData();
     browser = browser.toLowerCase();
-    for (var i = 0; i &lt; data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         if (browser == data[i].identity.toLowerCase())
             return data[i];
     }
@@ -141,21 +108,21 @@ function addBrowserVersionClasses( agentData, version ) {
     if (agentData.versionSearch) {
         var browser = agentData.identity.toLowerCase(),
             actualVersion = parseFloat(navigator.userAgent.split(agentData.versionSearch || agentData.identity)[1]);
-        if ((version + EMPTY_STRING).indexOf(&apos;.&apos;) == -1)
+        if ((version + EMPTY_STRING).indexOf('.') == -1)
             actualVersion = parseInt(actualVersion);
 
         if (!isNaN(actualVersion)) {
 
             if (version == actualVersion) {
-                addClass(browser + &apos;-v&apos; + version + &apos;-le&apos;);
-                addClass(browser + &apos;-v&apos; + version + &apos;-ge&apos;);
+                addClass(browser + '-v' + version + '-le');
+                addClass(browser + '-v' + version + '-ge');
             }
 
-            if (version &gt; actualVersion)
-                addClass(browser + &apos;-v&apos; + version + &apos;-l&apos;);
+            if (version > actualVersion)
+                addClass(browser + '-v' + version + '-l');
 
-            if (version &lt; actualVersion)
-                addClass(browser + &apos;-v&apos; + version + &apos;-g&apos;);
+            if (version < actualVersion)
+                addClass(browser + '-v' + version + '-g');
 
             return TRUE;
         }
@@ -173,7 +140,7 @@ function detectAgentPlatform(_justReturnValue) {
             version: NULL
         };
 
-    for (var i = 0; i &lt; data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
 
         var dataString = data[i].string,
             dataProp = data[i].prop;
@@ -188,7 +155,7 @@ function detectAgentPlatform(_justReturnValue) {
                 if (data[i].versionSearch) {
                     var version = parseFloat(navigator.userAgent.split(data[i].versionSearch || data[i].identity)[1]);
 
-                    if (clsName != &apos;webkit&apos;)
+                    if (clsName != 'webkit')
                         foundBrowser = TRUE; // this is exception for webkit
 
                     if (!isNaN(version)) {
@@ -197,10 +164,10 @@ function detectAgentPlatform(_justReturnValue) {
                         else
                         // if more classes with spaces, adds versions to all classes
                         // (e.g. msie-v11 wow-v11)
-                            addClass(clsName.replace(/( |$)/g, &apos;-v&apos; + parseInt(version)+&apos; &apos;).trim() );
+                            addClass(clsName.replace(/( |$)/g, '-v' + parseInt(version)+' ').trim() );
                         if (version != parseInt(version) &amp;&amp; !_justReturnValue)
                         // if more classes with spaces, adds versions to all classes
-                            addClass(clsName.replace(/( |$)/g, &apos;-v&apos; + version.toString().replace(&apos;.&apos;, &apos;-&apos;)+&apos; &apos;).trim() );
+                            addClass(clsName.replace(/( |$)/g, '-v' + version.toString().replace('.', '-')+' ').trim() );
                     }
                 }
             }
@@ -227,43 +194,43 @@ function getAgentData() {
             identity: identity,
             string: string,
             subString: subString==UNDEFINED ? identity : subString,
-            versionSearch: versionSearch!==TRUE ? versionSearch : identity+&apos;/&apos;,
+            versionSearch: versionSearch!==TRUE ? versionSearch : identity+'/',
             prop: prop
         });
     }
-    add(&quot;Edge&quot;, nua, NULL, TRUE);
-    add(&quot;Webkit&quot;, nua, NULL, TRUE);
-    add(&quot;Android&quot;, nall);
-    add(&quot;CoreMedia&quot;, nall);
-    add(&quot;QuickTime&quot;, nall);
-    add(&quot;BlackBerry&quot;, nall);
-    add(&quot;Windows&quot;, np, &quot;Win&quot;);
-    add(&quot;Mac&quot;, np);
-    add(&quot;MacOSX&quot;, nua, &quot;Intel Mac OS X&quot;); // because on iPhone is &quot;like Mac OS X&quot;
-    add(&quot;iPhone&quot;, nua);
-    add(&quot;iOS&quot;, nua, &quot;iPhone&quot;);
-    add(&quot;iPad&quot;, nall);
-    add(&quot;iOS&quot;, nall, &quot;iPad&quot;);
-    add(&quot;iPod&quot;, nall);
-    add(&quot;iOS&quot;, nall, &quot;iPod&quot;);
-    add(&quot;PSP&quot;, nall); //PlayStation Portable
-    add(&quot;Kindle&quot;, nall);
-    add(&quot;Linux&quot;, np);
-    add(&quot;Maxthon&quot;, nua, NULL, TRUE);
-    add(&quot;Chrome&quot;, nua, NULL, TRUE);
-    add(&quot;OmniWeb&quot;, nua, NULL, TRUE);
-    add(&quot;Safari&quot;, nv, &quot;Apple&quot;, &quot;Version/&quot;);
-    add(&quot;Opera&quot;, UNDEFINED, NULL, &quot;Version/&quot;, win.opera);
-    add(&quot;OperaMini&quot;, nall, &quot;Opera Mini&quot;);
-    add(&quot;iCab&quot;, nv);
-    add(&quot;Konqueror&quot;, nv, &quot;KDE&quot;);
-    add(&quot;Firefox&quot;, nua, NULL, TRUE);
-    add(&quot;Camino&quot;, nv);
-    add(&quot;Netscape&quot;, nua); // for newer Netscapes (6+)
-    add(&quot;MSIE&quot;, nua, NULL, &quot;MSIE&quot;);
-    add(&quot;MSIE WOW&quot;, nua, &quot;WOW64&quot;, &quot;rv:&quot;);
-    add(&quot;Mozilla&quot;, nua, &quot;Gecko&quot;, &quot;rv&quot;);
-    add(&quot;Mozilla&quot;, nua, NULL, &quot;Mozilla&quot;); // for older Netscapes (4-)
+    add("Edge", nua, NULL, TRUE);
+    add("Webkit", nua, NULL, TRUE);
+    add("Android", nall);
+    add("CoreMedia", nall);
+    add("QuickTime", nall);
+    add("BlackBerry", nall);
+    add("Windows", np, "Win");
+    add("Mac", np);
+    add("MacOSX", nua, "Intel Mac OS X"); // because on iPhone is "like Mac OS X"
+    add("iPhone", nua);
+    add("iOS", nua, "iPhone");
+    add("iPad", nall);
+    add("iOS", nall, "iPad");
+    add("iPod", nall);
+    add("iOS", nall, "iPod");
+    add("PSP", nall); //PlayStation Portable
+    add("Kindle", nall);
+    add("Linux", np);
+    add("Maxthon", nua, NULL, TRUE);
+    add("Chrome", nua, NULL, TRUE);
+    add("OmniWeb", nua, NULL, TRUE);
+    add("Safari", nv, "Apple", "Version/");
+    add("Opera", UNDEFINED, NULL, "Version/", win.opera);
+    add("OperaMini", nall, "Opera Mini");
+    add("iCab", nv);
+    add("Konqueror", nv, "KDE");
+    add("Firefox", nua, NULL, TRUE);
+    add("Camino", nv);
+    add("Netscape", nua); // for newer Netscapes (6+)
+    add("MSIE", nua, NULL, "MSIE");
+    add("MSIE WOW", nua, "WOW64", "rv:");
+    add("Mozilla", nua, "Gecko", "rv");
+    add("Mozilla", nua, NULL, "Mozilla"); // for older Netscapes (4-)
 
     return agentList;
 
@@ -271,7 +238,7 @@ function getAgentData() {
 
 
  function getAgentTags() {
-     for (var i = 0, data = getAgentData(), tags = []; i &lt; data.length; i++)
+     for (var i = 0, data = getAgentData(), tags = []; i < data.length; i++)
      tags.push(data[i].identity.toLowerCase());
      return tags;
  }
@@ -279,20 +246,16 @@ function getAgentData() {
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 

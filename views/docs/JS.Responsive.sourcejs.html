@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: JS.Responsive.source.js</h1>
 
-        
+
+<h1 class="page-title">Source: JS.Responsive.source.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -59,7 +26,7 @@
  *
  * @version 3.0.0
  *
- * @author Johnny Seyd &lt;seyd@wezeo.com&gt;, Ctibor Laky &lt;laky@wezeo.com&gt;
+ * @author Johnny Seyd <seyd@wezeo.com>, Ctibor Laky <laky@wezeo.com>
  *
  * @description JS.Responsive is a free tool for responsive styling and responsive javascript coding.
  *
@@ -67,7 +34,7 @@
  *
  */
 (function() {
-	&apos;use strict&apos;;
+	'use strict';
 
 	// base namespace
 	if (!window.JS)
@@ -92,14 +59,14 @@
 	 *
 	 */
 	var $C = JS.Responsive = function() {
-		throw new Error(&quot;JS.Responsive cannot have instances.&quot;);
+		throw new Error("JS.Responsive cannot have instances.");
 	};
 
 	/**
 	 * Library version
 	 * @const {String}
 	 */
-	$C.version = &apos;3.0.0&apos;;
+	$C.version = '3.0.0';
 
 	 
 	// -------------------------------------------------------------------------------------------------
@@ -119,16 +86,16 @@
 		FALSE = false,
 		NULL = null,
 		UNDEFINED = undefined,
-		EMPTY_STRING = &apos;&apos;,
-		SPACE_CHAR = &apos; &apos;,
-		WIDTH_STRING = &apos;width&apos;,
-		HEIGHT_STRING = &apos;height&apos;,
-		MOZ_PREFIX = &apos;moz&apos;,
-		MS_PREFIX = &apos;ms&apos;,
-		PORTRAIT_STRING = &apos;portrait&apos;,
-		LANDSCAPE_STRING = &apos;landscape&apos;,
-		HORIZONTAL_STRING = &apos;horizontal&apos;,
-		VERTICAL_STRING = &apos;vertical&apos;,
+		EMPTY_STRING = '',
+		SPACE_CHAR = ' ',
+		WIDTH_STRING = 'width',
+		HEIGHT_STRING = 'height',
+		MOZ_PREFIX = 'moz',
+		MS_PREFIX = 'ms',
+		PORTRAIT_STRING = 'portrait',
+		LANDSCAPE_STRING = 'landscape',
+		HORIZONTAL_STRING = 'horizontal',
+		VERTICAL_STRING = 'vertical',
 
 		/**
 		 * Storing listeners types and callback functions
@@ -193,13 +160,13 @@
 			forEach(listeners[type], applyEach);
 
 		args.unshift(type); // type added back
-		if(listeners[&apos;all&apos;]) // listeners to all event types
-			forEach(listeners[&apos;all&apos;], applyEach);
+		if(listeners['all']) // listeners to all event types
+			forEach(listeners['all'], applyEach);
 
 		if (errors.length) {
 			// if more errors, we want to print all to console
-			if (errors.length&gt;1)
-				console.log(&apos;All errors in JS.Responsive onchangeHandler:&apos;, errors);
+			if (errors.length>1)
+				console.log('All errors in JS.Responsive onchangeHandler:', errors);
 			throw errors[0];
 		}
 
@@ -240,13 +207,13 @@
 	 * Tests if HTML element contains given class names.
 	 * @param {...String} - class names
 	 * @returns {Boolean}
-	 * @example JS.Responsive.is(&apos;mobile&apos;) === true, when HTML contains &quot;mobile&quot; class
-	 * @example JS.Responsive.is(&apos;portrait touch&apos;) === true, when HTML contains &quot;portrait&quot; and &quot;touch&quot; class
-	 * @example JS.Responsive.is(&apos;portrait touch&apos;, &apos;mobile&apos;) === true, when HTML contains (&quot;portrait&quot; and &quot;touch&quot; class) OR (&apos;mobile&apos;)
+	 * @example JS.Responsive.is('mobile') === true, when HTML contains "mobile" class
+	 * @example JS.Responsive.is('portrait touch') === true, when HTML contains "portrait" and "touch" class
+	 * @example JS.Responsive.is('portrait touch', 'mobile') === true, when HTML contains ("portrait" and "touch" class) OR ('mobile')
 	 */
 	$C.is = function() {
 
-		for (var i=0; i&lt;arguments.length; i++)
+		for (var i=0; i<arguments.length; i++)
 			if (hasAllTheseClasses(arguments[i]))
 				return TRUE; // if once true then disjunction is true
 
@@ -261,7 +228,7 @@
 		if(Array.prototype.forEach)
 			array.forEach(fn);
 		else
-			for (var i = 0; i &lt; array.length; i++)
+			for (var i = 0; i < array.length; i++)
 				// calls on array (this == array) and
 				// first argument is current array item,
 				// second argument is current index
@@ -304,18 +271,18 @@
 	}
 
 
-	// @param (String) sizeType - &apos;width&apos; or &apos;height&apos;
+	// @param (String) sizeType - 'width' or 'height'
 	function getDocumentSize(sizeType) {
 		var el = !isIE() ? getHtmlElement() : getBodyElement();
-		return el ? el[&apos;offset&apos; + ucFirst(sizeType)] : 0;
+		return el ? el['offset' + ucFirst(sizeType)] : 0;
 	}
 
-	// @param (String) sizeType - &apos;width&apos; or &apos;height&apos;
+	// @param (String) sizeType - 'width' or 'height'
 	function getWindowSize(sizeType) {
 		var ucSizeType = ucFirst(sizeType),
-			size = win[&apos;inner&apos; + ucSizeType],
+			size = win['inner' + ucSizeType],
 			docEl = document.documentElement;
-		return size || (docEl &amp;&amp; docEl[&apos;offset&apos; + ucSizeType] ? docEl[&apos;client&apos; + ucSizeType] : screen[sizeType]);
+		return size || (docEl &amp;&amp; docEl['offset' + ucSizeType] ? docEl['client' + ucSizeType] : screen[sizeType]);
 	}
 
 	var htmlElement,
@@ -327,19 +294,19 @@
 
 	function getHtmlElement() {
 		if (!htmlElement)
-			htmlElement = getElementByTagName(&apos;html&apos;);
+			htmlElement = getElementByTagName('html');
 		return htmlElement;
 	}
 
 	function getBodyElement() {
 		if (!bodyElement)
-			bodyElement = getElementByTagName(&apos;body&apos;);
+			bodyElement = getElementByTagName('body');
 		return bodyElement;
 	}
 
 
 	function arrayIndex(array, value, _exactMatch) {
-		for (var i = 0; i &lt; array.length; i++)
+		for (var i = 0; i < array.length; i++)
 			if ((_exactMatch &amp;&amp; array[i] === value) || (!_exactMatch &amp;&amp; array[i] == value))
 				return i;
 		return -1;
@@ -347,13 +314,13 @@
 
 
 	function arrayContains(array, item, _exactMatch) {
-		return arrayIndex(array, item, _exactMatch) &gt;= 0;
+		return arrayIndex(array, item, _exactMatch) >= 0;
 	}
 
 
 	function arrayRemoveItemsStartingWith(array, startingWith) {
-		var reg = new RegExp(&apos;^&apos; + startingWith);
-        for (var i = 0; i &lt; array.length; i++)
+		var reg = new RegExp('^' + startingWith);
+        for (var i = 0; i < array.length; i++)
             if (array[i].match(reg)){
                 array.splice(i, 1);
                 i--; // because of splice
@@ -366,7 +333,7 @@
 		if (el.addEventListener)
 			el.addEventListener(eventType, fn, FALSE);
 		else if (el.attachEvent)
-			el.attachEvent(&apos;on&apos; + eventType, fn);
+			el.attachEvent('on' + eventType, fn);
 
 		function fn(e) {
 			handlerFn.call(NULL, e || event);
@@ -459,7 +426,7 @@
 
 	function commitTransactionClass() {
 		isInTransactionClassMode = FALSE;
-		for (var i = 0; i &lt; removedClasses.length; i++)
+		for (var i = 0; i < removedClasses.length; i++)
 			removeClass(removedClasses[i]);
 		// adding in one punch
 		if (addedClasses.length)
@@ -483,7 +450,7 @@
 	}
 
 	function isIE() {
-		return navigator.appName == &apos;Microsoft Internet Explorer&apos;;
+		return navigator.appName == 'Microsoft Internet Explorer';
 	}
 
 	var isDocumentLoaded = FALSE,
@@ -493,7 +460,7 @@
 	function onloadHandler() {
 		isDocumentLoaded = TRUE;
 		docReadyTime = +(new Date());
-		$C.emit(&apos;documentReady&apos;, docReadyTime);
+		$C.emit('documentReady', docReadyTime);
 	}
 
 
@@ -504,7 +471,7 @@
 	function hasAllTheseClasses( classNames ) {
 
 		var classes = classNames.split(SPACE_CHAR);
-		for (var i=0; i&lt;classes.length; i++) {
+		for (var i=0; i<classes.length; i++) {
 			if (classes[i] != EMPTY_STRING &amp;&amp; !hasClass(classes[i]))
 					return FALSE;
 		}
@@ -513,7 +480,7 @@
 
     function missingMethod(feat) {
     	return function(){
-			throw Error(&apos;Method &quot;&apos; + feat + &apos;&quot; is not available in this bundle!&apos;);
+			throw Error('Method "' + feat + '" is not available in this bundle!');
 		}
     }
 
@@ -532,9 +499,9 @@
 
 			for (prop in cfg) {
 				if (cfg.hasOwnProperty(prop)) {
-					if ($C.features[prop])&#x2028;
+					if ($C.features[prop]) 
 						$C.features[prop](prop);
-					else&#x2028; missingMethod(prop)();
+					else  missingMethod(prop)();
 				}
 			}
 		else // init all available features
@@ -543,14 +510,14 @@
 				$C.features[prop].call($C);
 			}
 
-		bind(window, &apos;load&apos;, onloadHandler);
+		bind(window, 'load', onloadHandler);
 	}
 
 	// -------------------------------------------------------------------------------------------------
 	// --- INITIALIZATION ------------------------------------------------------------------------------
 	// -------------------------------------------------------------------------------------------------
 
-    if(typeof module != &apos;undefined&apos;)
+    if(typeof module != 'undefined')
         module.exports = $C;
 
 })();
@@ -558,20 +525,16 @@
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 

@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: detectHiRes.js</h1>
 
-        
+
+<h1 class="page-title">Source: detectHiRes.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -63,12 +30,12 @@
  * @custom-class normal-display - applied when display is lower resolution DEMO: http://codepen.io/WEZEO/pen/gLEgar
  * @custom-class display-pixel-ratio-$$-more - current display pixel ratio is higher then $$ value
  * @custom-class display-pixel-ratio-$$-less - current display pixel ratio is lower or equal then $$ value
- * @example &lt;caption&gt;Example usage of module&lt;/caption&gt;
+ * @example <caption>Example usage of module</caption>
  * #logo {
- *      background-image: url(&apos;wezeologo.jpg&apos;);
+ *      background-image: url('wezeologo.jpg');
  *
  *      html.hires-display &amp; {
- *        background-image: url(&apos;wezeologo-hires.jpg&apos;);
+ *        background-image: url('wezeologo-hires.jpg');
  *      }
  *    }
  *
@@ -84,39 +51,39 @@
 
 $C.isHiResDisplay = function() {
 
-    return win.devicePixelRatio &gt; 1;
+    return win.devicePixelRatio > 1;
 };
 
 $C.features.detectHiRes = initHiResDisplayDetection;
 
 // Function declarations: ######################### ######################### ######################### ######################### ######################### ######################### #########################
 
-// adds &quot;hires-display&quot; or &quot;normal-display&quot; class (once)
+// adds "hires-display" or "normal-display" class (once)
 function initHiResDisplayDetection() {
     detectHiResDisplay();
-    bind(window, &apos;resize&apos;, detectHiResDisplay); // also zoom and moving to another display triggers this
+    bind(window, 'resize', detectHiResDisplay); // also zoom and moving to another display triggers this
 }
 
 function detectHiResDisplay() {
     // clear previous state
-    removeClass(&apos;display-pixel-ratio-&apos;, TRUE); // remove all classes starting with display-pixel-ratio-
-    removeClass(&apos;normal-display&apos;);
-    removeClass(&apos;hires-display&apos;);
+    removeClass('display-pixel-ratio-', TRUE); // remove all classes starting with display-pixel-ratio-
+    removeClass('normal-display');
+    removeClass('hires-display');
 
     var ratio = win.devicePixelRatio,
         ratioCeil,
         i;
 
-    addClass(ratio&gt;1 ? &apos;hires-display&apos; : &apos;normal-display&apos;);
+    addClass(ratio>1 ? 'hires-display' : 'normal-display');
 
-    if(typeof ratio != &apos;undefined&apos;){
+    if(typeof ratio != 'undefined'){
         ratioCeil = Math.ceil(ratio);
 
-        for(i = 0; i &lt;= ratioCeil; i++){
-            if(ratio &gt; i)
-                addClass(&apos;display-pixel-ratio-&apos; + i + &apos;-more&apos;);
-            else if(ratio &lt;= i)
-                addClass(&apos;display-pixel-ratio-&apos; + i + &apos;-less&apos;);
+        for(i = 0; i <= ratioCeil; i++){
+            if(ratio > i)
+                addClass('display-pixel-ratio-' + i + '-more');
+            else if(ratio <= i)
+                addClass('display-pixel-ratio-' + i + '-less');
 
         }
     }
@@ -124,20 +91,16 @@ function detectHiResDisplay() {
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 

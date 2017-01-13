@@ -2,8 +2,8 @@
 // Created: 2017-01-11 20:47
 
 // contact.html
-T-136388205      : Get the best commercial support for your JS.
-T574662468       : Responsive. Our support program is on free for now!
+T-136388205      : Získajte najlepšiu komerčnú podporu pre váš JS.
+T574662468       : Responsive. Náš program podpory je zatiaľ úplne zdarma!
 T-127956515      : Thanks, the contact form has been sent successfully.
 T1774297627      : First name
 T-336058955      : Last name
@@ -23,8 +23,8 @@ T2122703262      : Search results
 T65203672        : Close
 
 // download.html
-T507276382       : JS.Responsive is available also as custom build, so you can choose
-T-1320123181     : what features you want to be included in your build. And download it bellow.
+T507276382       : JS.Responsive je dostupný tiež ako custom build, takže je možné si vybrať
+T-1320123181     : aké súčasti budú zahrnuté v builde. A stiahnuť si ho priamo z tejto stránky.
 T-699566212      : Or install default or full version via npm or bower:
 T-1902337885     : Build your package...
 T1254941692      : All features
@@ -50,7 +50,7 @@ T712298501       : Amazing sites across the web are using <a href="/">JS.Respons
 T-1655032974     : See <a href="/documentation/">all features of JS.Responsive
 
 // indexDocs.html
-T-887101829      : Enjoy JS.Responsive documentation! It is generated from source code with
+T-887101829      : Uži si JS.Responsive documentáciu! Je generovaná zo zdrojového kódu pomocou
 T101418831       : jsdoc
 T1826085540      : <b>Notice!</b> Not all contents suits your version and type of your build, please ensure the module is included in your build, before rising an issue.
 T-502677702      : Contents
@@ -60,11 +60,11 @@ T622700265       : Quick access list of javascript API methods
 T1845866727      : Javascript API
 
 // layout.html
-T-1011330417     : Fork me on <strong>GitHub</strong>
-T2255103         : Home
-T-1908600166     : Documentation
-T1492462760      : Download
-T-1678787584     : Contact
+T-1011330417     : Forkni ma na <strong>GitHub</strong>e
+T2255103         : Domov
+T-1908600166     : Dokumentácia
+T1492462760      : Stiahnúť
+T-1678787584     : Kontakt
 T1637042828      : Powered by <a href="http://www.totaljs.com" target="_blank">Total.js - web framework
 T-1593829725     : Made with <img src="/img/icon-heart@2x.png" alt="Love" width="19" class="heart">  by <a href="http://www.wezeo.com" target="_blank"><img src="/img/logo-wezeo@2x.png" alt="Wezeo" width="46"></a>
 
@@ -87,10 +87,10 @@ T-1528936832     : Register callback to referenced event type
 T-45452763       : callback function called after event occurred
 
 // docs/JS.Responsive.html, docs/module-breakpoints.html, docs/module-detectAgent.html, docs/module-detectDeviceOrientation.html, docs/module-detectHiRes.html, docs/module-detectOrientation.html, docs/module-detectTouch.html, docs/module-documentState.html, docs/module-focusBlur.html, docs/module-isMobile.html, docs/module-isScrolling.html, docs/module-timeBased.html, docs/module-touchVsMouse.html, docs/quicksearch.html
-T79889178        : Since
-T-357223585      : Source:
-T-1674779758     : Methods
-T-242343049      : Returns:
+T79889178        : Od verzie
+T-357223585      : Zdroj:
+T-1674779758     : Metódy
+T-242343049      : Vracia:
 
 // docs/JS.Responsive.html, docs/module-breakpoints.html, docs/module-detectAgent.html, docs/module-timeBased.html, docs/quicksearch.html
 T2622298         : Type

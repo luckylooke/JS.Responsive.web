@@ -1,55 +1,22 @@
 
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
+	</ul>
 
-<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="/documentation/index/">JS.Responsive</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="/documentation/modules.list/" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detectAgent/">detectAgent</a></li><li><a href="/documentation/module-detectDeviceOrientation/">detectDeviceOrientation</a></li><li><a href="/documentation/module-detectHiRes/">detectHiRes</a></li><li><a href="/documentation/module-detectOrientation/">detectOrientation</a></li><li><a href="/documentation/module-detectTouch/">detectTouch</a></li><li><a href="/documentation/module-documentState/">documentState</a></li><li><a href="/documentation/module-focusBlur/">focusBlur</a></li><li><a href="/documentation/module-isMobile/">isMobile</a></li><li><a href="/documentation/module-isScrolling/">isScrolling</a></li><li><a href="/documentation/module-timeBased/">timeBased</a></li><li><a href="/documentation/module-touchVsMouse/">touchVsMouse</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="/documentation/classes.list/" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
-
-</div>
-</div>
+	<ul class="dropdown-menu" style="display: none">
+		<li><a href="/documentation/JS.Responsive/">JS.Responsive</a></li>
+	</ul>
 
 
-    
-        <h1 class="page-title">Source: detectDeviceOrientation.js</h1>
 
-        
+
+<h1 class="page-title">Source: detectDeviceOrientation.js</h1>
+<div id="toc-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="main">
+                    
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -71,17 +38,17 @@
  *
  * */
 
-var ORIENTATION_STRING = &apos;orientation&apos;,
+var ORIENTATION_STRING = 'orientation',
     UC_ORIENTATION_STRING = ucFirst(ORIENTATION_STRING),
-    DEVICE_ORIENTATION_CLASS = &apos;device-&apos;+ORIENTATION_STRING,
-    LANDSCAPE_APPENDIX = &apos;-&apos;+LANDSCAPE_STRING,
-    PORTRAIT_APPENDIX = &apos;-&apos;+PORTRAIT_STRING,
-    PRIMARY_APPENDIX = &apos;-primary&apos;,
-    SECONDARY_APPENDIX = &apos;-secondary&apos;,
-    ANGLE_0_APPENDIX = &apos;-0&apos;,
-    ANGLE_90_APPENDIX = &apos;-90&apos;,
-    ANGLE_180_APPENDIX = &apos;-180&apos;,
-    ANGLE_270_APPENDIX = &apos;-270&apos;,
+    DEVICE_ORIENTATION_CLASS = 'device-'+ORIENTATION_STRING,
+    LANDSCAPE_APPENDIX = '-'+LANDSCAPE_STRING,
+    PORTRAIT_APPENDIX = '-'+PORTRAIT_STRING,
+    PRIMARY_APPENDIX = '-primary',
+    SECONDARY_APPENDIX = '-secondary',
+    ANGLE_0_APPENDIX = '-0',
+    ANGLE_90_APPENDIX = '-90',
+    ANGLE_180_APPENDIX = '-180',
+    ANGLE_270_APPENDIX = '-270',
     ORIENTATION_CLASSES = {
         0: DEVICE_ORIENTATION_CLASS + ANGLE_0_APPENDIX,
         90: DEVICE_ORIENTATION_CLASS + ANGLE_90_APPENDIX,
@@ -92,8 +59,8 @@ var ORIENTATION_STRING = &apos;orientation&apos;,
     previousOrientationClass;
 
 /**
- * Returns device orientation &quot;portrait&quot; or &quot;landscape&quot;.
- * @returns {String} &quot;portrait&quot; or &quot;landscape&quot;
+ * Returns device orientation "portrait" or "landscape".
+ * @returns {String} "portrait" or "landscape"
  * @memberof module:detectDeviceOrientation
  * @alias JS.Responsive.getDeviceOrientation
  * @since 3.0.0
@@ -124,10 +91,10 @@ $C.features.detectDeviceOrientation = initDetectDeviceOrientation;
 // init detection
 function initDetectDeviceOrientation() {
     detectDeviceOrientation();
-    $C.on(&apos;update&apos;, detectDeviceOrientation);
+    $C.on('update', detectDeviceOrientation);
 }
 
-// adds &quot;device-orientation-portrait&quot; or &quot;device-orientation-landscape&quot; class  and  &quot;device-orientation-0&quot;, &quot;device-orientation-90&quot;, &quot;device-orientation-180&quot; or &quot;device-orientation-270&quot; class
+// adds "device-orientation-portrait" or "device-orientation-landscape" class  and  "device-orientation-0", "device-orientation-90", "device-orientation-180" or "device-orientation-270" class
 function detectDeviceOrientation() {
     var angle = getDeviceOrientationAngle();
 
@@ -149,11 +116,11 @@ function detectDeviceOrientation() {
 
         previousOrientationClass = newClass;
 
-        $C.emit(&apos;changedDeviceOrientation&apos;, newClass, previousOrientationClass, newAngleClass, previousAngleClass);
+        $C.emit('changedDeviceOrientation', newClass, previousOrientationClass, newAngleClass, previousAngleClass);
     }
 
 
-    $C.emit(&apos;changedDeviceOrientationAngle&apos;, newAngleClass, previousAngleClass, newClass, previousOrientationClass);
+    $C.emit('changedDeviceOrientationAngle', newAngleClass, previousAngleClass, newClass, previousOrientationClass);
 
     return newAngleClass;
 }
@@ -163,7 +130,7 @@ function detectDeviceOrientation() {
 function getDeviceOrientationAngle() {
     var orientation = 0;
     // win.orientation is deprecated (https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation)
-    if (typeof win.orientation == &apos;number&apos;) {
+    if (typeof win.orientation == 'number') {
         orientation = win.orientation;
     }
     else {
@@ -174,7 +141,7 @@ function getDeviceOrientationAngle() {
                 screen[MOZ_PREFIX + UC_ORIENTATION_STRING] ||
                 screen[MS_PREFIX + UC_ORIENTATION_STRING];
         if (screenOrientation) {
-            if (typeof screenOrientation == &apos;string&apos;) {
+            if (typeof screenOrientation == 'string') {
                 // is commented because zero is default
                 //if (screenOrientation == PORTRAIT_STRING + PRIMARY_APPENDIX)
                 //orientation = 0;
@@ -198,20 +165,16 @@ function getDeviceOrientationAngle() {
     </article>
 </section>
 
+                </div>
+            </div>
 
-    
+            <div class="clearfix"></div>
+
+            
+
+        </div>
+    </div>
+</div>
 
 
-
-<footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
-	
-		on Jan 11, 2017 10:50 PM
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
 
