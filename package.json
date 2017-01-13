@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "node test.js",
-    "update_hard": "git checkout master && git reset --hard && cd JS.Responsive && git checkout master && git reset --hard && git pull origin master && cd .. && npm run update",
+    "update_hard": "git checkout master && git reset --hard && cd JS.Responsive && git reset --hard && git checkout master && git pull origin master && cd .. && npm run update",
     "update": "git pull origin master && git submodule init && git submodule update && cd JS.Responsive && git pull origin master && npm i && cd node_modules/jsdoc-webpack-plugin && npm i --production && cd ../../.. && node jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node jsdocProcessUtil",
     "install": "npm run update",
     "templdev": "node jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node jsdocProcessUtil"
