@@ -27,6 +27,8 @@ function customRouter() {
 		firstIsLang = /^\w{2}$/.test(pathParts[0]),
 		resolved = resolvePath[path];
 
+    console.log('Routing path: ', path);
+
 	setLanguage(ctrl, firstIsLang ? pathParts[0] : '', path, firstIsLang);
 
 	if(firstIsLang){
@@ -42,7 +44,7 @@ function customRouter() {
 	}
 
 
-	console.log('resolved', resolved);
+	// console.log('resolved', resolved);
 
 	if(resolved)
 		if(typeof resolved == 'string')

@@ -4,12 +4,15 @@ $(document).ready(function() {
 	});
 
 
-	var actualPath = location.pathname.match(/^\/[a-z]*/)[0];
+	var actualPath = location.pathname.match(/^(\/\w{2})?(\/[a-z]*)/)[2];
 
 	$('header nav a').removeClass('active');
 	$('header nav')
-		.find('a[href="' + actualPath + '/"]')
+		.find('a[href$="' + actualPath + '/"]')
+		.eq(0)
 		.addClass('active');
+
+	console.log('dingdong', $('header nav').find('a[href$="' + actualPath + '/"]'), actualPath + '/');
 
 	// add to data attribute on body element actual page
 	$('body').attr('data-page', actualPath.charAt(0) === '/' ? actualPath.slice(1) : actualPath);
