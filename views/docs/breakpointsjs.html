@@ -9,14 +9,14 @@
 
 
 
-
-<h1 class="page-title">Source: breakpoints.js</h1>
-<div id="toc-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="main">
-                    
+    
+        <h1 class="page-title">@(Source: breakpoints.js)</h1>
+        <div id="toc-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="main">
+                            
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -33,7 +33,7 @@
  * @emits changedBreakPointHorizontal - fires when new horizontal breakpoint is reached
  * @emits changedBreakPointVertical - fires when new vertical breakpoint is reached
  *
- * @example <caption>Example usage of module</caption>
+ * @example &lt;caption>Example usage of module&lt;/caption>
  *
  * // JS:
  * JS.Responsive
@@ -340,7 +340,7 @@ function checkWindowOrDocumentResize() {
 }
 
 function arrayGetIndexOfName( array, name ) {
-    for (var i = 0; i < array.length; i++)
+    for (var i = 0; i &lt; array.length; i++)
         if (array[i].name == name)
             return i;
     return -1;
@@ -425,7 +425,7 @@ function solveSizes() {
         isSmallerThanNextBreakPoint;
 
     // for all dimensions, both 'horizontal' and 'vertical'
-    for (var k = 0; k < arrays.length; k++) {
+    for (var k = 0; k &lt; arrays.length; k++) {
 
         var actualSize = sizes[k],
             firstIn = FALSE,
@@ -433,14 +433,14 @@ function solveSizes() {
             sizeAttributeName = sizeAttributes[k];
 
         // for all break points in current dimension
-        for (var i = 0; i < a.length; i++) {
+        for (var i = 0; i &lt; a.length; i++) {
             size = a[i];
             nextSize = a[i + 1];
             removeAllClasses(size.name);
 
             sizeIsEqualToCurrentBreakPoint = (size[sizeAttributeName] == actualSize);
-            sizeIsGreaterThanCurrentBreakPoint = (size[sizeAttributeName] < actualSize);
-            sizeIsGreaterOrEqualToCurrentBreakPoint = (size[sizeAttributeName] <= actualSize);
+            sizeIsGreaterThanCurrentBreakPoint = (size[sizeAttributeName] &lt; actualSize);
+            sizeIsGreaterOrEqualToCurrentBreakPoint = (size[sizeAttributeName] &lt;= actualSize);
             thisBreakPointIsLastOne = (i == a.length - 1);
             isSmallerThanNextBreakPoint = nextSize &amp;&amp; nextSize[sizeAttributeName] > actualSize;
 
@@ -475,16 +475,16 @@ function solveSizes() {
     </article>
 </section>
 
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    
+
                 </div>
             </div>
-
-            <div class="clearfix"></div>
-
-            
-
         </div>
-    </div>
-</div>
 
-
+    
 

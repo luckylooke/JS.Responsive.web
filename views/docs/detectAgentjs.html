@@ -9,14 +9,14 @@
 
 
 
-
-<h1 class="page-title">Source: detectAgent.js</h1>
-<div id="toc-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="main">
-                    
+    
+        <h1 class="page-title">@(Source: detectAgent.js)</h1>
+        <div id="toc-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="main">
+                            
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -96,7 +96,7 @@ function findAgentDataByBrowserName( browser ) {
 
     var data = getAgentData();
     browser = browser.toLowerCase();
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i &lt; data.length; i++) {
         if (browser == data[i].identity.toLowerCase())
             return data[i];
     }
@@ -121,7 +121,7 @@ function addBrowserVersionClasses( agentData, version ) {
             if (version > actualVersion)
                 addClass(browser + '-v' + version + '-l');
 
-            if (version < actualVersion)
+            if (version &lt; actualVersion)
                 addClass(browser + '-v' + version + '-g');
 
             return TRUE;
@@ -140,7 +140,7 @@ function detectAgentPlatform(_justReturnValue) {
             version: NULL
         };
 
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i &lt; data.length; i++) {
 
         var dataString = data[i].string,
             dataProp = data[i].prop;
@@ -238,7 +238,7 @@ function getAgentData() {
 
 
  function getAgentTags() {
-     for (var i = 0, data = getAgentData(), tags = []; i < data.length; i++)
+     for (var i = 0, data = getAgentData(), tags = []; i &lt; data.length; i++)
      tags.push(data[i].identity.toLowerCase());
      return tags;
  }
@@ -246,16 +246,16 @@ function getAgentData() {
     </article>
 </section>
 
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    
+
                 </div>
             </div>
-
-            <div class="clearfix"></div>
-
-            
-
         </div>
-    </div>
-</div>
 
-
+    
 

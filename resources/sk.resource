@@ -207,3 +207,135 @@ T2115478082      : List of included features in current bundle, each property re
 T1247202999      : Object with key value pairs of features which will be initialised, if not provided, all features will be initialised. If you provide empty object, none of features will be initialised.
 T1816283015      : Unique name of given break point. Only lower case letters and comma is allowed /[a-z\\-]+/
 T477988352       : Detection of touch usage, because some devices are capable of touches even they are equipped with mouse, so user can change usage of both inputs unexpectedly in time.
+
+// 404.html, contact.html, download.html, indexDocs.html
+T786028832       : @{title}
+
+// docs/JS.Responsive.html
+T-1718991150     : Class: Responsive
+
+// docs/JS.Responsive.html, docs/quicksearch.html
+T-1378744462     : JS.Responsive - for chaining
+
+// docs/JS.Responsive.html, docs/module-breakpoints.html, docs/module-detectAgent.html, docs/module-detectDeviceOrientation.html, docs/module-detectHiRes.html, docs/module-detectOrientation.html, docs/module-detectTouch.html, docs/module-documentState.html, docs/module-focusBlur.html, docs/module-isMobile.html, docs/module-isScrolling.html, docs/module-timeBased.html, docs/module-touchVsMouse.html, docs/quicksearch.html
+T48517559        : 3.0.0
+
+// docs/JS.Responsive.sourcejs.html
+T1228554790      : Source: JS.Responsive.source.js
+
+// docs/breakpointsjs.html
+T1298886390      : Source: breakpoints.js
+
+// docs/detectAgentjs.html
+T1179590518      : Source: detectAgent.js
+
+// docs/detectDeviceOrientationjs.html
+T1497545409      : Source: detectDeviceOrientation.js
+
+// docs/detectHiResjs.html
+T1717072988      : Source: detectHiRes.js
+
+// docs/detectOrientationjs.html
+T-414258741      : Source: detectOrientation.js
+
+// docs/detectTouchjs.html
+T-1109106436     : Source: detectTouch.js
+
+// docs/documentStatejs.html
+T955588770       : Source: documentState.js
+
+// docs/focusBlurjs.html
+T-1672066215     : Source: focusBlur.js
+
+// docs/isMobilejs.html
+T-2117609270     : Source: isMobile.js
+
+// docs/isScrollingjs.html
+T-2143988467     : Source: isScrolling.js
+
+// docs/module-breakpoints.html
+T1001705648      : Module: breakpoints
+
+// docs/module-breakpoints.html, docs/quicksearch.html
+T-1861211716     : Name of actual horizontal break point or null if no horizontal break point is set.
+
+// docs/module-breakpoints.html, docs/quicksearch.html
+T778077884       : Name of actual vertical break point or null if no vertical break point is set.
+
+// docs/module-breakpoints.html, docs/module-detectAgent.html, docs/quicksearch.html
+T471002113       : this - for chaining.
+
+// docs/module-detectAgent.html
+T-1436356560     : Module: detectAgent
+
+// docs/module-detectAgent.html
+T-337709031      : containing "platform" as array, "browser" as string and "version" as number.
+
+// docs/module-detectAgent.html
+T990351080       : browser name, see function getAgentData() attribute "identity"
+
+// docs/module-detectAgent.html, docs/quicksearch.html
+T88708706        : all browser tags strings in Array.
+
+// docs/module-detectDeviceOrientation.html
+T-1289579963     : Module: detectDeviceOrientation
+
+// docs/module-detectDeviceOrientation.html
+T-902575356      : Returns device orientation "portrait" or "landscape".
+
+// docs/module-detectDeviceOrientation.html
+T1044528935      : "portrait" or "landscape"
+
+// docs/module-detectDeviceOrientation.html, docs/quicksearch.html
+T1796902589      : 0, 90, 180, 270
+
+// docs/module-detectHiRes.html
+T-1429850870     : Module: detectHiRes
+
+// docs/module-detectHiRes.html, docs/module-detectTouch.html, docs/module-isMobile.html, docs/quicksearch.html
+T-530358202      : The return value is not changing in time.
+
+// docs/module-detectOrientation.html
+T2005194427      : Module: detectOrientation
+
+// docs/module-detectTouch.html
+T-1418556310     : Module: detectTouch
+
+// docs/module-documentState.html
+T1642481348      : Module: documentState
+
+// docs/module-focusBlur.html
+T-1278210323     : Module: focusBlur
+
+// docs/module-isMobile.html
+T-765667554      : Module: isMobile
+
+// docs/module-isScrolling.html
+T362772985       : Module: isScrolling
+
+// docs/module-timeBased.html
+T1397983860      : Module: timeBased
+
+// docs/module-timeBased.html, docs/quicksearch.html
+T-1588089380     : Name of actual day time period.
+
+// docs/module-touchVsMouse.html
+T-501712037      : Module: touchVsMouse
+
+// docs/module-touchVsMouse.html, docs/quicksearch.html
+T1853439549      : Returns true if using touches, false if using mouse, undefined if no use detected yet
+
+// docs/modules-list.html
+T-1402880153     : Modules
+
+// docs/quicksearch.html
+T-1068664061     : containing &quot;platform&quot; as array, &quot;browser&quot; as string and &quot;version&quot; as number.
+
+// docs/quicksearch.html
+T1545289675      : &quot;portrait&quot; or &quot;landscape&quot;
+
+// docs/timeBasedjs.html
+T1645891186      : Source: timeBased.js
+
+// docs/touchVsMousejs.html
+T-1603621139     : Source: touchVsMouse.js

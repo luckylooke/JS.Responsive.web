@@ -9,14 +9,14 @@
 
 
 
-
-<h1 class="page-title">Source: detectHiRes.js</h1>
-<div id="toc-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="main">
-                    
+    
+        <h1 class="page-title">@(Source: detectHiRes.js)</h1>
+        <div id="toc-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="main">
+                            
 <section>
     <article>
         <pre class="sunlight-highlight-javascript linenums">/**
@@ -30,7 +30,7 @@
  * @custom-class normal-display - applied when display is lower resolution DEMO: http://codepen.io/WEZEO/pen/gLEgar
  * @custom-class display-pixel-ratio-$$-more - current display pixel ratio is higher then $$ value
  * @custom-class display-pixel-ratio-$$-less - current display pixel ratio is lower or equal then $$ value
- * @example <caption>Example usage of module</caption>
+ * @example &lt;caption>Example usage of module&lt;/caption>
  * #logo {
  *      background-image: url('wezeologo.jpg');
  *
@@ -79,10 +79,10 @@ function detectHiResDisplay() {
     if(typeof ratio != 'undefined'){
         ratioCeil = Math.ceil(ratio);
 
-        for(i = 0; i <= ratioCeil; i++){
+        for(i = 0; i &lt;= ratioCeil; i++){
             if(ratio > i)
                 addClass('display-pixel-ratio-' + i + '-more');
-            else if(ratio <= i)
+            else if(ratio &lt;= i)
                 addClass('display-pixel-ratio-' + i + '-less');
 
         }
@@ -91,16 +91,16 @@ function detectHiResDisplay() {
     </article>
 </section>
 
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    
+
                 </div>
             </div>
-
-            <div class="clearfix"></div>
-
-            
-
         </div>
-    </div>
-</div>
 
-
+    
 
