@@ -22,6 +22,7 @@
 						<!--and maintained on <a href="https://github.com/seyd/JS.Responsive" class="link" target="_blank">GitHub</a>.-->
 					<!--</p>-->
 				<!--</div>-->
+
 				<div class="col-12 text-center">
 					<h1 class="wow fadeIn" data-wow-delay=".25s">@(@{title})</h1>
 					<p class="max-75 wow bounceInUp" data-wow-delay=".5s">@(Get the best commercial support for your JS. )<br class="hidden-xs">@(Responsive. Our support program is on free for now!)</p>
@@ -36,46 +37,46 @@
 
 		<div class="wrap">
 
-			<div class="container">
+			<div class="container" data-jc-url="/templates/contactform.html">
 
-				<div data-component="visible" data-component-path="form.response" data-if="value && value.success === true" class="hidden">
-					<div class="message-success"><span class="fa fa-check-circle"></span>@(Thanks, the contact form has been sent successfully.)</div>
-					<br>
-				</div>
+				<!--<div data-component="visible" data-component-path="form.response" data-if="value && value.success === true" class="hidden">-->
+					<!--<div class="message-success"><span class="fa fa-check-circle"></span>@(Thanks, the contact form has been sent successfully.)</div>-->
+					<!--<br>-->
+				<!--</div>-->
 
-				<div id="contact-form" data-component="visible" data-component-path="form.response" data-if="!value || !value.success">
-					<div class="row">
-						<div class="col-md-6 m">
-							<div data-component="textbox" data-component-path="form.firstname" data-required="true" data-component-value="''">@(First name)</div>
-						</div>
-						<div class="col-md-6 m">
-							<div data-component="textbox" data-component-path="form.lastname" data-required="true" data-component-value="''">@(Last name)</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 m">
-							<div data-component="textbox" data-component-path="form.email" data-required="true" data-component-type="email" data-component-value="'@'">@(Email address)</div>
-						</div>
-						<div class="col-md-6 m">
-							<div data-component="textbox" data-component-path="form.phone" data-component-value="''">@(Phone number)</div>
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-12 m">
-							<div data-component="textarea" data-component-path="form.message" data-required="true" data-height="100px" data-component-value="''">@(Message)</div>
-						</div>
-					</div>
-					<div data-component="error" data-component-path="form.response"></div>
-					<br>
-					<div class="row">
-						<div class="col-12 text-right">
-							<div data-component="validation" data-component-path="form">
-								<button class="button" data-component="click" data-component-path="#submit" id="submit">@(SUBMIT FORM)</button>
-							</div>
-						</div>
-					</div>
-				</div>
+				<!--<div id="contact-form" data-component="visible" data-component-path="form.response" data-if="!value || !value.success">-->
+					<!--<div class="row">-->
+						<!--<div class="col-md-6 m">-->
+							<!--<div data-component="textbox" data-component-path="form.firstname" data-required="true" data-component-value="''">@(First name)</div>-->
+						<!--</div>-->
+						<!--<div class="col-md-6 m">-->
+							<!--<div data-component="textbox" data-component-path="form.lastname" data-required="true" data-component-value="''">@(Last name)</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="row">-->
+						<!--<div class="col-md-6 m">-->
+							<!--<div data-component="textbox" data-component-path="form.email" data-required="true" data-component-type="email" data-component-value="'@'">@(Email address)</div>-->
+						<!--</div>-->
+						<!--<div class="col-md-6 m">-->
+							<!--<div data-component="textbox" data-component-path="form.phone" data-component-value="''" data-jc-type="number">@(Phone number)</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<br>-->
+					<!--<div class="row">-->
+						<!--<div class="col-md-12 m">-->
+							<!--<div data-component="textarea" data-component-path="form.message" data-required="true" data-height="100px" data-component-value="''">@(Message)</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div data-component="error" data-component-path="form.response"></div>-->
+					<!--<br>-->
+					<!--<div class="row">-->
+						<!--<div class="col-12 text-right">-->
+							<!--<div data-component="validation" data-component-path="form">-->
+								<!--<button class="button" data-component="click" data-component-path="#submit" id="submit">@(SUBMIT FORM)</button>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
 
 			</div>
 
@@ -152,12 +153,12 @@
 
 </section><!-- contact-block -->
 
-<script>
-        var form = {};
-        OPERATION('submit', function() {
-            console.log('submit');
-            RESET('form.*');
-            console.log('form', form);
-            AJAX('POST /api/contact/', form, 'form.response');
-        });
-</script>
+<!--<script>-->
+        <!--var form = {};-->
+        <!--OPERATION('submit', function() {-->
+            <!--console.log('submit');-->
+            <!--RESET('form.*');-->
+            <!--console.log('form', form);-->
+            <!--AJAX('POST /api/contact/', form, 'form.response');-->
+        <!--});-->
+<!--</script>-->

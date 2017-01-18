@@ -2140,7 +2140,7 @@ pre {
 	display: table;
 	transition: border-color $animation-time ease;
 
-	&.ui-textbox-invalid {
+	&.ui-textbox-invalid, &.ui-textarea-invalid {
 		border-color: rgba($color-red, .6);
 	}
 

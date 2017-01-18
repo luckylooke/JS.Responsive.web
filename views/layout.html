@@ -29,7 +29,7 @@
 		})(document, 'script');
 	</script>
 </head>
-<body>
+<body data-jc="exec">
 
 	<div id="page-background">
 		<!--<div class="background-stripe"><div class="tick"></div></div>-->
@@ -69,7 +69,7 @@
 		</header>
 
 		@{if self.repository.colBreaks}
-		@{view('docSubMenu')}
+			@{view('docSubMenu')}
 		@{fi}
 
 		<div id="scene" class="scene unselectable"

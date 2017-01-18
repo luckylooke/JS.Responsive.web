@@ -2,6 +2,8 @@ var featuresList = require('./../JS.Responsive/server/featuresList.json');
 
 exports.install = function() {
 
+	F.localize('/templates/*.html', ['compress']);
+
 	F.route('*', customRouter);
 
 	F.file('/documentation/scripts/*.*', docFiles);

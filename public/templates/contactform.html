@@ -1,0 +1,63 @@
+<div data-jc-scope="?">
+
+    <div data-jc="visible" data-jc-path="form.response" data-if="value && value.success" class="hidden">
+        <br />
+        <br />
+        <div class="center">
+            <div><span class="fa fa-5x green fa-check-circle"></span></div>
+            <p class="mt10">@(<b class="dark">The contact form has been sent successfully.</b><br />We will contact you as soon as possible.)</p>
+        </div>
+        <br />
+        <br />
+    </div>
+
+    <div data-jc="visible" data-jc-path="form.response" data-if="value == null || !value.success">
+        <div class="row">
+            <div class="col-sm-6 m">
+                <div data-jc="textbox" data-jc-path="form.firstname" data-required="true">@(First name)</div>
+            </div>
+            <div class="col-sm-6 m">
+                <div data-jc="textbox" data-jc-path="form.lastname" data-required="true">@(Last name)</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 m">
+                <div data-jc="textbox" data-jc-path="form.company">@(Subject)</div>
+            </div>
+            <div class="col-sm-6 m">
+                <div data-jc="textbox" data-jc-path="form.email" data-required="true" data-jc-type="email" data-jc-value="'@'">@(E-mail address)</div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-sm-12">
+                <div data-jc="textarea" data-jc-path="form.body" data-required="true" data-height="200px" data-placeholder="@(Your questions...)">@(Message)</div>
+            </div>
+        </div>
+        <br />
+
+        <div data-jc="error" data-jc-path="form.response"></div>
+
+        <div class="row">
+            <div class="col-12 text-right">
+                <button class="button exec" data-exec="#contact.submit">@(SUBMIT)</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    OPERATION('contact.submit', function(el) {
+        var component = el.closest('[data-jc]').component();
+        console.log('test', !jC.validate(component.pathscope + '.form.*'));
+        if (!jC.validate(component.pathscope + '.form.*')){
+            console.log('dingdong', $('[data-jc="textarea"]').component());
+            return;
+        }
+        AJAX('POST /api/contact/', component.get(), component.pathscope + '.response');
+    });
+
+</script>
