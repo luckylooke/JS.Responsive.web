@@ -5,7 +5,6 @@ var list = data.featuresList,
     listHalf = Math.ceil(list.length/2),
     domList = $('#checklist'),
     downloadLinks = $('#donwload-links'),
-    downloadBtnWrap = $('#download-btn-wrap'),
     downloadBtn = $('#download-btn'),
     $allCheck = $("#all"),
     $defaultCheck = $("#default"),
@@ -84,7 +83,7 @@ function refreshLinks(e) {
         +'<div class="download-file wow bounceInRight" data-wow-delay="1.2s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.min.js.map">JS.Responsive' + result + '.min.js.map</a></div>'
     );
 
-    downloadBtnWrap.html('<a id="download-btn" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + cfg + '.zip" class="button shadow wow zoomIn" data-wow-delay="1.6s" target="_blank">(Download complete ZIP)</a>');
+    downloadBtn.attr('href', '/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + cfg + '.zip');
 }
 
 refreshLinks(); // init
