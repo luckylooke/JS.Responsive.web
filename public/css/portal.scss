@@ -573,6 +573,10 @@ p {
 strong, b {
 	font-family: $roboto-bold;
 	font-weight: normal;
+
+	&.medium {
+		font-family: $roboto-medium;
+	}
 }
 
 a {
@@ -1415,7 +1419,7 @@ section {
 
 	.contact-form {
 		border-top: 2px solid $color-light-blue;
-		padding-top: (90/$font-size)+rem;
+		padding: (90/$font-size)+rem 0;
 		background-color: $color-bg-blue;
 	}
 
@@ -1824,6 +1828,10 @@ section {
 				width: 1px;
 				background-color: #fff;
 			}
+
+			.input-group-btn {
+				width: 1%;
+			}
 		}
 
 		.form-control {
@@ -1839,8 +1847,10 @@ section {
 			// .navbar.navbar-fixed-top .navbar-form.expand .form-control
 			@at-root #{selector-nth(&, -2, append-class, '.expand')} {
 				width: 100%;
+				padding-right: 0.5rem;
 
 				html.small-less & {
+					padding-right: 1.5rem;
 				}
 			}
 
@@ -2158,6 +2168,7 @@ pre {
 
 		html.small-less & {
 			height: (130/$font-size)+rem;
+			padding: (25/$font-size)+rem (25/$font-size)+rem;
 		}
 
 		@at-root #{selector-nth(&, -2, append-class, '.ui-textbox-invalid')} {
@@ -2281,9 +2292,28 @@ pre {
 			}
 		}
 	}
+
+	.modal-body {
+		&:empty {
+			padding-top: 0;
+		}
+	}
+
+	.modal-footer {
+		padding: 10px 5px;
+	}
+
+	.noResults {
+		padding: 0 15px 15px;
+
+		html.small-less & {
+			font-family: $roboto-light;
+			font-size: ($font-size-p-xs/$font-size)+rem;
+		}
+	}
 }
 
-/* Codepen emmbeded */
+// Codepen emmbeded
 .cp_embed_wrapper {
 	box-shadow: 0 0.25em 0.8em 0 rgba(#888, .6);
 	margin-bottom: 4em;
