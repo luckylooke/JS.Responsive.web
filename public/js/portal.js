@@ -118,6 +118,9 @@
 		$navbarForm = $(this).closest('.navbar-form');
 		$navbarForm.find('input').focus();
 		$navbarForm.toggleClass('expand');
+        setTimeout(function () {
+            $navbarForm.find('input').val('');
+        }, 200);
 	});
 
 	// close search panel
