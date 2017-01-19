@@ -30,7 +30,7 @@ function customRouter() {
         firstIsLang = /^\w{2}$/.test(pathParts[0]),
         resolved = resolvePath[path];
 
-    console.log('Routing path: ', path);
+    console.log('Routing path: ', path, pathParts);
 
     if(firstIsLang && pathParts[0] == 'en') { // someone put manually default lang en instead of current lang
         ctrl.redirect(path.replace(/^\/\w{2}/, ''), true);
