@@ -49,7 +49,7 @@ function customRouter() {
 
     if(pathParts[0] == 'documentation' && pathParts[1]){
         ctrl.repository.route = pathParts[1];
-        path = path.replace(/[\-\w]+\/$/, ''); // remove dynamic route part from path
+        path = path.replace(/[\-\w.]+\/$/, ''); // remove dynamic route part from path
         resolved = resolvePath[path]; // and resolve again
     }
 
