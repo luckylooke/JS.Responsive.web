@@ -45,6 +45,30 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 if(file.match(/\.list.html$/))
                     file = file.replace('.list', '-list');
 
+                if(file === 'JS.Responsive.html')
+                    fs.writeFile(__dirname + '/views/docs/js.responsive.html', contents, function(err){
+                        "use strict";
+                        if(err) console.error(err);
+
+                        console.log('file done:  js.responsive.html');
+                        opened--;
+                        if(!opened){
+                            afterAllCreated();
+                        }
+                    });
+
+                if(file === 'JS.Responsive.sourcejs.html')
+                    fs.writeFile(__dirname + '/views/docs/js.responsive.sourcejs.html', contents, function(err){
+                        "use strict";
+                        if(err) console.error(err);
+
+                        console.log('file done:  js.responsive.sourcejs.html');
+                        opened--;
+                        if(!opened){
+                            afterAllCreated();
+                        }
+                    });
+
                 fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
                     "use strict";
                     if(err) console.error(err);

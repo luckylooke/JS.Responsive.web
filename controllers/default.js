@@ -77,8 +77,8 @@ function docCtrl(ctrl) {
     var route = ctrl.repository.route;
     console.log('doc_route: ', route || 'indexDocs');
 
-    ctrl.repository.colBreaks = ['detectAgent', 'documentState']; // column breaks
-    ctrl.repository.colContentBreaks = ['documentState']; // column breaks
+    ctrl.repository.colBreaks = ['detect-agent', 'document-state']; // column breaks
+    ctrl.repository.colContentBreaks = ['document-state']; // column breaks
     ctrl.repository.modules = featuresList;
     ctrl.view('documentation', {
         dynaview: route ? 'docs/' + route : 'indexDocs'
