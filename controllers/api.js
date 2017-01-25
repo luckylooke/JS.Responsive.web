@@ -1,5 +1,6 @@
 var fs = require('fs'),
 	customBuild = require(__dirname + '/../JS.Responsive/server/customBuild.js'),
+	defaultCfg = require(__dirname + '/../JS.Responsive/server/defaultCfg.js'),
     statsPath = __dirname + '/../fileSizes.json',
     stats,
     writingStats = false,
@@ -58,7 +59,7 @@ exports.install = function() {
                     // serve cached
                     res.file(resFile);
                 } else {
-                    customBuild(def ? '6257' : cfg, type, function (err) {
+                    customBuild(def ? defaultCfg : cfg, type, function (err) {
                         if(err) console.error(err);
                         console.log('resFile generated: ', resFile);
 

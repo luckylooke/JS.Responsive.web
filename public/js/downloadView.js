@@ -11,7 +11,7 @@ var list = JSON.parse($('#featuresList').html()),
     domListDetached = domList.detach(),
     inputs,
     html = '',
-    defaultSetup = '100001110001';
+    defaultCfg = parseInt($('#defaultCfg').html()).toString(2).substr(1); // .substr(1) because first '1' is protection of leading zeros
 
 for (var prop in fileSizes){
     if(fileSizes.hasOwnProperty(prop))
@@ -32,7 +32,7 @@ inputs = domList.find('input');
 domList.on('click', refreshLinks);
 
 inputs.prop('checked', function(i){
-    return !!parseInt(defaultSetup[i]);
+    return !!parseInt(defaultCfg[i]);
 });
 
 $allCheck.change(function (e) {
@@ -41,7 +41,7 @@ $allCheck.change(function (e) {
 });
 $defaultCheck.change(function (e) {
     inputs.prop('checked', function(i){
-        return !!parseInt(defaultSetup[i]);
+        return !!parseInt(defaultCfg[i]);
     });
     refreshLinks(e);
 });
@@ -54,8 +54,8 @@ function refreshLinks(e) {
         resultPath = '',
         cfg = '',
         base = 'v3.0.0-';
-    inputs.each(function (i, chbox) {
-        if(chbox.checked)
+    inputs.each(function (i, checkbox) {
+        if(checkbox.checked)
             result += '1';
         else
             result += '0';
@@ -65,7 +65,7 @@ function refreshLinks(e) {
         result = 'full';
         $allCheck.prop("checked", true);
         $defaultCheck.prop("checked", false);
-    }else if(!result.match(/1/) || result == defaultSetup){
+    }else if(!result.match(/1/) || result == defaultCfg){
         result = '';
         base += 'default';
         $allCheck.prop("checked", false);
