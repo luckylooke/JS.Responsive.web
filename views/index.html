@@ -11,7 +11,7 @@
 
 			<div class="row">
 				<div class="col-12">
-					<h1 class="wow fadeIn" data-wow-delay=".25s">@(The new standard for <span class="color-blue">responsive)</span></h1>
+					<h1 class="wow fadeIn" data-wow-delay=".25s">@(#index-main-header)</h1>
 
 					<div class="row devices">
 
@@ -37,12 +37,10 @@
 
 					</div>
 
-					<p class="max-75 text-center wow bounceInUp" data-wow-delay="1.4s">@(
-						JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
-					)</p>
+					<p class="max-75 text-center wow bounceInUp" data-wow-delay="1.4s">@(#index-description)</p>
 
 					<div class="text-center">
-						<a class="button wow fadeInUp" href="/download/" data-wow-delay="2.2s">@(Download now!)</a>
+						<a class="button wow fadeInUp" href="/download/" data-wow-delay="2.2s">@(#index-download-now)</a>
 					</div>
 
 				</div>
@@ -60,12 +58,25 @@
 			<div class="row">
 
 				<div class="col-12">
-
-					<h2 class="wow fadeInUp">Check this <strong>simple example</strong>:</h2>
+					<h1 class="wow fadeInUp">@(#how-it-works)</h1>
+					
+					<p class="center">@(#how-it-works-1)</p>
+					
+					<div class="html-example">&lt;<span class="color-black">html</span> class="<em>windows chrome <span class="color-red">landscape</span> desktop small-more medium-more large state-complete normal-display</em>"&gt;</div>
+					
+					<p class="center">@(#how-it-works-2)</p>
+					
+					<div class="html-example"><span class="color-black">html</span>.<span class="color-red">landscape</span> .menu { <em>float: left;</em> }</div>
+					
+					<p class="center">@(#how-it-works-3)</p>
+					
+					
+					<p>&nbsp;</p>
+				
+					<h2 class="wow fadeInUp">@(#check-examples)</h2>
 
 					<!-- embeded codepen -->
-					<p data-height="276" data-theme-id="light" data-slug-hash="gLEgar" data-default-tab="css,result" data-user="WEZEO" data-embed-version="2" data-pen-title="basic hi-res DEMO" class="codepen">See the Pen <a href="http://codepen.io/WEZEO/pen/gLEgar/">basic hi-res DEMO</a> by wezeo (<a href="http://codepen.io/WEZEO">@WEZEO</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+					@(#codepen-example-display-density)
 
 				</div>
 
@@ -88,22 +99,7 @@
 
 				</a><!-- col-3 -->
 
-				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/bBEXXR" target="_blank" data-wow-delay=".7s">
-
-					<div class="inner">
-					<span class="icon">
-						<img src="/img/icon-js-api@2x.png" alt="Javascript API" width="41" />
-					</span>
-
-						<h3 class="line">Javascript API</h3>
-						<p>@(You can use just CSS selector based API but Javascript event based API for all features also.)</p>
-
-						<span class="button small">@(View example)</span>
-					</div>
-
-				</a><!-- col-3 -->
-
-				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/YpqJKz" target="_blank" data-wow-delay="1s">
+				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/YpqJKz" target="_blank" data-wow-delay=".7s">
 
 					<div class="inner">
 						<span class="icon">
@@ -118,7 +114,7 @@
 
 				</a><!-- col-3 -->
 
-				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/aBNaxQ" target="_blank" data-wow-delay="1.3s">
+				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/aBNaxQ" target="_blank" data-wow-delay="1s">
 
 					<div class="inner">
 						<span class="icon">
@@ -129,6 +125,21 @@
 						<p>@(CSS selector conditions by browser and fallback options for older versions.)</p>
 
 						<span class="button small">@(View code)</span>
+					</div>
+
+				</a><!-- col-3 -->
+				
+				<a class="col-3 wow fadeInUp" href="http://codepen.io/WEZEO/full/bBEXXR" target="_blank" data-wow-delay="1.3s">
+
+					<div class="inner">
+					<span class="icon">
+						<img src="/img/icon-js-api@2x.png" alt="Javascript API" width="41" />
+					</span>
+
+						<h3 class="line">Javascript API</h3>
+						<p>@(You can use just CSS selector based API but Javascript event based API for all features also.)</p>
+
+						<span class="button small">@(View example)</span>
 					</div>
 
 				</a><!-- col-3 -->
@@ -148,7 +159,7 @@
 			<div class="row">
 				<div class="col-12">
 
-					<h2 class="wow fadeInUp">@(Built with )<strong>JS.Responsive</strong></h2>
+					<h2 class="wow fadeInUp">@(Built with ) <strong>JS.Responsive</strong></h2>
 
 					<p class="max-75 wow fadeInUp" data-wow-delay=".5s">@(
 						Amazing sites across the web are using <strong class="medium">JS.Responsive</strong>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
@@ -202,7 +213,9 @@
 
 			<div class="col-12">
 
-				<p class="max-75">@(See <a href="/documentation/">all features of JS.Responsive)</a>.</p>
+				<div class="text-center wow fadeInUp">
+						<a class="button" href="documentation/" data-wow-delay="0.6s">@(#button-all-features)</a>
+				</div>
 
 			</div>
 

@@ -1,6 +1,45 @@
 // Total.js translation file
 // Created: 2017-01-14 16:03
 
+// layout.html
+menu-home			: Home
+menu-doc			: Documentation
+menu-download		: Download
+menu-contact		: Contact
+fork-me				: Fork me on <strong>GitHub</strong>
+powered-by			: 
+
+// index.html
+index-main-header	: The new standard for <span class="color-blue">responsive</span>
+index-description	: JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
+index-download-now	: Download now!
+how-it-works		: How it works?
+how-it-works-1		: You don't need to be a Javascript programmer to use <span class="color-blue">JS.Responsive</span> ;)<br />You can use just CSS, SASS or LESS.
+how-it-works-2		: <span class="color-blue">JS.Responsive</span> generates <strong class="color-blue">special classes</strong> to &lt;html&gt; element.<br />For example about your&nbsp;OS, browser, browser&nbsp;version, display or&nbsp;device&nbsp;orientation, document&nbsp;state, display&nbsp;density, actual width break&nbsp;points, if device is touchable, and many more...
+how-it-works-3		: You can write your <strong class="color-blue">styles with conditions</strong> to these classes and/or you can use <strong class="color-blue">Javascript API</strong> also.
+check-examples		: Check this <strong>simple example</strong>:
+codepen-example-display-density : <p data-height="276" data-theme-id="light" data-slug-hash="gLEgar" data-default-tab="css,result" data-user="WEZEO" data-embed-version="2" data-pen-title="basic hi-res DEMO" class="codepen">See the Pen <a href="http://codepen.io/WEZEO/pen/gLEgar/">basic hi-res DEMO</a> by wezeo (<a href="http://codepen.io/WEZEO">@WEZEO</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+button-all-features	: See all features of JS.Responsive
+
+T-1383443348     : The new standard for <span class="color-blue">responsive
+T-818980096      : JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
+T772480131       : Download now!
+T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
+T372290142       : View demo
+T-740933190      : You can use just CSS selector based API but Javascript event based API for all features also.
+T-1584478449     : View example
+T720523509       : Touch vs. Mouse
+T-299587101      : Different UI design for mouse and touch and switching dynamicaly beetwen them.
+T-1327173792     : View video
+T-925137043      : Browser detection
+T2129003478      : CSS selector conditions by browser and fallback options for older versions.
+T372269672       : View code
+T1923028296      : Built with
+T712298501       : Amazing sites across the web are using <a href="/">JS.Responsive</a>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
+T-1655032974     : See <a href="/documentation/">all features of JS.Responsive
+
+
 // 404.html, contact.html, download.html, indexDocs.html
 T786028832       : @{title}
 
@@ -36,24 +75,6 @@ T1254941692      : All features
 T-1085510111     : Default
 T-952488795      : ...and download generated files
 
-// index.html
-T-1383443348     : The new standard for <span class="color-blue">responsive
-T-818980096      : JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!
-T772480131       : Download now!
-T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
-T372290142       : View demo
-T-740933190      : You can use just CSS selector based API but Javascript event based API for all features also.
-T-1584478449     : View example
-T720523509       : Touch vs. Mouse
-T-299587101      : Different UI design for mouse and touch and switching dynamicaly beetwen them.
-T-1327173792     : View video
-T-925137043      : Browser detection
-T2129003478      : CSS selector conditions by browser and fallback options for older versions.
-T372269672       : View code
-T1923028296      : Built with
-T712298501       : Amazing sites across the web are using <a href="/">JS.Responsive</a>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
-T-1655032974     : See <a href="/documentation/">all features of JS.Responsive
-
 // indexDocs.html
 T-887101829      : Enjoy JS.Responsive documentation! It is generated from source code with
 T101418831       : jsdoc
@@ -63,15 +84,6 @@ T-2093436326     : Installation
 T1743439624      : How to get the library and choosing the right installation for your project.
 T622700265       : Quick access list of javascript API methods
 T1845866727      : Javascript API
-
-// layout.html
-T-1011330417     : Fork me on <strong>GitHub</strong>
-T2255103         : Home
-T-1908600166     : Documentation
-T1492462760      : Download
-T-1678787584     : Contact
-T1637042828      : Powered by <a href="http://www.totaljs.com" target="_blank">Total.js - web framework
-T-1593829725     : Made with <img src="/img/icon-heart@2x.png" alt="Love" width="19" class="heart">  by <a href="http://www.wezeo.com" target="_blank"><img src="/img/logo-wezeo@2x.png" alt="Wezeo" width="46"></a>
 
 // docs/JS.Responsive.html
 T-1718991150     : Class: Responsive

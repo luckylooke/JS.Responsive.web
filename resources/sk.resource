@@ -1,6 +1,40 @@
 // Total.js translation file
 // Created: 2017-01-11 20:47
 
+// layout.html
+menu-home			: Úvod
+menu-doc			: Dokumentácia
+menu-download		: Stiahnuť
+menu-contact		: Kontakt
+fork-me				: Forkni ma na <strong>GitHub</strong>e
+
+// index.html
+index-main-header	: <span class="color-blue">Spôsob ako robiť</span> responzívny dizajn <span class="color-blue">lepšie</span>
+index-description	: JS.Responsive je nenahraditeľný pomocník pri responzívnom štýlovaní. <br />Pretože responzívnosť je viac ako len šírka okna!
+index-download-now	: Stiahnuť hneď!
+how-it-works		: Ako to funguje?
+how-it-works-1		: Na to, aby si mohol používať <span class="color-blue">JS.Responsive</span>, memusíš byť Javascript programátor ;)<br />Stačí ovládať CSS, SASS alebo LESS.
+how-it-works-2		: <span class="color-blue">JS.Responsive</span> generuje <strong class="color-blue">špeciálne class-y</strong> do &lt;html&gt; elementu.<br />Napríklad o&nbsp;vašom operačnom&nbsp;systéme, prehliadači, verzii&nbsp;prehliadača, displeji alebo&nbsp;otočení&nbsp;displeja, document&nbsp;state, display&nbsp;density, break&nbsp;pointy podľa aktuálnej šírky okna, či je zariadenie dotykové, a mnoho iného...
+how-it-works-3		: Môžete písať <strong class="color-blue">podmienené štýly</strong> zohľadňújucé tieto class-y a/alebo môžete použiť aj <strong class="color-blue">Javascriptové API</strong>.
+check-examples		: Jeden <strong>príklad</strong> za tisíc slov:
+codepen-example-display-density : <p data-height="276" data-theme-id="light" data-slug-hash="YZwKKm" data-default-tab="css,result" data-user="WEZEO" data-embed-version="2" data-pen-title="basic hi-res DEMO" class="codepen">See the Pen <a href="http://codepen.io/WEZEO/pen/gLEgar/">basic hi-res DEMO</a> by wezeo (<a href="http://codepen.io/WEZEO">@WEZEO</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+button-all-features	: Zobraziť všetky funkcie JS.Responsive
+
+T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
+T372290142       : View demo
+T-740933190      : You can use just CSS selector based API but Javascript event based API for all features also.
+T-1584478449     : View example
+T720523509       : Touch vs. Mouse
+T-299587101      : Different UI design for mouse and touch and switching dynamicaly beetwen them.
+T-1327173792     : View video
+T-925137043      : Browser detection
+T2129003478      : CSS selector conditions by browser and fallback options for older versions.
+T372269672       : View code
+T1923028296      : Built with
+T712298501       : Amazing sites across the web are using <a href="/">JS.Responsive</a>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
+T-1655032974     : See <a href="/documentation/">all features of JS.Responsive
+
 // contact.html
 T-136388205      : Získajte najlepšiu komerčnú podporu pre váš JS.
 T574662468       : Responsive. Náš program podpory je zatiaľ úplne zdarma!
@@ -31,24 +65,6 @@ T1254941692      : All features
 T-1085510111     : Default
 T-952488795      : ...and download generated files
 
-// index.html
-T-1383443348     : The new standard for <span class="color-blue">responsive
-T-818980096      : JS.Responsive je ideálny štýlovací nástroj pre responzívnosť, ako nikdy pred tým. Pretože responzívnosť je viac ako len šírka okna!
-T772480131       : Download now!
-T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
-T372290142       : View demo
-T-740933190      : You can use just CSS selector based API but Javascript event based API for all features also.
-T-1584478449     : View example
-T720523509       : Touch vs. Mouse
-T-299587101      : Different UI design for mouse and touch and switching dynamicaly beetwen them.
-T-1327173792     : View video
-T-925137043      : Browser detection
-T2129003478      : CSS selector conditions by browser and fallback options for older versions.
-T372269672       : View code
-T1923028296      : Built with
-T712298501       : Amazing sites across the web are using <a href="/">JS.Responsive</a>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
-T-1655032974     : See <a href="/documentation/">all features of JS.Responsive
-
 // indexDocs.html
 T-887101829      : Uži si JS.Responsive documentáciu! Je generovaná zo zdrojového kódu pomocou
 T101418831       : jsdoc
@@ -58,15 +74,6 @@ T-2093436326     : Installation
 T1743439624      : How to get the library and choosing the right installation for your project.
 T622700265       : Quick access list of javascript API methods
 T1845866727      : Javascript API
-
-// layout.html
-T-1011330417     : Forkni ma na <strong>GitHub</strong>e
-T2255103         : Domov
-T-1908600166     : Dokumentácia
-T1492462760      : Stiahnúť
-T-1678787584     : Kontakt
-T1637042828      : Powered by <a href="http://www.totaljs.com" target="_blank">Total.js - web framework
-T-1593829725     : Made with <img src="/img/icon-heart@2x.png" alt="Love" width="19" class="heart">  by <a href="http://www.wezeo.com" target="_blank"><img src="/img/logo-wezeo@2x.png" alt="Wezeo" width="46"></a>
 
 // docs/JS.Responsive.html, docs/quicksearch.html
 T-1191068791     : Constructor is PRIVATE, client must use only class methods!!!!!

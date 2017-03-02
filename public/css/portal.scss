@@ -363,6 +363,15 @@ img {
 	color: $color-blue;
 }
 
+.color-red {
+	color: $color-dark-red;
+}
+
+.color-black {
+	color: #000;
+}
+
+
 .max-75 {
 	text-align: center;
 	max-width: 75%;
@@ -1119,6 +1128,7 @@ section {
 
 .intro {
 	padding: (130/$font-size)+rem 0 (180/$font-size)+rem;
+	overflow: hidden;
 
 	.devices {
 		font-size: 0;
@@ -2318,4 +2328,28 @@ pre {
 	box-shadow: 0 0.25em 0.8em 0 rgba(#888, .6);
 	margin-bottom: 4em;
 	line-height: 0;
+}
+
+.html-example {
+	box-shadow: 0 0.15em 0.35em 0 rgba($color-blue, .45);
+	line-height: 135%;
+	padding: 1em;
+	text-align: center;
+	margin-bottom: 1em;
+	background-color: #EEF8FF;
+	color: #777;
+	font-size: 1.2em;
+	
+	html.small-less & {
+		font-size: 1em;
+	}
+	
+	em {
+		color: $color-blue;
+		font-style: normal;
+	}
+}
+
+.center {
+	text-align: center;
 }
