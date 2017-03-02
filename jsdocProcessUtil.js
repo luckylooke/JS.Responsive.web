@@ -27,11 +27,11 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 var $ = cheerio.load(contents, {decodeEntities: false});
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
-                    fs.readFileSync(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
+                    fs.readFile(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
+                        if(err) return console.error(err);
                         console.log('file contents: ', 'docSubMenu.html', !!contents);
                         var $ = cheerio.load(contents, {decodeEntities: false});
                         $('#modules-list').html(listOfModules);
-                        $('.navbar').remove();
                         contents = $.html();
                         fs.writeFile(__dirname + '/views/docSubMenu.html', contents, function(err){
                             if(err) console.error(err);

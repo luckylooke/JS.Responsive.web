@@ -1,5 +1,5 @@
 <ul class="dropdown-menu" style="display: none">
-		<li><a href="/documentation/module-breakpoints/">breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">detect-ad-block</a></li><li><a href="/documentation/module-detect-agent/">detect-agent</a></li><li><a href="/documentation/module-detect-device-orientation/">detect-device-orientation</a></li><li><a href="/documentation/module-detect-hi-res/">detect-hi-res</a></li><li><a href="/documentation/module-detect-orientation/">detect-orientation</a></li><li><a href="/documentation/module-detect-touch/">detect-touch</a></li><li><a href="/documentation/module-document-state/">document-state</a></li><li><a href="/documentation/module-focus-blur/">focus-blur</a></li><li><a href="/documentation/module-is-mobile/">is-mobile</a></li><li><a href="/documentation/module-is-scrolling/">is-scrolling</a></li><li><a href="/documentation/module-time-based/">time-based</a></li><li><a href="/documentation/module-touch-vs-mouse/">touch-vs-mouse</a></li>
+		<li><a href="/documentation/module-breakpoints/">Size breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">Adblock detection</a></li><li><a href="/documentation/module-detect-agent/">User agent detection</a></li><li><a href="/documentation/module-detect-device-orientation/">Device orientation</a></li><li><a href="/documentation/module-detect-hi-res/">Display resolution</a></li><li><a href="/documentation/module-detect-orientation/">Viewport orientation</a></li><li><a href="/documentation/module-detect-touch/">Touch capability</a></li><li><a href="/documentation/module-document-state/">Document loading</a></li><li><a href="/documentation/module-focus-blur/">Window focus detection</a></li><li><a href="/documentation/module-is-mobile/">Mobile device detection</a></li><li><a href="/documentation/module-is-scrolling/">Scroll usage</a></li><li><a href="/documentation/module-time-based/">Time breakpoints and time related classes</a></li><li><a href="/documentation/module-touch-vs-mouse/">Touch usage detection</a></li>
 	</ul>
 
 	<ul class="dropdown-menu" style="display: none">
@@ -25,12 +25,12 @@
 
                             <article>
                                 <div class="container-overview">
-                                
                                     
-                                        <div class="description">@(Detection of device orientation (not orientation of viewport aka width/height ration))</div>
-                                    
+                                        
+                                            <div class="description">@(Detection of device orientation (not orientation of viewport aka width/height ration))</div>
+                                        
 
-                                    
+                                        
 <dl class="details">
     
 
@@ -66,7 +66,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/detect-device-orientationjs/">detect-device-orientation.js</a>,
-				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-1">line 1</a>
+				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-1"> line 1</a>
 			</li>
 		</ul>
 	</dd>
@@ -80,8 +80,8 @@
 </dl>
 
 
+                                        
                                     
-                                
                                 </div>
 
                                 
@@ -96,14 +96,40 @@
 
                                 
 
-                                
-                                    <h3 class="subsection-title">@(Methods)</h3>
 
-                                    <dl>
-                                        
+
+                                 
+                                    <div class="customclasses">
+                                        <h3 class="subsection-title">@(CSS classes)</h3>
+                                        <hr>
+                                          <dl>
+                                              
+                                                  <dt> device-orientation-portrait </dt> 
+                                              
+                                                  <dt> device-orientation-landscape </dt> 
+                                              
+                                                  <dt> device-orientation-0 </dt>   <dd>most common state (default for device) </dd>  
+                                              
+                                                  <dt> device-orientation-90 </dt>   <dd>device is left side down </dd>  
+                                              
+                                                  <dt> device-orientation-180 </dt>   <dd>upside down </dd>  
+                                              
+                                                  <dt> device-orientation-270 </dt>   <dd>device is right side down </dd>  
+                                              
+                                          </dl>
+
+                                     </div>
+
+                                
+
+                                
+                                   <div class="functions">
+                                         <h3 class="subsection-title">@(Methods)</h3>
+                                         <dl>
+                                             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getDeviceOrientation"><span class="type-signature">&lt;static> </span>JS.Responsive.getDeviceOrientation()</h4>
+    <h4 class="name" id=".JS.Responsive.getDeviceOrientation">JS.Responsive.getDeviceOrientation()</h4>
     
     
 </dt>
@@ -134,7 +160,7 @@
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -165,7 +191,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/detect-device-orientationjs/">detect-device-orientation.js</a>,
-				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-47">line 47</a>
+				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-47"> line 47</a>
 			</li>
 		</ul>
 	</dd>
@@ -201,7 +227,7 @@
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -218,11 +244,11 @@
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getDeviceOrientationAngle"><span class="type-signature">&lt;static> </span>JS.Responsive.getDeviceOrientationAngle()</h4>
+    <h4 class="name" id=".JS.Responsive.getDeviceOrientationAngle">JS.Responsive.getDeviceOrientationAngle()</h4>
     
     
 </dt>
@@ -253,7 +279,7 @@
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -284,7 +310,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/detect-device-orientationjs/">detect-device-orientation.js</a>,
-				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-60">line 60</a>
+				 <a href="/documentation/detect-device-orientationjs/#sunlight-1-line-60"> line 60</a>
 			</li>
 		</ul>
 	</dd>
@@ -320,7 +346,7 @@
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -337,12 +363,26 @@
     
 </dd>
 
-                                    </dl>
+                                         </dl>
+                                   </div>
                                 
 
                                 
 
                                 
+                                    <div class="fires">
+                                        <h3 class="subsection-title">@(Events)</h3>
+                                        <hr>
+                                        <dl>
+                                            
+                                                <dt> changedDeviceOrientationAngle </dt> <dd> </dd>
+                                            
+                                                <dt> changedDeviceOrientation </dt> <dd> </dd>
+                                            
+                                        </dl>
+                                     </div>
+                                
+
                             </article>
 
                             </section>

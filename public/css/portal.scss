@@ -1511,12 +1511,14 @@ section {
 }
 
 .documentation-detail-block {
+	//color: darken(#999, 20%);
 
 	#toc-content {
 		border-top: 2px solid $color-light-blue;
 		margin-top: (100/$font-size)+rem;
 		padding: (40/$font-size)+rem 0;
 		background-color: #fff;
+		transform: translateX(10px);
 
 		header {
 			padding: 0;
@@ -1535,23 +1537,34 @@ section {
 
 		h3.subsection-title {
 			font-family: $roboto-bold;
-			font-size: (20/$font-size)+rem;
+			font-size: (25/$font-size)+rem;
+			margin-top: (35/$font-size)+rem;
+			transform: translateX(-10px);
 
 			html.small-less & {
 				font-size: (70/$font-size)+rem;
 			}
 		}
 
+		dt {
+			margin-top: (10/$font-size)+rem;
+		}
+
 		h4.name,
 		dt.name h4 {
 			font-family: $roboto-medium;
-			font-size: (18/$font-size)+rem;
+			font-size: (22/$font-size)+rem;
 			margin-bottom: (10/$font-size)+rem;
 
 			html.small-less & {
 				font-size: (68/$font-size)+rem;
 				margin-bottom: (50/$font-size)+rem;
 			}
+		}
+
+		h5 {
+			margin-bottom: 0;
+			font-weight: 700;
 		}
 
 		dt.name {
@@ -1579,7 +1592,7 @@ section {
 
 		.description,
 		.param-desc {
-			margin-bottom: (10/$font-size)+rem;
+			margin-bottom: (20/$font-size)+rem;
 		}
 	}
 
@@ -1590,6 +1603,29 @@ section {
 
 	footer {
 		display: none;
+	}
+
+	.tag-source,
+	.tag-since {
+		display: inline-block;
+		margin: 0 5px 0 0 !important;
+	}
+
+	.description {
+		color: #999;
+		margin-bottom: .3rem;
+	}
+
+	dd, dt {
+		line-height: 1.7;
+	}
+
+	hr {
+		transform: translateX(-10px);
+	}
+
+	section {
+		overflow: visible;
 	}
 }
 
