@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>JS.Responsive Index</title>
+	<title>JS.Responsive Source: detectTouch.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -67,32 +67,49 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	
-	
+		<h1 class="page-title">Source: detectTouch.js</h1>
+    
+<section>
+    <article>
+        <pre class="sunlight-highlight-javascript linenums">/**
+ *
+ * Detection whether device is touch capable
+ * @module detectTouch
+ * @pretty-name Touch capability
+ * @teaser Touch capability detection.
+ *
+ * @custom-class touch - is touch capable
+ * @custom-class no-touch - is not
+ *
+ * */
 
+/**
+ * Detects if current device supports touch events.
+ * @returns {Boolean} The return value is not changing in time.
+ * @memberof module:detectTouch
+ * @alias JS.Responsive.isTouch
+ * @since 3.0.0
+ */
+$C.isTouch = function() {
 
+    return 'ontouchstart' in document.documentElement;
+};
 
+$C.features.detectTouch = detectTouch;
 
+// Function declarations: ######################### ######################### ######################### ######################### ######################### ######################### #########################
 
-
-
-
-
-
-
-	
-	
-
-
-
-
-
-
+// adds "touch" or "no-touch" class (once)
+function detectTouch() {
+    addClass($C.isTouch() ? 'touch' : 'no-touch');
+}</pre>
+    </article>
+</section>
 
 
 
@@ -103,10 +120,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
