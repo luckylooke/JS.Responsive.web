@@ -86,14 +86,14 @@ function refreshLinks(e) {
     }
 
     downloadLinks.html(
-        '<div class="download-file wow bounceInRight" data-wow-delay="0.3s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.js">JS.Responsive' + result + '.js (' + (fileSizes[base + ".js"] || '?') + 'kB)</a></div>'
-        +'<div class="download-file wow bounceInRight" data-wow-delay="0.6s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.js.map">JS.Responsive' + result + '.js.map (' + (fileSizes[base + ".js.map"] || '?') + 'kB)</a></div>'
-        +'<div class="download-file wow bounceInRight" data-wow-delay="0.9s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.min.js">JS.Responsive' + result + '.min.js (' + (fileSizes[base + ".min.js"] || '?') + 'kB)</a></div>'
-        +'<div class="download-file wow bounceInRight" data-wow-delay="1.2s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.min.js.map">JS.Responsive' + result + '.min.js.map (' + (fileSizes[base + ".min.js.map"] || '?') + 'kB)</a></div>'
+        '<div class="download-file wow bounceInRight" data-wow-delay="0.3s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.js">JS.Responsive' + result + '.js' +  (fileSizes[base + ".js"] ? ' (' + fileSizes[base + ".js"] + 'KB)' : '') + '</a></div>'
+        +'<div class="download-file wow bounceInRight" data-wow-delay="0.6s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.js.map">JS.Responsive' + result + '.js.map' +  (fileSizes[base + ".js.map"] ? ' (' + fileSizes[base + ".js.map"] + 'KB)' : '') + '</a></div>'
+        +'<div class="download-file wow bounceInRight" data-wow-delay="0.9s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.min.js">JS.Responsive' + result + '.min.js' +  (fileSizes[base + ".min.js"] ? ' (' + fileSizes[base + ".min.js"] + 'KB)' : '') + '</a></div>'
+        +'<div class="download-file wow bounceInRight" data-wow-delay="1.2s"><a class="link" target="_blank" href="/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + '.min.js.map">JS.Responsive' + result + '.min.js.map' +  (fileSizes[base + ".min.js.map"] ? ' (' + fileSizes[base + ".min.js.map"] + 'KB)' : '') + '</a></div>'
     );
 
     downloadBtn.attr('href', '/api/download/v3.0.0' + resultPath + cfg + '/JS.Responsive' + result + cfg + '.zip');
-    downloadBtn.find('.size').html(' ('+ (fileSizes[base + cfg + ".zip"] || '?') +'kB)');
+    downloadBtn.find('.size').html(fileSizes[base + cfg + ".zip"] ? ' ('+ fileSizes[base + cfg + ".zip"] +'KB)' : '');
 }
 
 refreshLinks(); // init

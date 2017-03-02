@@ -25,12 +25,12 @@
 
                             <article>
                                 <div class="container-overview">
-                                
                                     
-                                        <div class="description">@(Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.)</div>
-                                    
+                                        
+                                            <div class="description">@(Adding horizontal and vertical breakpoints, similar use case to media queries, but with js API.)</div>
+                                        
 
-                                    
+                                        
 <dl class="details">
     
 
@@ -66,7 +66,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-1">line 1</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-1"> line 1</a>
 			</li>
 		</ul>
 	</dd>
@@ -80,9 +80,9 @@
 </dl>
 
 
-                                    
-                                        <h3>@(Example)</h3>
                                         
+                                            <h3>@(Example)</h3>
+                                            
         <p class="code-caption">Example usage of module</p>
     
     <pre class="sunlight-highlight-javascript">// JS:
@@ -113,8 +113,8 @@ JS.Responsive
 }</pre>
 
 
+                                        
                                     
-                                
                                 </div>
 
                                 
@@ -132,25 +132,28 @@ JS.Responsive
 
 
                                  
-                                    <h3 class="subsection-title">@(CSS classes)</h3>
+                                    <div class="customclasses">
+                                        <h3 class="subsection-title">@(CSS classes)</h3>
+                                        <hr>
+                                          <dl>
+                                              
+                                                  <dt> $breakpointName$-more </dt>   <dd>applied when display size is higher or equal to provided size for the name  </dd>  
+                                              
+                                                  <dt> $breakpointName$-less </dt>   <dd>applied when display size is smaller than provided size for the name  </dd>  
+                                              
+                                                  <dt> $breakpointName$ </dt>   <dd>applied when display size is higher or equal to provided size and less then next breakpoint size if any  </dd>  
+                                              
+                                          </dl>
 
-                                    <dl>
-                                        
-                                            <dt> $breakpointName$-more </dt>   <dd>applied when display size is higher or equal to provided size for the name  </dd>  
-                                        
-                                            <dt> $breakpointName$-less </dt>   <dd>applied when display size is smaller than provided size for the name  </dd>  
-                                        
-                                            <dt> $breakpointName$ </dt>   <dd>applied when display size is higher or equal to provided size and less then next breakpoint size if any  </dd>  
-                                        
-                                    </dl>
+                                     </div>
 
                                 
 
                                 
-                                    <h3 class="subsection-title">@(Methods)</h3>
-
-                                    <dl>
-                                        
+                                   <div class="functions">
+                                         <h3 class="subsection-title">@(Methods)</h3>
+                                         <dl>
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.addHorizontalBreakPoint">JS.Responsive.addHorizontalBreakPoint(name, width)</h4>
@@ -258,7 +261,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -289,7 +292,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-82">line 82</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-82"> line 82</a>
 			</li>
 		</ul>
 	</dd>
@@ -325,7 +328,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -348,8 +351,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.addVerticalBreakPoint">JS.Responsive.addVerticalBreakPoint(name, height)</h4>
@@ -457,7 +460,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -488,7 +491,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-171">line 171</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-171"> line 171</a>
 			</li>
 		</ul>
 	</dd>
@@ -524,7 +527,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -547,8 +550,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.disableHorizontalBreakPoints">JS.Responsive.disableHorizontalBreakPoints( [_keepActualClasses])</h4>
@@ -644,7 +647,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -675,7 +678,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-124">line 124</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-124"> line 124</a>
 			</li>
 		</ul>
 	</dd>
@@ -711,7 +714,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -728,8 +731,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.disableVerticalBreakPoints">JS.Responsive.disableVerticalBreakPoints( [_keepActualClasses])</h4>
@@ -825,7 +828,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -856,7 +859,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-215">line 215</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-215"> line 215</a>
 			</li>
 		</ul>
 	</dd>
@@ -892,7 +895,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -909,8 +912,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.enableHorizontalBreakPoints">JS.Responsive.enableHorizontalBreakPoints()</h4>
@@ -944,7 +947,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -975,7 +978,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-140">line 140</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-140"> line 140</a>
 			</li>
 		</ul>
 	</dd>
@@ -1011,7 +1014,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1028,8 +1031,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.enableVerticalBreakPoints">JS.Responsive.enableVerticalBreakPoints()</h4>
@@ -1063,7 +1066,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1094,7 +1097,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-231">line 231</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-231"> line 231</a>
 			</li>
 		</ul>
 	</dd>
@@ -1130,7 +1133,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1147,8 +1150,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getActualHorizontalBreakPoint">JS.Responsive.getActualHorizontalBreakPoint()</h4>
@@ -1182,7 +1185,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1213,7 +1216,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-110">line 110</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-110"> line 110</a>
 			</li>
 		</ul>
 	</dd>
@@ -1249,7 +1252,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1269,8 +1272,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getActualVerticalBreakPoint">JS.Responsive.getActualVerticalBreakPoint()</h4>
@@ -1304,7 +1307,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1335,7 +1338,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-201">line 201</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-201"> line 201</a>
 			</li>
 		</ul>
 	</dd>
@@ -1371,7 +1374,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1391,8 +1394,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getDocumentHeight">JS.Responsive.getDocumentHeight()</h4>
@@ -1426,7 +1429,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1457,7 +1460,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-298">line 298</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-298"> line 298</a>
 			</li>
 		</ul>
 	</dd>
@@ -1489,7 +1492,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1512,8 +1515,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getDocumentWidth">JS.Responsive.getDocumentWidth()</h4>
@@ -1547,7 +1550,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1578,7 +1581,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-286">line 286</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-286"> line 286</a>
 			</li>
 		</ul>
 	</dd>
@@ -1610,7 +1613,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1633,8 +1636,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getWindowHeight">JS.Responsive.getWindowHeight()</h4>
@@ -1668,7 +1671,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1699,7 +1702,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-274">line 274</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-274"> line 274</a>
 			</li>
 		</ul>
 	</dd>
@@ -1731,7 +1734,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1754,8 +1757,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.getWindowWidth">JS.Responsive.getWindowWidth()</h4>
@@ -1789,7 +1792,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1820,7 +1823,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-261">line 261</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-261"> line 261</a>
 			</li>
 		</ul>
 	</dd>
@@ -1852,7 +1855,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1875,8 +1878,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.isDisabledHorizontalBreakPoints">JS.Responsive.isDisabledHorizontalBreakPoints()</h4>
@@ -1910,7 +1913,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -1941,7 +1944,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-155">line 155</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-155"> line 155</a>
 			</li>
 		</ul>
 	</dd>
@@ -1973,7 +1976,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -1990,8 +1993,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.isDisabledVerticalBreakPoints">JS.Responsive.isDisabledVerticalBreakPoints()</h4>
@@ -2025,7 +2028,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -2056,7 +2059,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-246">line 246</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-246"> line 246</a>
 			</li>
 		</ul>
 	</dd>
@@ -2088,7 +2091,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -2105,8 +2108,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.removeHorizontalBreakPoint">JS.Responsive.removeHorizontalBreakPoint(name)</h4>
@@ -2190,7 +2193,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -2221,7 +2224,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-97">line 97</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-97"> line 97</a>
 			</li>
 		</ul>
 	</dd>
@@ -2257,7 +2260,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -2280,8 +2283,8 @@ JS.Responsive
     
 </dd>
 
-                                    
-                                        
+                                         
+                                             
 <hr>
 <dt>
     <h4 class="name" id=".JS.Responsive.removeVerticalBreakPoint">JS.Responsive.removeVerticalBreakPoint(name)</h4>
@@ -2365,7 +2368,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>@(3.0.0)</li>
 		</ul>
-	</dd>
+	</dd><br>
 	
 
 	
@@ -2396,7 +2399,7 @@ JS.Responsive
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/breakpointsjs/">breakpoints.js</a>,
-				 <a href="/documentation/breakpointsjs/#sunlight-1-line-187">line 187</a>
+				 <a href="/documentation/breakpointsjs/#sunlight-1-line-187"> line 187</a>
 			</li>
 		</ul>
 	</dd>
@@ -2432,7 +2435,7 @@ JS.Responsive
 
 <dl>
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
@@ -2455,21 +2458,24 @@ JS.Responsive
     
 </dd>
 
-                                    </dl>
+                                         </dl>
+                                   </div>
                                 
 
                                 
 
                                 
-                                    <h3 class="subsection-title">@(Fires)</h3>
-
-                                    <dl>
-                                        
-                                            <dt> changedBreakPointHorizontal </dt> <dd> </dd>
-                                        
-                                            <dt> changedBreakPointVertical </dt> <dd> </dd>
-                                        
-                                    </dl>
+                                    <div class="fires">
+                                        <h3 class="subsection-title">@(Events)</h3>
+                                        <hr>
+                                        <dl>
+                                            
+                                                <dt> changedBreakPointHorizontal </dt> <dd> </dd>
+                                            
+                                                <dt> changedBreakPointVertical </dt> <dd> </dd>
+                                            
+                                        </dl>
+                                     </div>
                                 
 
                             </article>
