@@ -20,7 +20,25 @@ how-it-works-3		: You can write your <strong class="color-blue">styles with cond
 check-examples		: Check this <strong>simple example</strong>:
 codepen-example-display-density : <p data-height="276" data-theme-id="light" data-slug-hash="gLEgar" data-default-tab="css,result" data-user="WEZEO" data-embed-version="2" data-pen-title="basic hi-res DEMO" class="codepen">See the Pen <a href="http://codepen.io/WEZEO/pen/gLEgar/">basic hi-res DEMO</a> by wezeo (<a href="http://codepen.io/WEZEO">@WEZEO</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
+size-breakpoints		: Size breakpoints
+size-breakpoints-text	: Like Media queries you can target horizontal and vertical viewport sizes.
+touch-vs-mouse			: Touch vs. Mouse
+touch-vs-mouse-text		: Different UI design for mouse and touch and switching dynamicaly beetwen them.
+browser-detection		: Browser detection
+browser-detection-text	: CSS selector conditions by browser and fallback options for older versions.
+javascript-api			: Javascript API
+javascript-api-text		: You can use just CSS selector based API but Javascript event based API for all features also.
+
+button-view-demo	: View demo
+button-view-video	: View video
+button-view-code	: View code
+button-view-example	: View example
+
+buit-with			: Built with
+amazing-sites		: Amazing sites across the web are using <strong class="medium">JS.Responsive</strong>. Get started on your own with our <a href="/documentation/" class="link">documentation</a> or by exploring some of our favorites.
+
 button-all-features	: See all features of JS.Responsive
+
 
 T-1383443348     : The new standard for <span class="color-blue">responsive
 T-818980096      : JS.Responsive is perfect styling tool for moving responsiveness further then ever before. Because responsiveness is more than just window width!

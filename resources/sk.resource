@@ -19,6 +19,23 @@ how-it-works-3		: Môžete písať <strong class="color-blue">podmienené štýl
 check-examples		: Jeden <strong>príklad</strong> za tisíc slov:
 codepen-example-display-density : <p data-height="276" data-theme-id="light" data-slug-hash="YZwKKm" data-default-tab="css,result" data-user="WEZEO" data-embed-version="2" data-pen-title="basic hi-res DEMO" class="codepen">See the Pen <a href="http://codepen.io/WEZEO/pen/gLEgar/">basic hi-res DEMO</a> by wezeo (<a href="http://codepen.io/WEZEO">@WEZEO</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
+size-breakpoints		: Size breakpoints
+size-breakpoints-text	: Tak ako s media queries, aj tu môžete pracovať s horizontálnymi a vertikálnymi veľkosťami viewportu.
+touch-vs-mouse			: Touch vs. Mouse
+touch-vs-mouse-text		: Rozdielny UI design pre ovládanie dotykom a/alebo myšou s možnosťou dynamického prepínania medzi nimi.
+browser-detection		: Browser detection
+browser-detection-text	: CSS selectory podľa prehliadača a možnosť jednoducho podmieniť štýl aj pre staršie verzie prehliadačov.
+javascript-api			: Javascript API
+javascript-api-text		: Všetká ponúkaná funkčnosť je dostupná nielen pomocou CSS selectorov, ale aj cez javascript API a eventy.
+
+button-view-demo	: Pozri demo
+button-view-video	: Pozri video
+button-view-code	: Pozri kód
+button-view-example	: Pozri príklad
+
+buit-with			: Vyrobené s pomocou 
+amazing-sites		: S podporou <strong class="medium">JS.Responsive</strong> už beží množstvo stránok. Tak výskušaj aj ty za pomoci skvelej <a href="/documentation/" class="link">dokumentácie</a> alebo pozri na niektoré z nasledovných:
+
 button-all-features	: Zobraziť všetky funkcie JS.Responsive
 
 T-92508270       : Like Media queries you can target horizontal and vertical viewport sizes.
