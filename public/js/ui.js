@@ -158,7 +158,6 @@ COMPONENT('textarea', function() {
     var container;
 
     self.validate = function(value) {
-        console.log('validate textarea');
 
         var type = typeof(value);
         if (input.prop('disabled') || !isRequired)
