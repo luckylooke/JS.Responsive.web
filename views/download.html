@@ -23,8 +23,8 @@
 					</p>
 					<p class="max-75 wow bounceInUp" data-wow-delay=".5s">@(
 						Or install default or full version via npm or bower:)
-						<pre>npm install JS.Responsive --save</pre>
-						<pre>bower install JS.Responsive --save</pre>
+						<pre class="max-75 wow bounceInUp" data-wow-delay=".5s">npm install JS.Responsive --save</pre>
+						<pre class="max-75 wow bounceInUp" data-wow-delay=".5s">bower install JS.Responsive --save</pre>
 					</p>
 				</div>
 			</div>
@@ -52,10 +52,10 @@
 							<h2 class="h3 line wow fadeInUp" data-wow-delay="1.2s">@(Build your package...)</h2>
 
 							<div class="wow fadeInUp" data-wow-delay="1.5s">
-								<input type="checkbox" name="" id="all"><label for="all">@(All features) (@{model.fullSize}kB)</label>
+								<input type="checkbox" name="" id="all"><label for="all">@(All features) @{if model.fullSize}(@{model.fullSize}kB)@{fi}</label>
 							</div>
 							<div class="wow fadeInUp" data-wow-delay="1.5s">
-								<input type="checkbox" name="" id="default"><label for="default">@(Default) (@{model.defaultSize}kB)</label>
+								<input type="checkbox" name="" id="default"><label for="default">@(Default) @{if model.defaultSize}(@{model.defaultSize}kB)@{fi}</label>
 							</div>
 
 							<hr>
