@@ -26,26 +26,52 @@
 
                             <div class="description">@(How to get the JS.Responsive library and choosing the right installation for your project.)</div>
 
-                            <p>@(You have several possibilities here. Download
-                                via <a href="/download/">download page</a> or <pre>npm install JS.Responsive</pre> or <pre>bower install JS.Responsive</pre>.)</p>
-                            <p>@(In bower and npm you get default build and full build prepared in dist folder. But you can build own version following this steps:)</p>
-                            <ul>
-                                <li>@(run npm command to download dependencies)</li>
-                                <pre>npm install</pre>
-                                <li>@(to build default (JS.Responsive.js) and full build (JS.Responsive.full.js = all features included))</li>
-                                <pre>npm run build</pre>
-                                <li>@(to build your custom build edit JSON config file in `server/customBuild.json`)</li>
-                                <pre>["isScrolling", "detectTouch"]</pre>
-                                <li>@(each string represent name of a feature, full list of available features is in `server/featuresList.json`)</li>
-                                <li>@(when customBuild.json is ready run custom build command)</li>
-                                <pre>npm run custom</pre>
-                                <li>@(build will finish with statement in console)</li>
-                                <pre>Custom build DONE!</pre>
-                                <li>@(output built files are in `dist/` directory (`JS.Responsive.custom.js`, `JS.Responsive.custom.min.js`, etc..))</li>
-                            </ul>
+                            <br>
+                            <br>
+                            <p>@(<b>Step 1</b> - get the lib)</p>
 
+                                <p>@(You have several possibilities here. Download
+                                    via <a href="/download/">download page</a> or <pre>npm install JS.Responsive</pre> or <pre>bower install JS.Responsive</pre>)</p>
+                                <p>@(In bower and npm you get default build and full build prepared in dist folder. But you can build own version following this steps:)</p>
+                                <ul>
+                                    <li>@(run npm command to download dependencies)</li>
+                                    <pre>npm install</pre>
+                                    <li>@(to build default (JS.Responsive.js) and full build (JS.Responsive.full.js = all features included))</li>
+                                    <pre>npm run build</pre>
+                                    <li>@(to build your custom build edit JSON config file in `server/customBuild.json`)</li>
+                                    <pre>["isScrolling", "detectTouch"]</pre>
+                                    <li>@(each string represent name of a feature, full list of available features is in `server/featuresList.json`)</li>
+                                    <li>@(when customBuild.json is ready run custom build command)</li>
+                                    <pre>npm run custom</pre>
+                                    <li>@(build will finish with statement in console)</li>
+                                    <pre>Custom build DONE!</pre>
+                                    <li>@(output built files are in `dist/` directory (`JS.Responsive.custom.js`, `JS.Responsive.custom.min.js`, etc..))</li>
+                                </ul>
 
+                            <br>
+                            <br>
+                            <br>
+                            <br>
 
+                            <p>@(<b>Step 2</b> - include into your project)</p>
+
+                                <p>@(Include lib into HEAD element in your document:)</p>
+                                <pre> &lt;script type=&quot;text/javascript&quot; src=&quot;path/to/scripts/JS.Responsive.js&quot;&gt;&lt;/script&gt;</pre>
+                                <p>@(Or include it as UMD component)</p>
+
+                                <pre>import JSResponsive from ('JS.Responsive');
+var JSResponsive = require('JS.Responsive');</pre>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p>@(<b>Step 3</b> - init lib in js)</p>
+
+                                <p>@(Library needs to be initialised - it is for your better control)</p>
+                                <pre>JS.Responsive.init();</pre>
+                                <p>@(you can init modules individually refer to <a href="/documentation/JS.Responsive/#.init">documentation</a>)</p>
 
                         </div>
 
