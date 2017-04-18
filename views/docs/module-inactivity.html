@@ -9,7 +9,7 @@
 
 
     
-        <h1 class="page-title">@(Module: detect-agent)</h1>
+        <h1 class="page-title">@(Module: inactivity)</h1>
 
         <div id="toc-content">
             <div class="container">
@@ -27,7 +27,7 @@
                                 <div class="container-overview">
                                     
                                         
-                                            <div class="description">@(<p>User agent detection for precise fixes.</p>)</div>
+                                            <div class="description">@(<p>Detection of window focus</p>)</div>
                                         
 
                                         
@@ -65,8 +65,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detect-agentjs/">detect-agent.js</a>,
-				 <a href="/documentation/detect-agentjs/#sunlight-1-line-1"> line 1</a>
+				<a href="/documentation/inactivityjs/">inactivity.js</a>,
+				 <a href="/documentation/inactivityjs/#sunlight-1-line-1"> line 1</a>
 			</li>
 		</ul>
 	</dd>
@@ -104,13 +104,9 @@
                                         <hr>
                                           <dl>
                                               
-                                                  <dt> $browserName$-v$version$-le </dt>   <dd>applied when browser is lower or equal version </dd>  
+                                                  <dt> inactive </dt> 
                                               
-                                                  <dt> $browserName$-v$version$-ge </dt>   <dd>applied when browser is higher or equal version </dd>  
-                                              
-                                                  <dt> $browserName$-v$version$-l </dt>   <dd>applied when browser is lower version </dd>  
-                                              
-                                                  <dt> $browserName$-v$version$-g </dt>   <dd>applied when browser is higher version </dd>  
+                                                  <dt> inactive-$timeLimitName$ </dt> 
                                               
                                           </dl>
 
@@ -125,7 +121,7 @@
                                              
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.getAgentTags">JS.Responsive.getAgentTags()</h4>
+    <h4 class="name" id=".JS.Responsive.setInactiveTimeLimit">JS.Responsive.setInactiveTimeLimit()</h4>
     
     
 </dt>
@@ -133,7 +129,8 @@
 
     
         <div class="description">
-            @(<p>Returns browser tags</p>)
+            @(<p>Returns time limit object which is plain object with <code>limit</code> property with seconds for time limit asked
+via optional <code>name</code> parameter, if no name is provided, the default 'inactive' object will be returned.</p>)
         </div>
     
 
@@ -154,7 +151,7 @@
 	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
-			<li>@(3.0.0)</li>
+			<li>@(3.1.0)</li>
 		</ul>
 	</dd><br>
 	
@@ -186,8 +183,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detect-agentjs/">detect-agent.js</a>,
-				 <a href="/documentation/detect-agentjs/#sunlight-1-line-68"> line 68</a>
+				<a href="/documentation/inactivityjs/">inactivity.js</a>,
+				 <a href="/documentation/inactivityjs/#sunlight-1-line-74"> line 74</a>
 			</li>
 		</ul>
 	</dd>
@@ -215,129 +212,6 @@
     <h5>@(Returns:)</h5>
     
             
-<div class="param-desc">
-    @(<p>all browser tags strings in Array.</p>)
-</div>
-
-
-
-<dl>
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type">Array</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-                                         
-                                             
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.getPlatformInfo">JS.Responsive.getPlatformInfo()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-        <div class="description">
-            @(<p>Returns information about platform, browser and its version</p>)
-        </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
-	<dd class="tag-since">
-		<ul class="dummy">
-			<li>@(3.0.0)</li>
-		</ul>
-	</dd><br>
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/detect-agentjs/">detect-agent.js</a>,
-				 <a href="/documentation/detect-agentjs/#sunlight-1-line-55"> line 55</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>@(Returns:)</h5>
-    
-            
-<div class="param-desc">
-    @(<p>containing &quot;platform&quot; as array, &quot;browser&quot; as string and &quot;version&quot; as number.</p>)
-</div>
-
 
 
 <dl>
@@ -357,15 +231,99 @@
         
 
     
-        <h5>@(Example)</h5>
-        
-    <pre class="sunlight-highlight-javascript">JS.Responsive.getPlatformInfo() returns
-  {
-		platform: Array[&quot;webkit&quot;, &quot;windows&quot;, &quot;chrome&quot;],
-		browser: &quot;chrome&quot;,
-		version: 43.5
-  }</pre>
+</dd>
 
+                                         
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.setInactiveTimeLimit">JS.Responsive.setInactiveTimeLimit()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+        <div class="description">
+            @(<p>Deletes timeLimit object based on optional <code>name</code> parameter, if no name is provided, the default 'inactive' object will be deleted.</p>)
+        </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.1.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/inactivityjs/">inactivity.js</a>,
+				 <a href="/documentation/inactivityjs/#sunlight-1-line-88"> line 88</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 </dd>
@@ -374,7 +332,7 @@
                                              
 <hr>
 <dt>
-    <h4 class="name" id=".JS.Responsive.watchBrowserVersion">JS.Responsive.watchBrowserVersion(browser, version)</h4>
+    <h4 class="name" id=".JS.Responsive.setInactiveTimeLimit">JS.Responsive.setInactiveTimeLimit(timeLimit [, name], callback)</h4>
     
     
 </dt>
@@ -382,7 +340,7 @@
 
     
         <div class="description">
-            @(<p>Set watching given browser and its version</p>)
+            @(<p>Set time limit in seconds for considering window as inactive and optionally applying name of a limit if provided.</p>)
         </div>
     
 
@@ -405,7 +363,11 @@
         <th>@(Type)</th>
 
         
+        <th>@(Argument)</th>
+        
 
+        
+        <th>@(Default)</th>
         
 
         <th class="last">@(Description)</th>
@@ -417,31 +379,7 @@
 
         <tr>
             
-                <td class="name"><code>browser</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">@(<p>browser name, see function getAgentData() attribute &quot;identity&quot;</p>)</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>version</code></td>
+                <td class="name"><code>timeLimit</code></td>
             
 
             <td class="type">
@@ -455,10 +393,100 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">@(<p>browser version number</p>)</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">@(<p>in seconds.</p>)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    inactivity
+                
+                </td>
+            
+
+            <td class="description last">@(<p>name of the limit, will be applied as className to window when user reaches the
+time limit of inactivity. NOTE: The className will be applied with 'inactive-' prefix!, if no name provided, default
+className 'inactive' will be applied instead.</p>)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">@(<p>called when timeLimit is reached, <code>callback(timeLimit, name)</code></p>)</td>
         </tr>
 
     
@@ -477,7 +505,7 @@
 	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
-			<li>@(3.0.0)</li>
+			<li>@(3.1.0)</li>
 		</ul>
 	</dd><br>
 	
@@ -509,8 +537,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detect-agentjs/">detect-agent.js</a>,
-				 <a href="/documentation/detect-agentjs/#sunlight-1-line-27"> line 27</a>
+				<a href="/documentation/inactivityjs/">inactivity.js</a>,
+				 <a href="/documentation/inactivityjs/#sunlight-1-line-40"> line 40</a>
 			</li>
 		</ul>
 	</dd>
@@ -535,42 +563,6 @@
     
 
     
-    <h5>@(Returns:)</h5>
-    
-            
-<div class="param-desc">
-    @(<p>this - for chaining.</p>)
-</div>
-
-
-
-<dl>
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-        <h5>@(Example)s</h5>
-        
-    <pre class="sunlight-highlight-javascript">JS.Responsive.watchBrowserVersion(&#x27;Webkit&#x27;, 530);</pre>
-
-    <pre class="sunlight-highlight-javascript">JS.Responsive.watchBrowserVersion(&#x27;Chrome&#x27;, 47);</pre>
-
-    <pre class="sunlight-highlight-javascript">JS.Responsive.watchBrowserVersion(&#x27;MSIE&#x27;, 10);</pre>
-
-    <pre class="sunlight-highlight-javascript">JS.Responsive.watchBrowserVersion(&#x27;Edge&#x27;, 12);</pre>
-
 
     
 </dd>
@@ -581,6 +573,16 @@
 
                                 
 
+                                
+                                    <div class="fires">
+                                        <h3 class="subsection-title">@(Events)</h3>
+                                        <hr>
+                                        <dl>
+                                            
+                                                <dt> inactive </dt> <dd> {Number} time in seconds of inactivity </dd>
+                                            
+                                        </dl>
+                                     </div>
                                 
 
                             </article>

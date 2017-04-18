@@ -1,6 +1,6 @@
 
 	<ul class="dropdown-menu" style="display: none">
-		<li><a href="/documentation/module-breakpoints/">Size breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">Adblock detection</a></li><li><a href="/documentation/module-detect-agent/">User agent detection</a></li><li><a href="/documentation/module-detect-device-orientation/">Device orientation</a></li><li><a href="/documentation/module-detect-hi-res/">Display resolution</a></li><li><a href="/documentation/module-detect-orientation/">Viewport orientation</a></li><li><a href="/documentation/module-detect-touch/">Touch capability</a></li><li><a href="/documentation/module-document-state/">Document loading</a></li><li><a href="/documentation/module-focus-blur/">Window focus detection</a></li><li><a href="/documentation/module-is-mobile/">Mobile device detection</a></li><li><a href="/documentation/module-is-scrolling/">Scroll usage</a></li><li><a href="/documentation/module-time-based/">Time breakpoints and time related classes</a></li><li><a href="/documentation/module-touch-vs-mouse/">Touch usage detection</a></li>
+		<li><a href="/documentation/module-breakpoints/">Size breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">Adblock detection</a></li><li><a href="/documentation/module-detect-agent/">User agent detection</a></li><li><a href="/documentation/module-detect-device-orientation/">Device orientation</a></li><li><a href="/documentation/module-detect-hi-res/">Display resolution</a></li><li><a href="/documentation/module-detect-orientation/">Viewport orientation</a></li><li><a href="/documentation/module-detect-touch/">Touch capability</a></li><li><a href="/documentation/module-document-state/">Document loading</a></li><li><a href="/documentation/module-focus-blur/">Window focus detection</a></li><li><a href="/documentation/module-inactivity/">Inactivity detection</a></li><li><a href="/documentation/module-is-mobile/">Mobile device detection</a></li><li><a href="/documentation/module-is-scrolling/">Scroll usage</a></li><li><a href="/documentation/module-time-based/">Time breakpoints and time related classes</a></li><li><a href="/documentation/module-touch-vs-mouse/">Touch usage detection</a></li>
 	</ul>
 
 	<ul class="dropdown-menu" style="display: none">
@@ -34,11 +34,11 @@
  **/
 
 var
-    // Opera does not support document.hasFocus()
-    isWindowFocused = document.hasFocus ? document.hasFocus() : TRUE,
+	// Opera does not support document.hasFocus()
+	isWindowFocused = document.hasFocus ? document.hasFocus() : TRUE,
 
-    WINDOW_FOCUSED_CLASS = 'window-focused',
-    WINDOW_BLURED_CLASS = 'window-blured';
+	WINDOW_FOCUSED_CLASS = 'window-focused',
+	WINDOW_BLURED_CLASS = 'window-blured';
 
 /**
  * Returns if document is in state that everything is loaded.
@@ -47,9 +47,9 @@ var
  * @alias JS.Responsive.isDocumentLoaded
  * @since 3.0.0
  */
-$C.isDocumentLoaded = function() {
+$C.isDocumentLoaded = function () {
 
-    return isDocumentLoaded;
+	return isDocumentLoaded;
 };
 
 
@@ -60,9 +60,9 @@ $C.isDocumentLoaded = function() {
  * @alias JS.Responsive.isDocumentUnloading
  * @since 3.0.0
  */
-$C.isDocumentUnloading = function() {
+$C.isDocumentUnloading = function () {
 
-    return isDocumentUnloading;
+	return isDocumentUnloading;
 };
 
 
@@ -73,37 +73,37 @@ $C.isDocumentUnloading = function() {
  * @alias JS.Responsive.isFocused
  * @since 3.0.0
  */
-$C.isFocused = function() {
+$C.isFocused = function () {
 
-    return isWindowFocused;
+	return isWindowFocused;
 };
 
-$C.features.focusBlur = initFB;
+$C._features.focusBlur = initFB;
 
 // Function declarations: ######################### ######################### ######################### ######################### ######################### ######################### #########################
 
 function initFB() {
-    bind(window, 'blur', onblurHandler);
-    bind(window, 'focus', onfocusHandler);
+	bind( window, 'blur', onblurHandler );
+	bind( window, 'focus', onfocusHandler );
 
-    if (isWindowFocused)
-        onfocusHandler();
-    else
-        onblurHandler();
+	if ( isWindowFocused )
+		onfocusHandler();
+	else
+		onblurHandler();
 }
 
 function onblurHandler( e ) {
-    isWindowFocused = FALSE;
-    removeClass(WINDOW_FOCUSED_CLASS);
-    addClass(WINDOW_BLURED_CLASS);
-    $C.emit('windowFocused', FALSE);
+	isWindowFocused = FALSE;
+	removeClass( WINDOW_FOCUSED_CLASS );
+	addClass( WINDOW_BLURED_CLASS );
+	$C.emit( 'windowFocused', FALSE );
 }
 
 function onfocusHandler( e ) {
-    isWindowFocused = TRUE;
-    removeClass(WINDOW_BLURED_CLASS);
-    addClass(WINDOW_FOCUSED_CLASS);
-    $C.emit('windowFocused', TRUE);
+	isWindowFocused = TRUE;
+	removeClass( WINDOW_BLURED_CLASS );
+	addClass( WINDOW_FOCUSED_CLASS );
+	$C.emit( 'windowFocused', TRUE );
 }</pre>
     </article>
 </section>

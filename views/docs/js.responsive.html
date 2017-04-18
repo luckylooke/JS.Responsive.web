@@ -1,5 +1,5 @@
 <ul class="dropdown-menu" style="display: none">
-		<li><a href="/documentation/module-breakpoints/">Size breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">Adblock detection</a></li><li><a href="/documentation/module-detect-agent/">User agent detection</a></li><li><a href="/documentation/module-detect-device-orientation/">Device orientation</a></li><li><a href="/documentation/module-detect-hi-res/">Display resolution</a></li><li><a href="/documentation/module-detect-orientation/">Viewport orientation</a></li><li><a href="/documentation/module-detect-touch/">Touch capability</a></li><li><a href="/documentation/module-document-state/">Document loading</a></li><li><a href="/documentation/module-focus-blur/">Window focus detection</a></li><li><a href="/documentation/module-is-mobile/">Mobile device detection</a></li><li><a href="/documentation/module-is-scrolling/">Scroll usage</a></li><li><a href="/documentation/module-time-based/">Time breakpoints and time related classes</a></li><li><a href="/documentation/module-touch-vs-mouse/">Touch usage detection</a></li>
+		<li><a href="/documentation/module-breakpoints/">Size breakpoints</a></li><li><a href="/documentation/module-detect-ad-block/">Adblock detection</a></li><li><a href="/documentation/module-detect-agent/">User agent detection</a></li><li><a href="/documentation/module-detect-device-orientation/">Device orientation</a></li><li><a href="/documentation/module-detect-hi-res/">Display resolution</a></li><li><a href="/documentation/module-detect-orientation/">Viewport orientation</a></li><li><a href="/documentation/module-detect-touch/">Touch capability</a></li><li><a href="/documentation/module-document-state/">Document loading</a></li><li><a href="/documentation/module-focus-blur/">Window focus detection</a></li><li><a href="/documentation/module-inactivity/">Inactivity detection</a></li><li><a href="/documentation/module-is-mobile/">Mobile device detection</a></li><li><a href="/documentation/module-is-scrolling/">Scroll usage</a></li><li><a href="/documentation/module-time-based/">Time breakpoints and time related classes</a></li><li><a href="/documentation/module-touch-vs-mouse/">Touch usage detection</a></li>
 	</ul>
 
 	<ul class="dropdown-menu" style="display: none">
@@ -66,13 +66,6 @@
 	
 
 	
-	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
-	<dd class="tag-since">
-		<ul class="dummy">
-			<li>@(3.0.0)</li>
-		</ul>
-	</dd><br>
-	
 
 	
 
@@ -102,7 +95,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-40"> line 40</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-57"> line 57</a>
 			</li>
 		</ul>
 	</dd>
@@ -149,122 +142,6 @@
                                         <h3 class="subsection-title">@(Members)</h3>
 
                                           <dl>
-                                              
-<hr>
-<dt class="name" id=".features">
-    <h4 id=".features"><span class="type-signature">&lt;static> </span>features<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">@(Properties:)</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-
-        <th>@(Type)</th>
-
-        
-
-        
-
-        <th class="last">@(Description)</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">@(<p>List of included features in current bundle, each property represent one feature and value is initialisation
-function of the feature, so it can be initialised later</p>)</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-169"> line 169</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-                                          
                                               
 <hr>
 <dt class="name" id=".version">
@@ -328,7 +205,7 @@ function of the feature, so it can be initialised later</p>)</td>
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-48"> line 48</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-65"> line 65</a>
 			</li>
 		</ul>
 	</dd>
@@ -357,6 +234,94 @@ function of the feature, so it can be initialised later</p>)</td>
                                    <div class="functions">
                                          <h3 class="subsection-title">@(Methods)</h3>
                                          <dl>
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".disableAutoInit">disableAutoInit()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+        <div class="description">
+            @(<p>Disables auto initialization of library, if not called before document load event, the library initialize it selves automatically</p>)
+        </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-244"> line 244</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+                                         
                                              
 <hr>
 <dt>
@@ -509,7 +474,7 @@ function of the feature, so it can be initialised later</p>)</td>
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-131"> line 131</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-168"> line 168</a>
 			</li>
 		</ul>
 	</dd>
@@ -574,7 +539,7 @@ function of the feature, so it can be initialised later</p>)</td>
 
     
         <div class="description">
-            @(<p>Initialise JS.Responsive</p>)
+            @(<p>Initialise JS.Responsive, called automatically on document load event, if not prevented by calling <code>JS.Responsive,disableAutoInit()</code> in advance</p>)
         </div>
     
 
@@ -684,7 +649,7 @@ provided, all features will be initialised. If you provide empty object, none of
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-179"> line 179</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-216"> line 216</a>
 			</li>
 		</ul>
 	</dd>
@@ -717,7 +682,7 @@ provided, all features will be initialised. If you provide empty object, none of
                                              
 <hr>
 <dt>
-    <h4 class="name" id=".is">is()</h4>
+    <h4 class="name" id=".is">is(classNames)</h4>
     
     
 </dt>
@@ -742,6 +707,8 @@ provided, all features will be initialised. If you provide empty object, none of
     <thead>
     <tr>
         
+        <th>@(Name)</th>
+        
 
         <th>@(Type)</th>
 
@@ -759,6 +726,8 @@ provided, all features will be initialised. If you provide empty object, none of
     
 
         <tr>
+            
+                <td class="name"><code>classNames</code></td>
             
 
             <td class="type">
@@ -830,7 +799,7 @@ provided, all features will be initialised. If you provide empty object, none of
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-193"> line 193</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-231"> line 231</a>
 			</li>
 		</ul>
 	</dd>
@@ -1022,7 +991,7 @@ provided, all features will be initialised. If you provide empty object, none of
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-114"> line 114</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-149"> line 149</a>
 			</li>
 		</ul>
 	</dd>
@@ -1208,7 +1177,7 @@ provided, all features will be initialised. If you provide empty object, none of
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/JS.Responsive.sourcejs/">JS.Responsive.source.js</a>,
-				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-101"> line 101</a>
+				 <a href="/documentation/JS.Responsive.sourcejs/#sunlight-1-line-134"> line 134</a>
 			</li>
 		</ul>
 	</dd>
