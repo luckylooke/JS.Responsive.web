@@ -74,8 +74,8 @@ function downloadCtrl(ctrl) {
         featuresList: featuresList,
         fileSizes: fileSizes,
         defaultCfg: defaultCfg,
-        fullSize: Math.floor(fileSizes['v3.0.0-full-JS.Responsive.full.min.js']/1024) || '',
-        defaultSize: Math.floor(fileSizes['v3.0.0-default-JS.Responsive.min.js']/1024) || ''
+        fullSize: Math.floor(fileSizes['latest-full-JS.Responsive.full.min.js']/1024) || '',
+        defaultSize: Math.floor(fileSizes['latest-default-JS.Responsive.min.js']/1024) || ''
     });
 
 }
@@ -131,5 +131,5 @@ function setLanguage(ctrl, lang, path, firstIsLang) {
     else if(firstIsLang)
         nextLang = '/' + nextLang;
     ctrl.repository.nextLangUrl = firstIsLang ? path.replace(/^\/\w{2}/, nextLang) : '/' + nextLang + path;
-    
+
 }

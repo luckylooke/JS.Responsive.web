@@ -21,7 +21,7 @@ exports.install = function() {
 	F.file(function(req, res, isValidation) {
 		if (isValidation) {
 			// console.log('isValidation URL: ===> ', req.url);
-			return !!req.url.match(/^\/api\/download\/v\d\.\d\.\d\//);
+			return !!req.url.match(/^\/api\/download\/(v\d\.\d\.\d|latest)\//);
 		} else {
 
             var statsExists = fs.existsSync(statsPath);

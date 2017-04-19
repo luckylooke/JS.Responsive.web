@@ -15,9 +15,9 @@
     "translate": "cd views && totaljs --translate && cp -f ./views/translate.resource ./resources/en.resource",
     "translate_sk": "totaljs -diff ./resources/en.resource ./resources/sk.resource",
     "update_hard": "git checkout master && git reset --hard && git clean -f && cd JS.Responsive && git reset --hard && git clean -f && git checkout master && git pull origin master && cd .. && npm run update",
-    "update": "git pull origin master && git submodule update && cd JS.Responsive.jsdocTmpl && git checkout master && git pull origin master && npm i --production && cd .. && cd JS.Responsive && git pull origin master && npm i && cd node_modules/jsdoc-webpack-plugin && npm i --production && cd ../../.. && node jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node jsdocProcessUtil",
+    "update": "git pull origin master && git submodule update && cd JS.Responsive.jsdocTmpl && git checkout master && git pull origin master && npm i --production && cd .. && cd JS.Responsive && git pull origin master && npm i && cd node_modules/jsdoc-webpack-plugin && npm i --production && cd ../../.. && node utils/jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node utils/jsdocProcessUtil",
     "install": "npm rebuild node-sass && git submodule init && npm run update && npm rebuild node-sass",
-    "templdev": "node jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node jsdocProcessUtil"
+    "templdev": "node utils/jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node utils/jsdocProcessUtil"
   },
   "repository": {
     "type": "git",
