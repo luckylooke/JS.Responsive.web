@@ -9,7 +9,7 @@
 
 
     
-        <h1 class="page-title">@(Module: detect-touch)</h1>
+        <h1 class="page-title">@(Module: url-based)</h1>
 
         <div id="toc-content">
             <div class="container">
@@ -27,122 +27,10 @@
                                 <div class="container-overview">
                                     
                                         
-                                            <div class="description">@(<p>Detection whether device is touch capable</p>)</div>
+                                            <div class="description">@(<p>Url related classes representing url path.</p>)</div>
                                         
 
                                         
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="/documentation/detect-touchjs/">detect-touch.js</a>,
-				 <a href="/documentation/detect-touchjs/#sunlight-1-line-1"> line 1</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-                                        
-                                    
-                                </div>
-
-                                
-
-                                
-
-                                
-
-                                
-
-                                
-
-                                
-
-
-
-                                 
-                                    <div class="customclasses">
-                                        <h3 class="subsection-title">@(CSS classes)</h3>
-                                        <hr>
-                                          <dl>
-                                              
-                                                  <dt> touch </dt>   <dd>is touch capable </dd>  
-                                              
-                                                  <dt> no-touch </dt>   <dd>is not </dd>  
-                                              
-                                                  <dt> touch-points-$$ </dt>   <dd>touches count </dd>  
-                                              
-                                          </dl>
-
-                                     </div>
-
-                                
-
-                                
-                                   <div class="functions">
-                                         <h3 class="subsection-title">@(Methods)</h3>
-                                         <dl>
-                                             
-<hr>
-<dt>
-    <h4 class="name" id=".JS.Responsive.isTouch">JS.Responsive.isTouch()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-        <div class="description">
-            @(<p>Detects if current device supports touch events.</p>)
-        </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
 <dl class="details">
     
 
@@ -152,7 +40,7 @@
 	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
 	<dd class="tag-since">
 		<ul class="dummy">
-			<li>@(3.0.0)</li>
+			<li>@(3.2.0)</li>
 		</ul>
 	</dd><br>
 	
@@ -184,8 +72,102 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="/documentation/detect-touchjs/">detect-touch.js</a>,
-				 <a href="/documentation/detect-touchjs/#sunlight-1-line-28"> line 28</a>
+				<a href="/documentation/url-basedjs/">url-based.js</a>,
+				 <a href="/documentation/url-basedjs/#sunlight-1-line-1"> line 1</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+                                        
+                                    
+                                </div>
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+
+                                
+                                    <div class="members">
+                                        <h3 class="subsection-title">@(Members)</h3>
+
+                                          <dl>
+                                              
+<hr>
+<dt class="name" id=".JS.Responsive.urlChanged">
+    <h4 id=".JS.Responsive.urlChanged"><span class="type-signature">&lt;static> </span>JS.Responsive.urlChanged<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        @(<p>Method for use cases of SPA routers which dynamically changes url via js. If your router uses # before
+navigation urls, like mypage.com/#/my/router/url. Then you don't need to use this method, as library is
+listening on window hashchange event. And generates <code>hash-</code> classes accordingly.</p>)
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.2.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/url-basedjs/">url-based.js</a>,
+				 <a href="/documentation/url-basedjs/#sunlight-1-line-27"> line 27</a>
 			</li>
 		</ul>
 	</dd>
@@ -200,46 +182,36 @@
 
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>@(Returns:)</h5>
-    
-            
-<div class="param-desc">
-    @(<p>The return value is not changing in time.</p>)
-</div>
-
-
-
-<dl>
-    <dt>
-        Type:
-    </dt>
-    <dd>
+        <h5>@(Example)</h5>
         
-<span class="param-type">Boolean</span>
+    <pre class="sunlight-highlight-javascript">JS.Responsive.urlChanged( &#x27;/my/router/url&#x27; );</pre>
 
-
-
-    </dd>
-</dl>
-
-
-        
 
     
 </dd>
 
-                                         </dl>
-                                   </div>
+                                          </dl>
+                                    </div>
+                                
+
+
+
+                                 
+                                    <div class="customclasses">
+                                        <h3 class="subsection-title">@(CSS classes)</h3>
+                                        <hr>
+                                          <dl>
+                                              
+                                                  <dt> page---$pathItem--$pathItem... </dt>   <dd>'page-' is class name base identificator and then every '/item' is represented as '--item' in class </dd>  
+                                              
+                                                  <dt> hash---$pathItem--$pathItem... </dt>   <dd>same like page but for hash part of url </dd>  
+                                              
+                                          </dl>
+
+                                     </div>
+
+                                
+
                                 
 
                                 
@@ -250,7 +222,7 @@
                                         <hr>
                                         <dl>
                                             
-                                                <dt> touchPointsChanged </dt> <dd> </dd>
+                                                <dt> changedUrl </dt> <dd> {String} newUrl, {String} lastUrl </dd>
                                             
                                         </dl>
                                      </div>
