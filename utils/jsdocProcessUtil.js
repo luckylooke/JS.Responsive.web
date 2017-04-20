@@ -6,13 +6,13 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var listOfModules = '';
 var opened = 0;
-fs.readdir('./JS.Responsive/docs', function(err, files) {
+fs.readdir(__dirname + '/../JS.Responsive/docs', function(err, files) {
     if(err) console.error(err);
 
     files
         .filter(function(file) { return file.substr(-5) === '.html'; }) // html only
         .forEach(function(file) {
-            fs.readFile(__dirname + '/JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
+            fs.readFile(__dirname + '/../JS.Responsive/docs/' + file, 'utf-8', function(err, contents) {
                 opened++;
                 console.log('file has content: ', file, !!contents);
                 file = file.replace('.js', 'js');
@@ -27,13 +27,13 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                 var $ = cheerio.load(contents, {decodeEntities: false});
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
-                    fs.readFile(__dirname + '/views/docSubMenu.html', 'utf-8', function(err, contents) {
+                    fs.readFile(__dirname + '/../views/docSubMenu.html', 'utf-8', function(err, contents) {
                         if(err) return console.error(err);
                         console.log('file contents: ', 'docSubMenu.html', !!contents);
                         var $ = cheerio.load(contents, {decodeEntities: false});
                         $('#modules-list').html(listOfModules);
                         contents = $.html();
-                        fs.writeFile(__dirname + '/views/docSubMenu.html', contents, function(err){
+                        fs.writeFile(__dirname + '/../views/docSubMenu.html', contents, function(err){
                             if(err) console.error(err);
                             console.log('file done: ', file);
                         });
@@ -46,7 +46,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     file = file.replace('.list', '-list');
 
                 if(file === 'JS.Responsive.html')
-                    fs.writeFile(__dirname + '/views/docs/js.responsive.html', contents, function(err){
+                    fs.writeFile(__dirname + '/../views/docs/js.responsive.html', contents, function(err){
                         "use strict";
                         if(err) console.error(err);
 
@@ -58,7 +58,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                     });
 
                 if(file === 'JS.Responsive.sourcejs.html')
-                    fs.writeFile(__dirname + '/views/docs/js.responsive.sourcejs.html', contents, function(err){
+                    fs.writeFile(__dirname + '/../views/docs/js.responsive.sourcejs.html', contents, function(err){
                         "use strict";
                         if(err) console.error(err);
 
@@ -69,7 +69,7 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
                         }
                     });
 
-                fs.writeFile(__dirname + '/views/docs/' + file, contents, function(err){
+                fs.writeFile(__dirname + '/../views/docs/' + file, contents, function(err){
                     "use strict";
                     if(err) console.error(err);
 
@@ -86,13 +86,13 @@ fs.readdir('./JS.Responsive/docs', function(err, files) {
 function afterAllCreated(){
     "use strict";
     // temp fixes:
-    fs.readFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
+    fs.readFile(__dirname + '/../JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', 'utf-8', function(err, contents) {
         if (err) console.error(err);
         if(contents.search("spawn\\(__dirname + '/node_modules/.bin/jsdoc'") != -1)
             return;
         contents = contents.replace("spawn('./node_modules/.bin/jsdoc'", "spawn(__dirname + '/node_modules/.bin/jsdoc'");
 
-        fs.writeFile(__dirname + '/JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', contents, function(err){
+        fs.writeFile(__dirname + '/../JS.Responsive/node_modules/jsdoc-webpack-plugin/index.js', contents, function(err){
             "use strict";
             if(err) console.error(err);
 
