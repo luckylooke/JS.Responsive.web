@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * (c) 2015 WEZEO http://wezeo.com
 	 * License: MIT
 	 *
-	 * @version 3.1.0
+	 * @version 3.2.4
 	 *
 	 * @author Johnny Seyd <seyd@wezeo.com>, Ctibor Laky <laky@wezeo.com>
 	 *
@@ -116,7 +116,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  * Library version
 	  * @const {String}
 	  */
-		$C.version = '3.1.0';
+		$C.version = '3.2.4';
 	
 		// -------------------------------------------------------------------------------------------------
 		// --- CONFIG --------------------------------------------------------------------------------------
@@ -144,14 +144,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		    LANDSCAPE_STRING = 'landscape',
 		    HORIZONTAL_STRING = 'horizontal',
 		    VERTICAL_STRING = 'vertical',
-	
-	
-		/**
-	  * @param {String} autoInit=true
-	  * Library auto initialization flag
-	  * @private
-	  */
-		_autoInit = TRUE,
 	
 	
 		/**
@@ -253,7 +245,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		$C._features = {};
 	
 		/**
-	  * Initialise JS.Responsive, called automatically on document load event, if not prevented by calling `JS.Responsive,disableAutoInit()` in advance
+	  * Initialise JS.Responsive
 	  * @param {Object} [config] - Object with key value pairs of features which will be initialised, if not
 	  * provided, all features will be initialised. If you provide empty object, none of features will be initialised.
 	  */
@@ -277,14 +269,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			for (var i = 0; i < arguments.length; i++) if (hasAllTheseClasses(arguments[i])) return TRUE; // if once true then disjunction is true
 	
 			return FALSE;
-		};
-	
-		/**
-	  * Disables auto initialization of library, if not called before document load event, the library initialize it selves automatically
-	  */
-		$C.disableAutoInit = function () {
-	
-			_autoInit = FALSE;
 		};
 	
 		// -------------------------------------------------------------------------------------------------
@@ -712,6 +696,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  *
 	  * Detection of Adblock or kind of ads blocking programs/apps
 	  * @module detect-ad-block
+	  * @since 3.0.0
 	  * @pretty-name Adblock detection
 	  * @teaser Detect weather user has Adblock enabled.
 	  *
@@ -1062,7 +1047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		// init detection
 		function initDetectDeviceOrientation() {
 			detectDeviceOrientation();
-			$C.on('update', detectDeviceOrientation);
+			bind(win, 'orientationchange', detectDeviceOrientation);
 		}
 	
 		// adds "device-orientation-portrait" or "device-orientation-landscape" class  and  "device-orientation-0", "device-orientation-90", "device-orientation-180" or "device-orientation-270" class
@@ -1233,7 +1218,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		// init detection
 		function initDetectOrientation() {
 			detectOrientation();
-			bind(window, 'orientationchange', detectOrientation);
+			bind(win, 'resize', detectOrientation);
 		}
 	
 		// adds "portrait" or "landscape" class
@@ -1261,7 +1246,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  * @custom-class touch - is touch capable
 	  * @custom-class no-touch - is not
 	  *
+	  * @custom-class touch-points-$ - touches count
+	  *
+	  * @emits touchPointsChanged - fires with number of touches, and previous number of touches as parameters
+	  *
 	  * */
+	
+		var TOUCH_POINTS_TEXT = 'touch-points-',
+		    actualTouchClass,
+		    actualTouchCount = 0;
 	
 		/**
 	  * Detects if current device supports touch events.
@@ -1281,7 +1274,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 		// adds "touch" or "no-touch" class (once)
 		function detectTouch() {
+	
+			bind(document, 'touchstart', setNumberOfTouches);
+			bind(document, 'touchend', setNumberOfTouches);
+	
 			addClass($C.isTouch() ? 'touch' : 'no-touch');
+		}
+	
+		function setNumberOfTouches(e) {
+	
+			var newCount = e.touches.length,
+			    newClass = TOUCH_POINTS_TEXT + newCount;
+	
+			if (newCount != actualTouchCount) {
+	
+				removeClass(actualTouchClass);
+	
+				if (newCount) {
+	
+					addClass(newClass);
+					actualTouchClass = newClass;
+				}
+	
+				$C.emit('touchPointsChanged', newCount, actualTouchCount);
+				actualTouchCount = newCount;
+			}
 		}
 		/**
 	  *
@@ -1462,6 +1479,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  *
 	  * Detection of window focus
 	  * @module inactivity
+	  * @since 3.1.0
 	  * @pretty-name Inactivity detection
 	  * @teaser Be notified that user is inactive
 	  *
@@ -1527,7 +1545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  * @returns {{limit: Number, name: String, cb:Function}}
 	  *
 	  * @memberof module:inactivity
-	  * @alias JS.Responsive.setInactiveTimeLimit
+	  * @alias JS.Responsive.getInactiveTimeLimit
 	  * @since 3.1.0
 	  */
 		$C.getInactiveTimeLimit = function (name) {
@@ -1540,7 +1558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  * Deletes timeLimit object based on optional `name` parameter, if no name is provided, the default 'inactive' object will be deleted.
 	  *
 	  * @memberof module:inactivity
-	  * @alias JS.Responsive.setInactiveTimeLimit
+	  * @alias JS.Responsive.removeInactiveTimeLimit
 	  * @since 3.1.0
 	  */
 		$C.removeInactiveTimeLimit = function (name) {
@@ -1563,7 +1581,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			});
 	
 			lastActivity = Date.now();
-			$C.setInactiveTimeLimit(WATCH_MOUSEMOVE, 'mouseWatch', inactivityWatchMouseMove);
+			$C.setInactiveTimeLimit(WATCH_MOUSEMOVE, 'mouse-watch', inactivityWatchMouseMove);
 			sortInactiveLimits();
 			inactiveSoonestLimit = inactiveLimits[0];
 			inactiveTimeout = setTimeout(checkIncativity, inactiveSoonestLimit.limit);
@@ -1769,6 +1787,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  *
 	  * Time related classes and custom time breakpoints from document loaded event.
 	  * @module time-based
+	  * @since 3.0.0
 	  * @pretty-name Time breakpoints and time related classes
 	  * @teaser Time related classes, day period, year seasson.
 	  *
@@ -2041,6 +2060,78 @@ return /******/ (function(modules) { // webpackBootstrap
 			removeClass('user-is-using-touch');
 			$C.emit('changedUsingTouch', FALSE);
 		}
+		/**
+	  *
+	  * Url related classes representing url path.
+	  * @module url-based
+	  * @since 3.2.0
+	  * @pretty-name Url related classes
+	  * @teaser Classes representing url path.
+	  *
+	  * @custom-class page---$pathItem--$pathItem... - 'page-' is class name base identificator and then every '/item' is represented as '--item' in class
+	  * @custom-class hash---$pathItem--$pathItem... - same like page but for hash part of url
+	  *
+	  * @emits changedUrl - Arguments: {String} newUrl, {String} lastUrl
+	  *
+	  **/
+	
+		var actualUrlClasses = {};
+	
+		/**
+	  * Method for use cases of SPA routers which dynamically changes url via js. If your router uses # before
+	  * navigation urls, like mypage.com/#/my/router/url. Then you don't need to use this method, as library is
+	  * listening on window hashchange event. And generates `hash-` classes accordingly.
+	  * @memberof module:url-based
+	  * @alias JS.Responsive.urlChanged
+	  * @since 3.2.0
+	  * @example JS.Responsive.urlChanged( '/my/router/url' );
+	  */
+		$C.urlChanged = checkUrlChanges;
+	
+		$C._features.urlBased = initUrlBased;
+	
+		// Function declarations: ######################### ######################### ######################### ######################### ######################### ######################### #########################
+	
+		function initUrlBased() {
+	
+			bind(win, 'popstate', checkUrlChanges);
+			bind(win, 'hashchange', checkUrlChanges);
+			checkUrlChanges();
+		}
+	
+		function checkUrlChanges() {
+	
+			_checkUrlChanges('pathname', 'page-', 'pageUrlChanged');
+			_checkUrlChanges('hash', 'hash-', 'hashUrlChanged');
+		}
+	
+		function _checkUrlChanges(prop, prefix, evtName) {
+	
+			var converted = parseUrlItems(win.location[prop]),
+			    newClass = prefix + converted;
+	
+			if (!converted || newClass == actualUrlClasses[prop]) return;
+	
+			removeClass(actualUrlClasses[prop]);
+			addClass(newClass);
+	
+			$C.emit(evtName, newClass, actualUrlClasses[prop]);
+			actualUrlClasses[prop] = newClass;
+		}
+	
+		function parseUrlItems(path) {
+	
+			if (path == '/') return FALSE;
+	
+			var parsed = path.split('/');
+	
+			parsed.shift(); // remove first item ""
+	
+			return parsed.reduce(function (result, item) {
+	
+				return result += '--' + item;
+			}, '');
+		}
 	
 		// -------------------------------------------------------------------------------------------------
 		// --- PRIVATE -------------------------------------------------------------------------------------
@@ -2261,8 +2352,6 @@ return /******/ (function(modules) { // webpackBootstrap
 			isDocumentLoaded = TRUE;
 			docReadyTime = +new Date();
 	
-			if (!initWasExecuted && _autoInit) init();
-	
 			$C.emit('documentReady', docReadyTime);
 		}
 	
@@ -2285,14 +2374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			};
 		}
 	
-		var initWasExecuted;
-	
 		function init(cfg) {
-	
-			// runs only once
-			if (initWasExecuted) return;
-	
-			initWasExecuted = TRUE;
 	
 			var prop;
 			if (cfg) // init features by config
