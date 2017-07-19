@@ -119,6 +119,10 @@
                                               
                                                   <dt> $timeBreakpointName$ </dt>   <dd>where name is custom name provided via setTimeBreakPoints </dd>  
                                               
+                                                  <dt> daylight-true </dt>   <dd>value of calculated daylight after location is provided by setLocation( lat, lng ) </dd>  
+                                              
+                                                  <dt> daylight-false </dt>   <dd>value of calculated daylight after location is provided by setLocation( lat, lng ) </dd>  
+                                              
                                           </dl>
 
                                      </div>
@@ -129,6 +133,183 @@
                                    <div class="functions">
                                          <h3 class="subsection-title">@(Methods)</h3>
                                          <dl>
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.dayOfYear">JS.Responsive.dayOfYear( [date])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>@(Parameters:)</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>@(Name)</th>
+        
+
+        <th>@(Type)</th>
+
+        
+        <th>@(Argument)</th>
+        
+
+        
+
+        <th class="last">@(Description)</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">@(<p>input Date instance, dafault is new Date()</p>)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.3.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/time-basedjs/">time-based.js</a>,
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-225"> line 225</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>@(Returns:)</h5>
+    
+            
+<div class="param-desc">
+    @(<p>day of the year</p>)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+                                         
                                              
 <hr>
 <dt>
@@ -194,7 +375,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/time-basedjs/">time-based.js</a>,
-				 <a href="/documentation/time-basedjs/#sunlight-1-line-68"> line 68</a>
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-74"> line 74</a>
 			</li>
 		</ul>
 	</dd>
@@ -235,6 +416,360 @@
     <dd>
         
 <span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+                                         
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.getSunrise">JS.Responsive.getSunrise( [date])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>@(Parameters:)</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>@(Name)</th>
+        
+
+        <th>@(Type)</th>
+
+        
+        <th>@(Argument)</th>
+        
+
+        
+
+        <th class="last">@(Description)</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">@(<p>input Date instance, dafault is new Date()</p>)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.3.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/time-basedjs/">time-based.js</a>,
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-253"> line 253</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>@(Returns:)</h5>
+    
+            
+<div class="param-desc">
+    @(<p>date object of sunrise calculated from provided date</p>)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+                                         
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.getSunrise">JS.Responsive.getSunrise( [date])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>@(Parameters:)</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>@(Name)</th>
+        
+
+        <th>@(Type)</th>
+
+        
+        <th>@(Argument)</th>
+        
+
+        
+
+        <th class="last">@(Description)</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">@(<p>input Date instance, dafault is new Date()</p>)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.3.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/time-basedjs/">time-based.js</a>,
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-241"> line 241</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>@(Returns:)</h5>
+    
+            
+<div class="param-desc">
+    @(<p>date object of sunrise calculated from provided date</p>)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type">Date</span>
 
 
 
@@ -313,7 +848,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/time-basedjs/">time-based.js</a>,
-				 <a href="/documentation/time-basedjs/#sunlight-1-line-80"> line 80</a>
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-86"> line 86</a>
 			</li>
 		</ul>
 	</dd>
@@ -362,6 +897,324 @@
 
 
         
+
+    
+</dd>
+
+                                         
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.isDaylight">JS.Responsive.isDaylight()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+        <div class="description">
+            @(<p>Returns actual daylight state</p>)
+        </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.3.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/time-basedjs/">time-based.js</a>,
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-186"> line 186</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>@(Returns:)</h5>
+    
+            
+<div class="param-desc">
+    @(<p>true for daylight time span</p>)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+                                         
+                                             
+<hr>
+<dt>
+    <h4 class="name" id=".JS.Responsive.setLocation">JS.Responsive.setLocation(lat, lng)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+        <div class="description">
+            @(<p>Set location to activate daylight detection classes</p>)
+        </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>@(Parameters:)</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>@(Name)</th>
+        
+
+        <th>@(Type)</th>
+
+        
+
+        
+
+        <th class="last">@(Description)</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">@(<p>input latitude</p>)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lng</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">@(<p>input longitude</p>)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+	<dt class="tag-since method-doc-label method-doc-details-label">@(Since):</dt>
+	<dd class="tag-since">
+		<ul class="dummy">
+			<li>@(3.3.0)</li>
+		</ul>
+	</dd><br>
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">@(Source:)</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="/documentation/time-basedjs/">time-based.js</a>,
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-172"> line 172</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>@(Returns:)</h5>
+    
+            
+<div class="param-desc">
+    @(<p>true for daylight time span</p>)
+</div>
+
+
+
+<dl>
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>@(Example)</h5>
+        
+    <pre class="sunlight-highlight-javascript">JS.Responsive.setLocation( 48.136609, 17.107228 ); // Bratislava</pre>
+
 
     
 </dd>
@@ -593,7 +1446,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="/documentation/time-basedjs/">time-based.js</a>,
-				 <a href="/documentation/time-basedjs/#sunlight-1-line-96"> line 96</a>
+				 <a href="/documentation/time-basedjs/#sunlight-1-line-102"> line 102</a>
 			</li>
 		</ul>
 	</dd>
