@@ -13,3 +13,5 @@ mail.address.from               : luckylooke@gmail.com
 mail.address.reply              : luckylooke@gmail.com
 mail.address.bcc                :
 mail.contact                    : luckylooke@gmail.com
+
+default-errorbuilder-status     : 400

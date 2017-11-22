@@ -1,6 +1,6 @@
 <div data-jc-scope="?">
 
-    <div data-jc="visible" data-jc-path="form.response" data-if="value && value.success" class="hidden">
+    <div data-jc="visible" data-jc-path="response" data-if="value && value.success" class="hidden">
         <br />
         <br />
         <div class="center">
@@ -11,7 +11,7 @@
         <br />
     </div>
 
-    <div data-jc="visible" data-jc-path="form.response" data-if="value == null || !value.success">
+    <div data-jc="visible" data-jc-path="response" data-if="value == null || !value.success">
         <div class="row">
             <div class="col-sm-6 m">
                 <div data-jc="textbox" data-jc-path="form.firstname" data-required="true">@(First name)</div>
@@ -32,7 +32,7 @@
 
         <div class="row" style="margin-bottom:10px">
             <div class="col-sm-12">
-                <div data-jc="textarea" data-jc-path="form.body" data-required="true" data-height="200px" data-placeholder="@(Your questions...)">@(Message)</div>
+                <div data-jc="textarea" data-jc-path="form.message" data-required="true" data-height="200px" data-placeholder="@(Your questions...)">@(Message)</div>
             </div>
         </div>
         <br />
@@ -52,12 +52,12 @@
 
     OPERATION('contact.submit', function(el) {
         var component = el.closest('[data-jc]').component();
-        console.log('test', !jC.validate(component.pathscope + '.form.*'));
-        if (!jC.validate(component.pathscope + '.form.*')){
-            console.log('dingdong', $('[data-jc="textarea"]').component());
-            return;
+        var scope = component.pathscope;
+        if (VALIDATE(scope + '.form.*')){
+            AJAX('POST /api/contact/', GET(scope + '.form'), scope + '.response');
+            // RESET(scope + '.form.*')
+            // SET(scope + '.form.*', {}, true)
         }
-        AJAX('POST /api/contact/', component.get(), component.pathscope + '.response');
     });
 
 </script>

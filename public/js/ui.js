@@ -57,9 +57,9 @@ COMPONENT('textbox', function() {
         attrs.attr('type', self.type === 'password' ? self.type : 'text');
         attrs.attr('placeholder', self.attr('data-placeholder'));
         attrs.attr('maxlength', self.attr('data-maxlength'));
-        attrs.attr('data-component-keypress', self.attr('data-component-keypress'));
-        attrs.attr('data-component-keypress-delay', self.attr('data-component-keypress-delay'));
-        attrs.attr('data-component-bind', '');
+        attrs.attr('data-jc-keypress', self.attr('data-jc-keypress'));
+        attrs.attr('data-jc-keypress-delay', self.attr('data-jc-keypress-delay'));
+        attrs.attr('data-jc-bind', '');
         attrs.attr('name', self.path);
 
         tmp = self.attr('data-align');
@@ -129,7 +129,7 @@ COMPONENT('textbox', function() {
         container = self.find('.ui-textbox');
     };
 
-    self.state = function(type, who) {
+    self.state = function(type) {
         if (!type)
             return;
         var invalid = self.isInvalid();
@@ -189,7 +189,7 @@ COMPONENT('textarea', function() {
 
         attrs.attr('placeholder', self.attr('data-placeholder'));
         attrs.attr('maxlength', self.attr('data-maxlength'));
-        attrs.attr('data-component-bind', '');
+        attrs.attr('data-jc-bind', '');
 
         tmp = self.attr('data-height');
         tmp && attrs.attr('style', 'height:' + tmp);
