@@ -7,7 +7,7 @@ menu-doc			: Documentation
 menu-download		: Download
 menu-contact		: Contact
 fork-me				: Fork me on <strong>GitHub</strong>
-powered-by			: 
+powered-by			:
 
 // index.html
 index-main-header	: The new standard for <span class="color-blue">responsive</span>
@@ -76,7 +76,7 @@ T-2117496884     : SUBMIT FORM
 T1939736568      : Chief Technical Officer
 T3123            : at
 T-494058584      : Technology enthusiast
-T-1966372403     : and senior js programmer at
+T-1966372403     : and js programmer at
 T1777428479      : Our team has powerfull
 T516534646       : brutal-mega skill
 

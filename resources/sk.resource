@@ -33,7 +33,7 @@ button-view-video	: Pozri video
 button-view-code	: Pozri kód
 button-view-example	: Pozri príklad
 
-buit-with			: Vyrobené s pomocou 
+buit-with			: Vyrobené s pomocou
 amazing-sites		: S podporou <strong class="medium">JS.Responsive</strong> už beží množstvo stránok. Tak výskušaj aj ty za pomoci skvelej <a href="/documentation/" class="link">dokumentácie</a> alebo pozri na niektoré z nasledovných:
 
 button-all-features	: Zobraziť všetky funkcie JS.Responsive
@@ -65,7 +65,7 @@ T-2117496884     : SUBMIT FORM
 T1939736568      : Chief Technical Officer
 T3123            : at
 T-494058584      : Technology enthusiast
-T-1966372403     : and senior js programmer at
+T-1966372403     : and js programmer at
 T1777428479      : Our team has powerfull
 T516534646       : brutal-mega skill
 

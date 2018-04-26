@@ -4,20 +4,23 @@
   "description": "web for https://github.com/seyd/JS.Responsive",
   "main": "debug.js",
   "dependencies": {
-    "archiver": "^1.1.0",
-    "bootstrap": "^3.3.7",
-    "cheerio": "^0.22.0",
-    "node-sass": "^3.10.1",
-    "total.js": "^2.7.0"
+    "archiver": "1.1.0",
+    "bootstrap": "3.3.7",
+    "cheerio": "0.22.0",
+    "node-sass": "3.10.1",
+    "total.js": "2.9.4"
   },
   "scripts": {
+    "start": "node debug.js",
+    "start-prod": "node release.js",
     "test": "node test.js",
     "translate": "cd views && totaljs --translate && cp -f ./views/translate.resource ./resources/en.resource",
     "translate_sk": "totaljs -diff ./resources/en.resource ./resources/sk.resource",
     "update_hard": "git checkout master && git reset --hard && git clean -f && cd JS.Responsive && git reset --hard && git clean -f && git checkout master && git pull origin master && cd .. && npm run update",
     "update": "git pull origin master && git submodule update && cd JS.Responsive.jsdocTmpl && git checkout master && git pull origin master && npm i --production && cd .. && cd JS.Responsive && git pull origin master && npm i && cd node_modules/jsdoc-webpack-plugin && npm i --production && cd ../../.. && node utils/jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node utils/jsdocProcessUtil",
     "install": "npm rebuild node-sass && git submodule init && npm run update && npm rebuild node-sass",
-    "templdev": "node utils/jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node utils/jsdocProcessUtil"
+    "templdev": "node utils/jsdocPreProcessUtil && cd JS.Responsive && npm run build && cd .. && node utils/jsdocProcessUtil",
+    "package": "tpm create jsrweb.package"
   },
   "repository": {
     "type": "git",

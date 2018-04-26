@@ -24,6 +24,8 @@ fs.readdir(__dirname + '/../JS.Responsive/docs', function(err, files) {
                     return p1 + '/documentation/' + p2.replace('.js', 'js') + '/' + (p4 || '') + '"';
                 });
 
+                contents = contents.replace(/href="\/documentation\/module\.list\/"/g, 'href="#"');
+
                 var $ = cheerio.load(contents, {decodeEntities: false});
                 if(file == 'index.html'){
                     listOfModules = $('.dropdown-menu').eq(0).html();
