@@ -54,13 +54,16 @@ COMPONENT('textbox', function() {
         var builder = [];
         var tmp;
 
-        attrs.attr('type', self.type === 'password' ? self.type : 'text');
+        attrs.attr('type', self.type === 'password' ? self.type : self.attr('type') || 'text');
         attrs.attr('placeholder', self.attr('data-placeholder'));
         attrs.attr('maxlength', self.attr('data-maxlength'));
         attrs.attr('data-jc-keypress', self.attr('data-jc-keypress'));
         attrs.attr('data-jc-keypress-delay', self.attr('data-jc-keypress-delay'));
+        attrs.attr('autocomplete', self.attr('autocomplete'));
+        attrs.attr('autofocus', self.attr('autofocus'));
+        attrs.attr('id', self.attr('id'));
         attrs.attr('data-jc-bind', '');
-        attrs.attr('name', self.path);
+        attrs.attr('name', self.attr('name') || self.path);
 
         tmp = self.attr('data-align');
         tmp && attrs.attr('class', 'ui-' + tmp);

@@ -14,25 +14,25 @@
     <div data-jc="visible" data-jc-path="response" data-if="value == null || !value.success">
         <div class="row">
             <div class="col-sm-6 m">
-                <div data-jc="textbox" data-jc-path="form.firstname" data-required="true">@(First name)</div>
+                <div id="firstname" name="firstname" data-jc="textbox" data-jc-path="form.firstname" data-required="true" autocomplete="given-name" autofocus="true">@(First name)</div>
             </div>
             <div class="col-sm-6 m">
-                <div data-jc="textbox" data-jc-path="form.lastname" data-required="true">@(Last name)</div>
+                <div id="lastname" name="lastname"  data-jc="textbox" data-jc-path="form.lastname" data-required="true" autocomplete="family-name">@(Last name)</div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-6 m">
-                <div data-jc="textbox" data-jc-path="form.company">@(Subject)</div>
+                <div id="subject" name="subject" data-jc="textbox" data-jc-path="form.subject" autocomplete="on">@(Subject)</div>
             </div>
             <div class="col-sm-6 m">
-                <div data-jc="textbox" data-jc-path="form.email" data-required="true" data-jc-type="email" data-jc-value="'@'">@(E-mail address)</div>
+                <div id="email" name="email" type="email" data-jc="textbox" data-jc-path="form.email" data-required="true" data-jc-type="email" data-jc-value="'@'" autocomplete="email">@(E-mail address)</div>
             </div>
         </div>
 
         <div class="row" style="margin-bottom:10px">
             <div class="col-sm-12">
-                <div data-jc="textarea" data-jc-path="form.message" data-required="true" data-height="200px" data-placeholder="@(Your questions...)">@(Message)</div>
+                <div data-jc="textarea" data-jc-path="form.message" data-required="true" data-height="200px" data-placeholder="@(Your message...)">@(Message)</div>
             </div>
         </div>
         <br />
@@ -41,7 +41,7 @@
 
         <div class="row">
             <div class="col-12 text-right">
-                <button class="button exec" data-exec="#contact.submit">@(SUBMIT)</button>
+                <button type="submit" class="button exec" data-exec="#contact.submit">@(SUBMIT)</button>
             </div>
         </div>
     </div>

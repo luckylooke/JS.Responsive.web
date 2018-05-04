@@ -7,7 +7,13 @@
 
 	// responsive init
 	JS.Responsive
-		.init()
+		.init({
+			detectAdblock: {
+				adblockDetectedClass: 'blocker-detected',
+				noAdblockClass: 'no-blocker',
+			},
+			all: true
+		})
 		.addHorizontalBreakPoint('micro', 420)
 		.addHorizontalBreakPoint('tiny', 478)
 		.addHorizontalBreakPoint('small', 768)
