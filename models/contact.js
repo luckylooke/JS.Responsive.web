@@ -3,8 +3,9 @@ NEWSCHEMA('Contact').make(function(schema) {
 	schema.define('firstname', 'Capitalize(40)', true);
 	schema.define('lastname', 'Capitalize(40)', true);
 	schema.define('email', 'Email', true);
+	schema.define('subject', String);
 	schema.define('message', String, true);
-	schema.define('phone', 'Phone');
+	// schema.define('phone', 'Phone');
 	schema.define('ip', 'String(80)');
 
 	// Saves the model into the database
